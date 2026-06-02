@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import "./globals.css";
 
@@ -52,6 +53,19 @@ export default function RootLayout({
       className={`${inter.variable} scroll-smooth antialiased`}
     >
       <body className="min-h-screen bg-[#F5F7FA] font-sans text-[#1E293B] overflow-x-hidden">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2CNVR5X55Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-2CNVR5X55Y');
+          `}
+        </Script>
         <SchemaMarkup />
         {children}
       </body>
