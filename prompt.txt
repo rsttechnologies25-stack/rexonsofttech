@@ -1,0 +1,478 @@
+Here’s the refined enterprise website prompt using your actual RexonSoftTech company profile, services, ERP solutions, projects, and business information instead of placeholder content.
+
+Create a premium enterprise-level corporate website for “RexonSoftTech” inspired by Infosys, TCS, Accenture, and Cognizant.
+
+The website must look highly professional, enterprise-focused, modern, scalable, trustworthy, and business-oriented. The UI should reflect a serious technology company specializing in ERP systems, enterprise software, automation, AI solutions, cybersecurity, websites, web applications, and mobile app development.
+
+Avoid startup-style flashy layouts, gaming UI, cartoon icons, or cyberpunk effects. The design must feel like a global IT consulting and enterprise software company.
+
+Use:
+
+* Clean white and light gray backgrounds
+* Deep enterprise blue tones
+* Professional typography
+* Spacious layouts
+* Corporate animations
+* Premium cards
+* Minimal but elegant motion effects
+
+PRIMARY BRAND COLORS:
+
+* Navy Blue: #0B1F3A
+* Enterprise Blue: #143B64
+* Accent Blue: #2563EB
+* Light Background: #F5F7FA
+* White: #FFFFFF
+* Dark Text: #1E293B
+* Muted Text: #64748B
+
+TYPOGRAPHY:
+Use Inter or IBM Plex Sans.
+
+* Hero Heading: 64px
+* Section Heading: 44px
+* Body Text: 18px
+
+==================================================
+HEADER SECTION
+==============
+
+Create a premium sticky navigation bar with:
+
+* Services
+* ERP Solutions
+* Industries
+* Projects
+* About
+* Careers
+* Contact
+
+Right side:
+“Book Consultation” button.
+
+Navbar should have:
+
+* smooth scroll behavior
+* glass blur effect
+* enterprise mega menu structure
+
+==================================================
+HERO SECTION
+============
+
+LEFT SIDE CONTENT:
+
+Small Label:
+“Transforming Business Through Technology”
+
+Main Heading:
+“Custom Software, ERP & Digital Transformation Solutions”
+
+Subheading:
+“RexonSoftTech delivers scalable ERP systems, business automation software, websites, web applications, mobile apps, AI solutions, and enterprise platforms that help businesses streamline operations and accelerate growth.”
+
+Buttons:
+
+* Explore Services
+* Contact Us
+
+RIGHT SIDE VISUALS:
+Create premium enterprise visuals including:
+
+* ERP dashboards
+* analytics systems
+* business management panels
+* cloud infrastructure visuals
+* cybersecurity monitoring dashboards
+
+Add subtle floating animations and layered enterprise cards.
+
+==================================================
+ABOUT COMPANY SECTION
+=====================
+
+Title:
+“About RexonSoftTech”
+
+Content:
+“RexonSoftTech is a software development company focused on delivering innovative, scalable, and business-oriented digital solutions.
+
+We specialize in ERP systems, custom software development, business automation solutions, websites, web applications, mobile applications, and digital transformation platforms.
+
+Our goal is to help businesses streamline operations, improve efficiency, reduce manual work, and accelerate growth through technology.”
+
+Add:
+
+* company visuals
+* office/business graphics
+* modern enterprise layouts
+
+==================================================
+VISION & MISSION SECTION
+========================
+
+VISION:
+“To become a trusted technology partner for businesses by delivering reliable, scalable, and future-ready software solutions.”
+
+MISSION:
+“To empower businesses through digital transformation and automation by building software solutions that improve productivity and operational efficiency.”
+
+Use premium enterprise card layouts.
+
+==================================================
+SERVICES SECTION
+================
+
+Create enterprise service cards with premium hover animations.
+
+SERVICES:
+
+Enterprise Resource Planning (ERP)
+
+* Manufacturing ERP
+* Steel Fabrication ERP
+* Inventory Management
+* Purchase Management
+* Sales Management
+* GST Billing Integration
+* HR & Payroll Management
+* Attendance Tracking
+* Production Monitoring
+* Dashboard & Reporting
+
+Custom Software Development
+
+* Billing Software
+* Inventory Software
+* CRM Solutions
+* Business Management Systems
+* Workflow Automation
+* Dashboard Applications
+* SaaS Platforms
+
+Website Development
+
+* Corporate Websites
+* Business Websites
+* E-Commerce Websites
+* Portfolio Websites
+* Landing Pages
+* Customer Portals
+
+Web Application Development
+
+* Lead Generation Platforms
+* Business Portals
+* Management Systems
+* Custom Web Applications
+
+Mobile Application Development
+
+* Android Applications
+* iOS Applications
+* Hybrid Mobile Apps
+
+AI & Automation Solutions
+
+* AI Chatbots
+* Smart Reporting
+* Business Process Automation
+* Analytics Dashboards
+
+Cyber Security Services
+
+* Vulnerability Assessment
+* Security Audits
+* Website Security Testing
+
+==================================================
+BUSINESS SOFTWARE SOLUTIONS SECTION
+===================================
+
+SECTION 1:
+Billing & Invoice Management Software
+
+Features:
+
+* GST Billing
+* Sales Invoicing
+* Product Management
+* Customer Management
+* Payment Tracking
+* Sales Reports
+* Business Analytics
+
+Benefits:
+
+* Faster Billing Operations
+* Reduced Manual Errors
+* Better Financial Tracking
+* Improved Business Management
+
+SECTION 2:
+Storage & Retrieval Management Software
+
+Features:
+
+* Data Storage Management
+* Quick Record Retrieval
+* Search & Filter Functions
+* Automated Calculations
+* Reporting Dashboard
+* Inventory Tracking
+
+Benefits:
+
+* Faster Information Access
+* Reduced Manual Work
+* Better Record Accuracy
+* Improved Productivity
+
+Create modern enterprise product showcase cards with dashboard previews.
+
+==================================================
+PROJECTS / PORTFOLIO SECTION
+============================
+
+Create a premium portfolio showcase section.
+
+PROJECTS:
+
+Paras Jewellers
+[https://parasjewellers.in](https://parasjewellers.in)
+Jewellery business website with premium product showcase and responsive UI.
+
+Perambur Srinivasa
+[https://perambursrinivasa.co.in/shop](https://perambursrinivasa.co.in/shop)
+E-commerce platform with online shopping features.
+
+Vinod Computers
+[https://vinodcomputers.in](https://vinodcomputers.in)
+Business website with lead generation and service showcase.
+
+Vinod Electronics
+[https://vinod-electronics.com](https://vinod-electronics.com)
+Electronics business website with product branding.
+
+Naresh Computers
+[https://nareshcomputers.co.in](https://nareshcomputers.co.in)
+Computer sales and service business website.
+
+Adhithya Electronics
+[https://adhithyaelectronics.netlify.app](https://adhithyaelectronics.netlify.app)
+Modern responsive electronics website.
+
+Interior Match
+[https://interior-match.rexonsofttech.in](https://interior-match.rexonsofttech.in)
+Lead generation platform for interior services.
+
+RexonSoftTech
+[https://rexonsofttech.in](https://rexonsofttech.in)
+Corporate technology website for company profile and services.
+
+Each project card should include:
+
+* screenshot preview
+* technologies used
+* business category
+* responsive device mockups
+* hover animations
+
+==================================================
+ERP SOLUTIONS SECTION
+=====================
+
+Manufacturing ERP:
+
+* Raw Material Management
+* Production Planning
+* Inventory Tracking
+* Work Order Management
+* Quality Control
+* Dispatch Management
+
+Steel Fabrication ERP:
+
+* GRN Management
+* Purchase Workflow
+* Material Tracking
+* Production Monitoring
+* Job Work Management
+* Sales & GST Billing
+
+Dashboard & Analytics:
+
+* Inventory Reports
+* Financial Reports
+* Production Reports
+* Performance Analytics
+* Real-Time Monitoring
+
+Create enterprise dashboard visuals and analytics graphics.
+
+==================================================
+WHY CHOOSE US SECTION
+=====================
+
+Create premium enterprise feature cards.
+
+POINTS:
+
+* Customized Software Solutions
+* Business-Oriented Development
+* ERP & Automation Expertise
+* Secure Development Practices
+* Affordable Pricing
+* Dedicated Technical Support
+* Fast Project Delivery
+* Long-Term Partnership Approach
+* Scalable Business Solutions
+
+==================================================
+DEVELOPMENT PROCESS SECTION
+===========================
+
+Create animated enterprise workflow timeline.
+
+STEPS:
+
+1. Requirement Analysis
+2. Business Process Study
+3. System Design
+4. Development
+5. Testing
+6. Deployment
+7. Training
+8. Support & Maintenance
+
+Use modern enterprise process visuals.
+
+==================================================
+INDUSTRIES WE SERVE SECTION
+===========================
+
+Industries:
+
+* Manufacturing
+* Steel Fabrication
+* Jewellery
+* Retail
+* Electronics
+* Construction
+* Healthcare
+* Education
+* Logistics
+* Service Industry
+
+Use enterprise industry cards with modern visuals.
+
+==================================================
+PROJECT SUMMARY SECTION
+=======================
+
+Display animated statistics:
+
+* 7+ Business Websites
+* E-Commerce Solutions
+* Billing Software Solutions
+* Storage & Retrieval Software
+* ERP Solutions
+* Business Automation Systems
+* Lead Generation Platforms
+* Custom Applications
+
+==================================================
+COMMITMENT SECTION
+==================
+
+Content:
+“At RexonSoftTech, we build technology solutions that simplify business operations, improve productivity, and drive growth.
+
+We are committed to delivering high-quality software, exceptional customer service, and long-term technology partnerships.”
+
+==================================================
+CONTACT SECTION
+===============
+
+Display:
+REXONSOFTTECH
+
+Website:
+[https://rexonsofttech.in](https://rexonsofttech.in)
+
+Email:
+[info@rexonsofttech.in](mailto:info@rexonsofttech.in)
+
+Phone:
++91 95662 61950
+
+Address:
+Flat No. 2, Plot No. 1051, Arun Builders Ground Floor, I Block, 35th Street, 18th Main Rd, Anna Nagar, Chennai, Tamil Nadu 600040
+
+Tagline:
+“Building Secure, Scalable & Future-Ready Digital Solutions”
+
+Add:
+
+* Google Maps integration
+* premium contact form
+* WhatsApp CTA
+* social media links
+
+==================================================
+FOOTER
+======
+
+Create large enterprise footer with:
+
+* Services
+* ERP Solutions
+* Industries
+* Projects
+* Company
+* Careers
+* Contact
+* Privacy Policy
+* Terms & Conditions
+
+==================================================
+ANIMATIONS & INTERACTIONS
+=========================
+
+Use:
+
+* Smooth scrolling
+* Framer Motion animations
+* Fade-up transitions
+* Hover elevation
+* Scroll animations
+* Animated counters
+* Sticky navigation
+* Elegant enterprise motion effects
+
+Avoid:
+
+* flashy neon animations
+* cartoon effects
+* gaming UI
+* excessive motion
+
+==================================================
+TECH STACK
+==========
+
+Use:
+
+* Next.js
+* Tailwind CSS
+* TypeScript
+* Framer Motion
+* SEO Optimization
+* Responsive Design
+* Fast Loading Architecture
+
+==================================================
+FINAL DESIGN GOAL
+=================
+
+The final website must look like a globally trusted enterprise technology company similar to Infosys or TCS while clearly presenting RexonSoftTech’s ERP expertise, software development services, automation capabilities, and business-focused technology solutions.
