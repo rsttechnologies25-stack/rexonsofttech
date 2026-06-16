@@ -10,14 +10,14 @@ export default function SchemaMarkup() {
     "logo": "https://rexonsofttech.in/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-95662-61950",
+      "telephone": "+91-78716-54777",
       "contactType": "sales",
       "areaServed": "IN",
       "availableLanguage": ["en", "ta"]
     },
     "sameAs": [
       "https://rexonsofttech.in",
-      "https://wa.me/919566261950"
+      "https://wa.me/917871654777"
     ]
   };
 
@@ -28,7 +28,7 @@ export default function SchemaMarkup() {
     "image": "https://rexonsofttech.in/logo.png",
     "@id": "https://rexonsofttech.in/#local-business",
     "url": "https://rexonsofttech.in",
-    "telephone": "+919566261950",
+    "telephone": "+917871654777",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

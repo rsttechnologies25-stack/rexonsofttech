@@ -48,9 +48,9 @@ export default function Footer() {
                 <Mail className="w-4.5 h-4.5 text-accent-500 mr-3" />
                 info@rexonsofttech.in
               </a>
-              <a href="tel:+919566261950" className="flex items-center text-sm hover:text-white transition-colors">
+              <a href="tel:+917871654777" className="flex items-center text-sm hover:text-white transition-colors">
                 <Phone className="w-4.5 h-4.5 text-accent-500 mr-3" />
-                +91 95662 61950
+                +91 78716 54777
               </a>
             </div>
           </div>

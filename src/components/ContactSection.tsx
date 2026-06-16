@@ -35,7 +35,7 @@ export default function ContactSection() {
   };
 
   const whatsappUrl = submittedData
-    ? `https://wa.me/919566261950?text=${encodeURIComponent(
+    ? `https://wa.me/917871654777?text=${encodeURIComponent(
         `Hi RexonSoftTech,\n\nI would like to book a consultation. Here are my details:\n\nName: ${submittedData.name}\nCompany: ${submittedData.company || "N/A"}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone}\n\nProject Brief:\n${submittedData.message}`
       )}`
     : "#";
@@ -87,11 +87,11 @@ export default function ContactSection() {
                   info@rexonsofttech.in
                 </a>
                 <a
-                  href="tel:+919566261950"
+                  href="tel:+917871654777"
                   className="flex items-center p-3 bg-white border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 hover:text-accent-500 transition-colors shadow-sm"
                 >
                   <Phone className="w-5 h-5 text-accent-500 mr-3 flex-shrink-0" />
-                  +91 95662 61950
+                  +91 78716 54777
                 </a>
                 <div className="flex items-start p-3 bg-white border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 shadow-sm leading-relaxed">
                   <MapPin className="w-5 h-5 text-accent-500 mr-3 flex-shrink-0 mt-0.5" />
@@ -106,7 +106,7 @@ export default function ContactSection() {
               {/* WhatsApp Call To Action */}
               <div className="pt-2">
                 <a
-                  href="https://wa.me/919566261950"
+                  href="https://wa.me/917871654777"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl text-xs font-bold transition-all duration-300 shadow-md shadow-green-500/10 cursor-pointer hover:shadow-lg hover:shadow-green-500/20 active:scale-95"
