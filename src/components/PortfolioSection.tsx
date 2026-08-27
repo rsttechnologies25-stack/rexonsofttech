@@ -38,14 +38,6 @@ export default function PortfolioSection() {
       img: "/project_vinod.png"
     },
     {
-      title: "Adhithya Electronics",
-      url: "https://adhithyaelectronics.netlify.app",
-      category: "Electronics E-Catalog",
-      desc: "A lightweight, rapid loading digital product catalog designed for instant client reviews and high conversions.",
-      techs: ["React.js", "Netlify Deployment", "Ultra-Fast Assets"],
-      img: "/project_vinod.png"
-    },
-    {
       title: "Interior Match",
       url: "https://interior-match.rexonsofttech.in",
       category: "Design Lead Platform",
