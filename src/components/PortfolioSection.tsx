@@ -7,7 +7,7 @@ export default function PortfolioSection() {
   const projects = [
     {
       title: "Perambur Srinivasa",
-      url: "https://perambursrinivasa.co.in/shop",
+      url: "https://www.perambursrinivasa.com/",
       category: "E-Commerce Shop",
       desc: "Full-scale online retail shopping portal optimized for mobile checkouts, catalog navigation, and local delivery tracking.",
       techs: ["E-Commerce Core", "Payment Integration", "Mobile Optimization"],
