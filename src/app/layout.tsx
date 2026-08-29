@@ -10,17 +10,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RexonSoftTech | ERP Software & Custom Software Development Company in Chennai",
-  description: "RexonSoftTech is a software development company in Chennai specializing in ERP software, custom software development, business automation, web applications, mobile apps, AI solutions, and cybersecurity services.",
+  title: "RexonSoftTech | Custom Software Development & Flagship ERP Company Chennai",
+  description: "RexonSoftTech is a full-service software development company in Chennai specializing in flagship custom ERP architecture, business automation, web applications, mobile apps, AI solutions, and cybersecurity services.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
   },
   alternates: {
     canonical: "https://rexonsofttech.in",
   },
   openGraph: {
-    title: "RexonSoftTech | ERP Software & Custom Software Development Company in Chennai",
-    description: "RexonSoftTech is a software development company in Chennai specializing in ERP software, custom software development, business automation, web applications, mobile apps, AI solutions, and cybersecurity services.",
+    title: "RexonSoftTech | Custom Software Development & Flagship ERP Company Chennai",
+    description: "RexonSoftTech is a full-service software development company in Chennai specializing in flagship custom ERP architecture, business automation, web applications, mobile apps, AI solutions, and cybersecurity services.",
     url: "https://rexonsofttech.in",
     siteName: "RexonSoftTech",
     locale: "en_US",
@@ -36,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RexonSoftTech | ERP Software & Custom Software Development Company in Chennai",
-    description: "RexonSoftTech is a software development company in Chennai specializing in ERP software, custom software development, business automation, web applications, mobile apps, AI solutions, and cybersecurity services.",
+    title: "RexonSoftTech | Custom Software Development & Flagship ERP Company Chennai",
+    description: "RexonSoftTech is a full-service software development company in Chennai specializing in flagship custom ERP architecture, business automation, web applications, mobile apps, AI solutions, and cybersecurity services.",
     images: ["https://rexonsofttech.in/logo.png"],
   },
 };

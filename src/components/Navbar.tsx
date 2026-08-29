@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X, ChevronDown, Award, Briefcase, Cpu, Shield, Globe, Terminal, Smartphone } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowRight } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,219 +24,121 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleDropdown = (name: string) => {
-    if (activeDropdown === name) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(name);
-    }
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About Us", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Careers", href: "/careers" }
+  ];
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
   };
 
-  const scrollToSection = (id: string) => {
+  const scrollToContact = () => {
     setMobileMenuOpen(false);
-    setActiveDropdown(null);
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // height of sticky navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+    if (pathname === "/") {
+      const el = document.getElementById("contact");
+      if (el) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = el.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: "smooth"
+        });
+      }
+    } else {
+      window.location.href = "/#contact";
     }
   };
+
+  const isDarkNav = !isScrolled && (pathname === "/" || pathname === "/services" || pathname === "/about" || pathname === "/blog" || pathname === "/careers");
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "glass-nav-light py-3 shadow-md"
-          : "bg-transparent py-5 border-b border-transparent"
+          ? "bg-white/95 backdrop-blur-md py-3 shadow-md border-b border-slate-100"
+          : "bg-navy-950/80 backdrop-blur-md py-4 border-b border-white/10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => scrollToSection("hero")}>
-            <div className="w-10 h-10 rounded-lg overflow-hidden mr-3 bg-white flex items-center justify-center shadow-md">
-              <Image src="/logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-cover" />
+          <Link href="/" className="flex-shrink-0 flex items-center">
+            <div className="w-10 h-10 rounded-xl overflow-hidden mr-3 bg-white flex items-center justify-center shadow-md border border-slate-100 p-0.5">
+              <Image src="/logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-contain w-full h-full" priority />
             </div>
-            <div>
+            <div className="text-left">
               <span className={`text-xl font-bold tracking-tight ${isScrolled ? "text-navy-900" : "text-white"}`}>
                 RexonSoftTech
               </span>
-              <p className={`text-[10px] tracking-widest font-semibold uppercase leading-none ${isScrolled ? "text-accent-500" : "text-blue-300"}`}>
+              <p className={`text-[10px] tracking-widest font-semibold uppercase leading-none ${isScrolled ? "text-accent-600" : "text-blue-300"}`}>
                 Software Development
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center space-x-1">
-            {/* Services Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown("services")}
-                className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                  isScrolled ? "text-slate-text hover:bg-slate-100" : "text-white/90 hover:bg-white/10"
-                }`}
-              >
-                Services <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
-
-              {activeDropdown === "services" && (
-                <div className="absolute left-0 mt-2 w-[520px] bg-white rounded-xl shadow-xl border border-slate-100 p-6 grid grid-cols-2 gap-4 animate-fade-in">
-                  <div>
-                    <h4 className="text-xs font-bold text-accent-500 uppercase tracking-widest mb-3">Enterprise Systems</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-start cursor-pointer hover:bg-slate-50 p-2 rounded-lg" onClick={() => scrollToSection("erp-solutions")}>
-                        <Cpu className="w-5 h-5 text-navy-800 mr-3 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-semibold text-navy-900">Enterprise ERP</p>
-                          <p className="text-[10px] text-muted-text">Custom & steel solutions</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start cursor-pointer hover:bg-slate-50 p-2 rounded-lg" onClick={() => scrollToSection("services")}>
-                        <Terminal className="w-5 h-5 text-navy-800 mr-3 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-semibold text-navy-900">Custom Software</p>
-                          <p className="text-[10px] text-muted-text">Tailored business automation</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-xs font-bold text-accent-500 uppercase tracking-widest mb-3">Digital Platforms</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-start cursor-pointer hover:bg-slate-50 p-2 rounded-lg" onClick={() => scrollToSection("services")}>
-                        <Globe className="w-5 h-5 text-navy-800 mr-3 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-semibold text-navy-900">Web Platforms</p>
-                          <p className="text-[10px] text-muted-text">Portals & e-commerce applications</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start cursor-pointer hover:bg-slate-50 p-2 rounded-lg" onClick={() => scrollToSection("services")}>
-                        <Smartphone className="w-5 h-5 text-navy-800 mr-3 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-semibold text-navy-900">Mobile Applications</p>
-                          <p className="text-[10px] text-muted-text">Hybrid iOS & Android systems</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* ERP Solutions Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown("erp")}
-                className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                  isScrolled ? "text-slate-text hover:bg-slate-100" : "text-white/90 hover:bg-white/10"
-                }`}
-              >
-                ERP Solutions <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
-
-              {activeDropdown === "erp" && (
-                <div className="absolute left-0 mt-2 w-[280px] bg-white rounded-xl shadow-xl border border-slate-100 p-4 space-y-2 animate-fade-in">
-                  <div
-                    onClick={() => scrollToSection("erp-solutions")}
-                    className="p-2 hover:bg-slate-50 rounded-lg cursor-pointer flex items-center"
-                  >
-                    <div className="w-8 h-8 rounded bg-blue-50 text-accent-500 flex items-center justify-center mr-3">
-                      <Cpu className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-navy-900">Custom ERP Solutions</p>
-                    </div>
-                  </div>
-                  <div
-                    onClick={() => scrollToSection("erp-solutions")}
-                    className="p-2 hover:bg-slate-50 rounded-lg cursor-pointer flex items-center"
-                  >
-                    <div className="w-8 h-8 rounded bg-blue-50 text-accent-500 flex items-center justify-center mr-3">
-                      <Award className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-navy-900">Steel Fabrication ERP</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
+                    isScrolled
+                      ? active
+                        ? "text-accent-600 bg-accent-500/10"
+                        : "text-slate-600 hover:text-navy-900 hover:bg-slate-50"
+                      : active
+                      ? "text-white bg-white/15 shadow-sm"
+                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
 
             <button
-              onClick={() => scrollToSection("industries")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                isScrolled ? "text-slate-text hover:bg-slate-100" : "text-white/90 hover:bg-white/10"
-              }`}
-            >
-              Industries
-            </button>
-
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                isScrolled ? "text-slate-text hover:bg-slate-100" : "text-white/90 hover:bg-white/10"
-              }`}
-            >
-              Projects
-            </button>
-
-            <button
-              onClick={() => scrollToSection("about")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                isScrolled ? "text-slate-text hover:bg-slate-100" : "text-white/90 hover:bg-white/10"
-              }`}
-            >
-              About
-            </button>
-
-            <button
-              onClick={() => scrollToSection("process")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                isScrolled ? "text-slate-text hover:bg-slate-100" : "text-white/90 hover:bg-white/10"
-              }`}
-            >
-              Careers
-            </button>
-
-            <button
-              onClick={() => scrollToSection("contact")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                isScrolled ? "text-slate-text hover:bg-slate-100" : "text-white/90 hover:bg-white/10"
+              type="button"
+              onClick={scrollToContact}
+              className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all cursor-pointer ${
+                isScrolled
+                  ? "text-slate-600 hover:text-navy-900 hover:bg-slate-50"
+                  : "text-slate-300 hover:text-white hover:bg-white/10"
               }`}
             >
               Contact
             </button>
           </div>
 
-          {/* Book Consultation Button */}
-          <div className="hidden lg:block">
+          {/* Action CTA Button */}
+          <div className="hidden lg:flex items-center space-x-3">
             <button
-              onClick={() => scrollToSection("contact")}
-              className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md shadow-accent-500/10 hover:shadow-lg hover:shadow-accent-500/20 active:scale-95 ${
+              onClick={scrollToContact}
+              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 shadow-md active:scale-95 cursor-pointer ${
                 isScrolled
-                  ? "bg-accent-500 text-white hover:bg-accent-600"
-                  : "bg-white text-navy-900 hover:bg-slate-100"
+                  ? "bg-accent-500 hover:bg-accent-600 text-white shadow-accent-500/20"
+                  : "bg-white text-navy-900 hover:bg-slate-100 shadow-black/20"
               }`}
             >
               Book Consultation
             </button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu toggle */}
           <div className="lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-md ${isScrolled ? "text-navy-900 hover:bg-slate-100" : "text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg ${isScrolled ? "text-navy-900 hover:bg-slate-100" : "text-white hover:bg-white/10"}`}
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -241,58 +146,48 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-navy-900 border-b border-navy-800 text-white px-4 pt-4 pb-8 space-y-3">
+        <div className="lg:hidden bg-navy-950 border-b border-white/10 text-white px-5 pt-4 pb-8 space-y-2 text-left animate-fade-in shadow-2xl">
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block w-full px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
+                  active ? "bg-accent-500 text-white font-bold" : "text-slate-300 hover:bg-white/10"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          
           <button
-            onClick={() => scrollToSection("services")}
-            className="block w-full text-left px-3 py-2.5 rounded-md text-base font-semibold hover:bg-navy-800"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("erp-solutions")}
-            className="block w-full text-left px-3 py-2.5 rounded-md text-base font-semibold hover:bg-navy-800 animate-slide-in"
-          >
-            ERP Solutions
-          </button>
-          <button
-            onClick={() => scrollToSection("industries")}
-            className="block w-full text-left px-3 py-2.5 rounded-md text-base font-semibold hover:bg-navy-800"
-          >
-            Industries
-          </button>
-          <button
-            onClick={() => scrollToSection("portfolio")}
-            className="block w-full text-left px-3 py-2.5 rounded-md text-base font-semibold hover:bg-navy-800"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("about")}
-            className="block w-full text-left px-3 py-2.5 rounded-md text-base font-semibold hover:bg-navy-800"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("process")}
-            className="block w-full text-left px-3 py-2.5 rounded-md text-base font-semibold hover:bg-navy-800"
-          >
-            Careers
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="block w-full text-left px-3 py-2.5 rounded-md text-base font-semibold hover:bg-navy-800"
+            onClick={scrollToContact}
+            className="block w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-slate-300 hover:bg-white/10 cursor-pointer"
           >
             Contact
           </button>
-          <div className="pt-4">
+
+          <div className="pt-4 border-t border-white/10 space-y-3">
             <button
-              onClick={() => scrollToSection("contact")}
-              className="w-full bg-accent-500 hover:bg-accent-600 text-white py-3 rounded-lg text-center font-bold"
+              onClick={scrollToContact}
+              className="w-full bg-accent-500 hover:bg-accent-600 text-white py-3.5 rounded-xl text-center font-bold text-sm shadow-lg shadow-accent-500/25"
             >
-              Book Consultation
+              Book a Consultation
             </button>
+            <a
+              href="https://wa.me/917871654777?text=Hi%20RexonSoftTech%2C%20I'd%20like%20to%20inquire%20about%20your%20software%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white py-3.5 rounded-xl font-bold text-sm"
+            >
+              <WhatsAppIcon className="w-4 h-4 mr-2" size={16} />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       )}

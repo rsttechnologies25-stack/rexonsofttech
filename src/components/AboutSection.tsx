@@ -1,136 +1,134 @@
 "use client";
 
-import { Check, ShieldCheck, Target, Eye, BarChart3, Database } from "lucide-react";
+import { Check, ShieldCheck, Target, MapPin, Users, Award, Code2 } from "lucide-react";
 
 export default function AboutSection() {
   return (
     <section id="about" className="py-24 bg-white relative overflow-hidden">
-      
-      {/* Abstract structural designs */}
-      <div className="absolute top-0 right-0 w-[400px] height-[400px] bg-slate-50/50 rounded-full filter blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* Left Column: Visual Mockup Dashboard Circular Card (Ref 2 Style) */}
+          {/* Left Column: Company Credibility Card */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-sm lg:max-w-none">
               
-              {/* Visual Wrapper */}
-              <div className="relative glass-card-light rounded-2xl p-6 shadow-xl border border-slate-100 overflow-hidden">
-                <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
-                  <span className="text-xs font-bold text-navy-900 uppercase tracking-widest">Operation Overview</span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-accent-500 animate-pulse" />
+              <div className="relative glass-card-light rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-200/80 bg-slate-50/50 space-y-6">
+                <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+                  <span className="text-xs font-bold text-navy-900 uppercase tracking-widest">
+                    Company Snapshot
+                  </span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
                 </div>
 
-                {/* Circular chart illustration */}
-                <div className="relative w-48 h-48 mx-auto flex items-center justify-center mb-6">
-                  {/* Outer circle */}
-                  <svg className="w-full h-full transform -rotate-95" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" stroke="#F1F5F9" strokeWidth="8" fill="transparent" />
-                    <circle cx="50" cy="50" r="40" stroke="#2563EB" strokeWidth="8" fill="transparent" strokeDasharray="251.2" strokeDashoffset="50.2" strokeLinecap="round" />
-                  </svg>
-                  
-                  {/* Inside content */}
-                  <div className="absolute text-center">
-                    <p className="text-3xl font-extrabold text-navy-900">80%</p>
-                    <p className="text-[10px] text-muted-text uppercase font-semibold tracking-wider">Automation Rate</p>
-                  </div>
-                </div>
-
-                {/* Automation statistics */}
-                <div className="space-y-3.5">
-                  <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-lg">
-                    <div className="flex items-center space-x-2.5">
-                      <BarChart3 className="w-4 h-4 text-accent-500" />
-                      <span className="text-xs font-bold text-navy-900">Process Optimization</span>
+                <div className="space-y-4 text-left text-xs">
+                  <div className="flex items-start space-x-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 text-accent-500 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-4 h-4" />
                     </div>
-                    <span className="text-xs font-bold text-green-500">+45%</span>
-                  </div>
-                  <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-lg">
-                    <div className="flex items-center space-x-2.5">
-                      <Database className="w-4 h-4 text-accent-500" />
-                      <span className="text-xs font-bold text-navy-900">Manual Error Reduction</span>
+                    <div>
+                      <p className="font-bold text-navy-900">Headquarters</p>
+                      <p className="text-slate-500 mt-0.5">Chennai, Tamil Nadu, India</p>
                     </div>
-                    <span className="text-xs font-bold text-accent-500">92%</span>
+                  </div>
+
+                  <div className="flex items-start space-x-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-500 flex items-center justify-center flex-shrink-0">
+                      <Code2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-navy-900">Core Specialization</p>
+                      <p className="text-slate-500 mt-0.5">Custom ERPs, GST Billing, Business Automation</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-500 flex items-center justify-center flex-shrink-0">
+                      <Users className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-navy-900">Engineering Approach</p>
+                      <p className="text-slate-500 mt-0.5">Zero Out-Sourcing • Direct Access to Software Architects</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-500 flex items-center justify-center flex-shrink-0">
+                      <Award className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-navy-900">Post-Deployment Guarantee</p>
+                      <p className="text-slate-500 mt-0.5">Staff Onboarding, Data Migration, Dedicated Maintenance</p>
+                    </div>
                   </div>
                 </div>
 
+                <div className="p-4 bg-accent-500/10 border border-accent-500/20 rounded-xl text-center">
+                  <p className="text-xs font-bold text-accent-700">
+                    Focused on SMBs & Enterprise Operations
+                  </p>
+                  <p className="text-[11px] text-slate-600 mt-0.5">
+                    We turn complex manual operations into clear, automated digital systems.
+                  </p>
+                </div>
               </div>
 
-              {/* Behind card shadows */}
-              <div className="absolute -right-4 -bottom-4 w-full h-full bg-slate-100/50 rounded-2xl -z-10 border border-slate-100" />
             </div>
           </div>
 
-          {/* Right Column: About Content & Mission/Vision (Ref 1 Style) */}
-          <div className="lg:col-span-7 space-y-8 text-left">
-            <div className="space-y-4">
-              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest border-b-2 border-accent-500 pb-1.5">
+          {/* Right Column: About Content & Mission */}
+          <div className="lg:col-span-7 space-y-7 text-left">
+            <div className="space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
                 About RexonSoftTech
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-navy-900 mt-2">
-                Delivering High-Quality, Scalable Software Solutions
+                We Turn Manual Business Operations into Automated Software Systems
               </h2>
             </div>
 
             <p className="text-base text-slate-600 leading-relaxed">
-              RexonSoftTech is a dedicated software development company focused on delivering innovative, scalable, and business-oriented digital solutions. We specialize in robust ERP systems, custom software development, business automation platforms, enterprise web portals, mobile apps, and digital transformation architectures.
+              Founded in Chennai, <strong>RexonSoftTech</strong> was created to solve a persistent challenge faced by growing Indian businesses: off-the-shelf ERP and billing software is too rigid, too complex, and filled with features you will never use—while your actual workflows still end up being tracked on Excel sheets and WhatsApp groups.
             </p>
 
             <p className="text-base text-slate-600 leading-relaxed">
-              Our core objective is to help businesses simplify operations, reduce manual effort, eliminate operational redundancies, and accelerate corporate growth through cutting-edge technology integrations.
+              We engineer custom software, warehouse databases, and automated ERPs that model <em>your</em> exact business logic. From multi-rack steel yard inventory and jewel showcase catalogs to retail point-of-sale and GST returns, our platforms provide total operational visibility and eliminate human error.
             </p>
 
-            {/* Quick benefits check list */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Core Pillars Check List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
               <div className="flex items-center space-x-3 text-slate-700">
-                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500">
+                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500 flex-shrink-0">
                   <Check className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-sm font-semibold">Custom-Engineered ERPs</span>
+                <span className="text-sm font-semibold">Bespoke ERP Workflow Architecture</span>
               </div>
               <div className="flex items-center space-x-3 text-slate-700">
-                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500">
+                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500 flex-shrink-0">
                   <Check className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-sm font-semibold">Dedicated Engineering Support</span>
+                <span className="text-sm font-semibold">Native Indian GST & Tax Compliance</span>
               </div>
               <div className="flex items-center space-x-3 text-slate-700">
-                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500">
+                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500 flex-shrink-0">
                   <Check className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-sm font-semibold">Seamless GST Integration</span>
+                <span className="text-sm font-semibold">Legacy Excel & Tally Data Migration</span>
               </div>
               <div className="flex items-center space-x-3 text-slate-700">
-                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500">
+                <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-accent-500 flex-shrink-0">
                   <Check className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-sm font-semibold">Secure Deployment Architectures</span>
+                <span className="text-sm font-semibold">Direct Engineering SLA Support</span>
               </div>
             </div>
 
-            {/* Vision & Mission Cards Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-slate-100">
-              <div className="bg-slate-50 border border-slate-100 p-6 rounded-xl space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-500/10 text-accent-500 flex items-center justify-center">
-                  <Eye className="w-5 h-5" />
-                </div>
-                <h4 className="text-sm font-extrabold text-navy-900 tracking-wider uppercase">Our Vision</h4>
-                <p className="text-xs text-muted-text leading-relaxed">
-                  To become a trusted technology partner for global businesses by delivering reliable, scalable, and future-ready software solutions.
-                </p>
-              </div>
-
-              <div className="bg-slate-50 border border-slate-100 p-6 rounded-xl space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-500/10 text-accent-500 flex items-center justify-center">
-                  <Target className="w-5 h-5" />
-                </div>
-                <h4 className="text-sm font-extrabold text-navy-900 tracking-wider uppercase">Our Mission</h4>
-                <p className="text-xs text-muted-text leading-relaxed">
-                  To empower businesses through digital transformation and automation by building software solutions that improve productivity and operational efficiency.
-                </p>
-              </div>
+            <div className="pt-2">
+              <a
+                href="#contact"
+                className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 bg-accent-50 hover:bg-accent-100 px-5 py-3 rounded-xl transition-colors"
+              >
+                Schedule a Consultation with our Engineers →
+              </a>
             </div>
 
           </div>

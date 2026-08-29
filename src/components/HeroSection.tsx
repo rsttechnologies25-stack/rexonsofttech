@@ -1,6 +1,21 @@
 "use client";
 
-import { ArrowRight, Play, CheckCircle2, TrendingUp, ShieldCheck, Activity, Terminal } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { 
+  ArrowRight, 
+  CheckCircle2, 
+  ShieldCheck, 
+  Cpu, 
+  Globe, 
+  Smartphone, 
+  Terminal, 
+  Layers, 
+  Database,
+  Lock,
+  Sparkles
+} from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -19,197 +34,210 @@ export default function HeroSection() {
     }
   };
 
-  const scrollToServices = () => {
-    const element = document.getElementById("services");
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
+  const whatsappHeroUrl = `https://wa.me/917871654777?text=${encodeURIComponent(
+    "Hi RexonSoftTech, I'm looking for custom software / ERP development for my business. Let's discuss."
+  )}`;
 
   return (
-    <section id="hero" className="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white pt-32 pb-24 overflow-hidden">
+    <section id="hero" className="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white pt-32 pb-24 lg:pt-36 lg:pb-32 overflow-hidden">
       {/* Decorative Glows */}
       <div className="hero-glow" />
       <div className="hero-glow-left" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column - Content */}
-          <div className="lg:col-span-6 space-y-8 text-left">
-            <div className="inline-flex items-center space-x-2 bg-accent-500/10 border border-accent-500/20 px-3.5 py-1.5 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
-              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest">
-                Transforming Business Through Technology
+          {/* Left Column - Full-Service Software Positioning */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="lg:col-span-7 space-y-7 text-left"
+          >
+            {/* Tag badge */}
+            <div className="inline-flex items-center space-x-2 bg-accent-500/10 border border-accent-500/25 px-4 py-1.5 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse" />
+              <span className="text-xs font-bold text-accent-400 uppercase tracking-wider">
+                Full-Service Software Development Company
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight leading-[1.1] text-white">
-              Enterprise Software & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-accent-500">ERP Solutions</span> Company
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12] text-white">
+              We Build Software That{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-accent-500">
+                Runs Your Business
+              </span>
             </h1>
 
-            <p className="text-lg text-slate-300 max-w-xl leading-relaxed">
-              RexonSoftTech delivers highly scalable ERP systems, business automation software, corporate websites, customized web platforms, and mobile apps that streamline operations and accelerate growth.
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+              From flagship custom ERP systems and business automation to high-performance corporate websites, mobile apps, and cybersecurity—we engineer custom technology solutions built around your exact workflows.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3.5 sm:space-y-0 sm:space-x-4 pt-1">
               <button
-                onClick={scrollToServices}
-                className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-accent-500/25 hover:shadow-accent-500/35 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-              >
-                Explore Services <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button
+                type="button"
                 onClick={scrollToContact}
-                className="inline-flex items-center justify-center bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-7 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-accent-500/25 hover:shadow-accent-500/35 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm sm:text-base"
               >
-                Contact Us
+                Book a Free Consultation
+                <ArrowRight className="ml-2 w-4 h-4" />
               </button>
+
+              <a
+                href={whatsappHeroUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm sm:text-base"
+              >
+                <WhatsAppIcon className="w-5 h-5 mr-2" size={20} />
+                WhatsApp Us
+              </a>
             </div>
 
-            {/* Quick Metrics */}
-            <div className="pt-8 border-t border-white/5 grid grid-cols-3 gap-6">
-              <div>
-                <p className="text-2xl font-bold text-white">100%</p>
-                <p className="text-xs text-slate-400">Custom Built</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-white">Secure</p>
-                <p className="text-xs text-slate-400">GST Integrated</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-white">24/7</p>
-                <p className="text-xs text-slate-400">Support Approach</p>
+            {/* Balanced Capabilities Bar */}
+            <div className="pt-6 border-t border-white/10">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">
+                Full Spectrum of Engineering Services
+              </p>
+              <div className="flex flex-wrap items-center gap-y-2 text-xs font-semibold text-slate-300">
+                <span className="flex items-center text-accent-300">
+                  <Sparkles className="w-3.5 h-3.5 mr-1" /> Flagship Custom ERP
+                </span>
+                <span className="mx-3 text-slate-600">•</span>
+                <span className="flex items-center">
+                  <Terminal className="w-3.5 h-3.5 text-accent-400 mr-1.5" /> Custom Software
+                </span>
+                <span className="mx-3 text-slate-600">•</span>
+                <span className="flex items-center">
+                  <Globe className="w-3.5 h-3.5 text-accent-400 mr-1.5" /> Websites & Apps
+                </span>
+                <span className="mx-3 text-slate-600">•</span>
+                <span className="flex items-center">
+                  <Smartphone className="w-3.5 h-3.5 text-accent-400 mr-1.5" /> Mobile Apps
+                </span>
+                <span className="mx-3 text-slate-600">•</span>
+                <span className="flex items-center">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-400 mr-1.5" /> Cybersecurity
+                </span>
               </div>
             </div>
-          </div>
 
-          {/* Right Column - Premium ERP & Security Dashboard Visual Mockup */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
+            {/* Quick Proof Pillars */}
+            <div className="pt-6 border-t border-white/5 grid grid-cols-3 gap-4">
+              <div>
+                <p className="text-xl sm:text-2xl font-extrabold text-white">100%</p>
+                <p className="text-xs text-slate-400 mt-0.5">Tailored to Workflows</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-extrabold text-white">Zero</p>
+                <p className="text-xs text-slate-400 mt-0.5">Recurring License Penalties</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-extrabold text-white">Chennai</p>
+                <p className="text-xs text-slate-400 mt-0.5">Direct Engineering Office</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column - Multi-Layer Technology Architecture Blueprint */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Decorative behind-image glow */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent-500 to-indigo-600 rounded-3xl opacity-20 filter blur-3xl" />
+              {/* Glow backdrop */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent-500/30 to-blue-600/20 rounded-3xl blur-3xl opacity-40 pointer-events-none" />
 
-              {/* Main Dashboard Frame */}
-              <div className="relative glass-card rounded-2xl shadow-2xl border border-white/10 overflow-hidden backdrop-blur-xl">
+              {/* Multi-Service Architecture Panel */}
+              <div className="relative glass-card rounded-2xl shadow-2xl border border-white/15 overflow-hidden backdrop-blur-xl bg-navy-950/75">
                 
                 {/* Header Bar */}
-                <div className="bg-navy-950/80 px-6 py-4 border-b border-white/10 flex items-center justify-between">
+                <div className="bg-navy-950 px-5 py-3.5 border-b border-white/10 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <span className="w-3 h-3 rounded-full bg-red-500/80" />
                     <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <span className="w-3 h-3 rounded-full bg-green-500/80" />
-                    <span className="text-xs text-slate-400 font-mono ml-3">rexon-erp-v4.0.cloud</span>
+                    <span className="text-xs text-slate-400 font-mono ml-2">rexon-tech-stack.cloud</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-xs bg-accent-500/10 text-accent-500 border border-accent-500/20 px-2.5 py-1 rounded">
-                    <Activity className="w-3.5 h-3.5 mr-1.5 animate-pulse" />
-                    Live Metrics
+                  <div className="flex items-center space-x-1.5 text-[11px] bg-accent-500/10 text-accent-400 border border-accent-500/20 px-2.5 py-0.5 rounded-full font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                    <span>Full-Stack Platform</span>
                   </div>
                 </div>
 
-                {/* Dashboard Body */}
-                <div className="p-6 space-y-6 bg-navy-900/40">
-                  
-                  {/* KPI Cards Row */}
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="bg-white/5 border border-white/5 p-3 rounded-xl">
-                      <p className="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Active Orders</p>
-                      <p className="text-lg font-bold text-white mt-1">1,482</p>
-                    </div>
-                    <div className="bg-white/5 border border-white/5 p-3 rounded-xl">
-                      <p className="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Efficiency</p>
-                      <p className="text-lg font-bold text-green-400 mt-1">98.4%</p>
-                    </div>
-                    <div className="bg-white/5 border border-white/5 p-3 rounded-xl">
-                      <p className="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Billing Sync</p>
-                      <p className="text-lg font-bold text-accent-500 mt-1">Success</p>
-                    </div>
+                {/* Body - Clean Layered Architecture */}
+                <div className="p-6 space-y-3.5">
+                  <div className="text-left pb-1">
+                    <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
+                      Integrated Software Stack
+                    </span>
+                    <p className="text-sm font-bold text-white mt-0.5">
+                      Tailored Digital Infrastructure
+                    </p>
                   </div>
 
-                  {/* Main Metric Visualization - SVG Area Chart */}
-                  <div className="bg-white/5 border border-white/5 p-4 rounded-xl">
-                    <div className="flex items-center justify-between mb-4">
+                  {/* Layer 1: Flagship ERP & Core Automation */}
+                  <div className="p-3 bg-white/5 border border-accent-500/30 rounded-xl flex items-center justify-between">
+                    <div className="flex items-center space-x-3 text-left">
+                      <div className="w-8 h-8 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center flex-shrink-0">
+                        <Cpu className="w-4 h-4" />
+                      </div>
                       <div>
-                        <p className="text-xs text-slate-400 font-semibold">Manufacturing Output</p>
-                        <p className="text-lg font-bold text-white">48,290 Tons</p>
+                        <div className="flex items-center space-x-2">
+                          <p className="text-xs font-bold text-white">Flagship Custom ERP</p>
+                          <span className="text-[9px] bg-accent-500 text-white font-bold px-1.5 py-0.2 rounded">Core</span>
+                        </div>
+                        <p className="text-[10px] text-slate-400">GST billing, stock racks & production workflows</p>
                       </div>
-                      <div className="flex items-center text-xs text-green-400 font-bold bg-green-500/10 px-2 py-0.5 rounded">
-                        <TrendingUp className="w-3.5 h-3.5 mr-1" />
-                        +14.8%
+                    </div>
+                  </div>
+
+                  {/* Layer 2: Web Applications & Customer Portals */}
+                  <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                    <div className="flex items-center space-x-3 text-left">
+                      <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0">
+                        <Globe className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-white">Web & Mobile Platforms</p>
+                        <p className="text-[10px] text-slate-400">High-conversion corporate sites, e-stores & apps</p>
                       </div>
                     </div>
-                    
-                    {/* SVG Chart */}
-                    <div className="h-32 w-full flex items-end">
-                      <svg viewBox="0 0 100 30" className="w-full h-full text-accent-500 overflow-visible" preserveAspectRatio="none">
-                        <defs>
-                          <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.4" />
-                            <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
-                          </linearGradient>
-                        </defs>
-                        {/* Area */}
-                        <path d="M 0 30 Q 15 22 25 18 T 50 15 T 75 8 T 100 5 L 100 30 Z" fill="url(#chartGradient)" />
-                        {/* Line */}
-                        <path d="M 0 30 Q 15 22 25 18 T 50 15 T 75 8 T 100 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                        {/* Interactive Node */}
-                        <circle cx="75" cy="8" r="2" className="fill-white stroke-accent-500 animate-ping" />
-                        <circle cx="75" cy="8" r="1.5" className="fill-white stroke-accent-500" />
-                      </svg>
+                  </div>
+
+                  {/* Layer 3: Database & Cloud Integration */}
+                  <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                    <div className="flex items-center space-x-3 text-left">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                        <Database className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-white">Secure Relational Databases</p>
+                        <p className="text-[10px] text-slate-400">Instant search indexing, role-based access & APIs</p>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Bottom System Status */}
-                  <div className="flex items-center justify-between text-xs text-slate-400 pt-2">
-                    <div className="flex items-center">
-                      <ShieldCheck className="w-4.5 h-4.5 text-green-400 mr-2" />
-                      <span>Security Core Activated</span>
+                  {/* Security Footer in Mockup */}
+                  <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                    <div className="flex items-center text-green-400">
+                      <Lock className="w-3.5 h-3.5 mr-1.5" />
+                      <span>Security & VAPT Audited</span>
                     </div>
-                    <span>Data Retrieval: 0.2s</span>
+                    <span className="text-slate-500 font-mono">100% Owned Code</span>
                   </div>
 
-                </div>
-              </div>
-
-              {/* Floating Widget 1 - Steel Fabrication Inventory Tracker */}
-              <div className="absolute -left-10 -bottom-8 bg-navy-950 border border-white/10 rounded-2xl p-4 shadow-xl max-w-[200px] hidden md:block backdrop-blur-md animate-bounce" style={{ animationDuration: '6s' }}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-9 h-9 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-slate-400 font-semibold uppercase">Steel Tracking</p>
-                    <p className="text-xs font-extrabold text-white mt-0.5">GRN Dispatched</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Widget 2 - Custom Billing API Status */}
-              <div className="absolute -right-8 -top-8 bg-navy-950 border border-white/10 rounded-2xl p-4 shadow-xl max-w-[220px] hidden md:block backdrop-blur-md animate-bounce" style={{ animationDuration: '8s' }}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent-500/10 text-accent-500 flex items-center justify-center">
-                    <Terminal className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-slate-400 font-semibold uppercase">Billing Integration</p>
-                    <p className="text-xs font-extrabold text-white mt-0.5">GST Sync Completed</p>
-                  </div>
                 </div>
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

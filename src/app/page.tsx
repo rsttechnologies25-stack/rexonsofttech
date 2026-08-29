@@ -1,37 +1,38 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
-import SolutionsSection from "@/components/SolutionsSection";
-import PortfolioSection from "@/components/PortfolioSection";
-import ERPSolutions from "@/components/ERPSolutions";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import DevelopmentProcess from "@/components/DevelopmentProcess";
-import IndustriesSection from "@/components/IndustriesSection";
+import ServicesPreview from "@/components/ServicesPreview";
+import CaseStudiesPreview from "@/components/CaseStudiesPreview";
 import StatsSection from "@/components/StatsSection";
-import Commitment from "@/components/Commitment";
+import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main className="flex-grow">
+        {/* 1. Hero: Balanced full-service software company with Flagship Custom ERP */}
         <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <SolutionsSection />
-        <PortfolioSection />
-        <ERPSolutions />
-        <WhyChooseUs />
-        <DevelopmentProcess />
-        <IndustriesSection />
+
+        {/* 2. Balanced 7-Service Grid (Equal weight cards with subtle Flagship badge) */}
+        <ServicesPreview />
+
+        {/* 3. Curated 3-Project Case Studies Preview */}
+        <CaseStudiesPreview />
+
+        {/* 4. Verifiable Trust & Operational Metrics */}
         <StatsSection />
-        <Commitment />
+
+        {/* 5. High-Conversion Action Block */}
+        <CTASection />
+
+        {/* 6. Consultation Lead Capture Form (Anchor: #contact) */}
         <ContactSection />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }
