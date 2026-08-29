@@ -3,15 +3,121 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import CareersContent from "@/components/CareersContent";
+import { POSITIONS } from "@/lib/careers-data";
 
 export const metadata: Metadata = {
   title: "Careers at RexonSoftTech | Software Engineering Jobs in Chennai",
-  description: "Join our engineering team in Chennai. Build mission-critical ERP systems, high-performance web applications, and business automation platforms."
+  description: "Explore tech job openings at RexonSoftTech in Anna Nagar, Chennai. We are hiring Full-Stack Developers (React/Next.js), ERP Business Analysts, and UI/UX Designers.",
+  keywords: [
+    "Software jobs Chennai",
+    "Next.js developer jobs Chennai",
+    "React developer hiring Tamil Nadu",
+    "ERP consultant jobs Chennai",
+    "UI/UX designer jobs",
+    "RexonSoftTech careers"
+  ],
+  alternates: {
+    canonical: "https://rexonsofttech.in/careers",
+  },
+  openGraph: {
+    title: "Careers at RexonSoftTech | Software Engineering Jobs in Chennai",
+    description: "Join our engineering team in Chennai. Build mission-critical ERP systems, high-performance web applications, and business automation platforms.",
+    url: "https://rexonsofttech.in/careers",
+    siteName: "RexonSoftTech",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://rexonsofttech.in/rst_logo.png",
+        width: 640,
+        height: 640,
+        alt: "Careers at RexonSoftTech Chennai",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers at RexonSoftTech | Software Engineering Jobs in Chennai",
+    description: "Join our Chennai engineering team to build custom ERPs and web platforms.",
+    images: ["https://rexonsofttech.in/rst_logo.png"],
+  }
 };
 
 export default function CareersPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rexonsofttech.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Careers",
+        "item": "https://rexonsofttech.in/careers"
+      }
+    ]
+  };
+
+  const jobPostingsSchema = POSITIONS.map((pos) => ({
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": pos.title,
+    "description": `${pos.overview}\n\nKey Responsibilities:\n${pos.responsibilities.join(
+      "\n"
+    )}\n\nQualifications:\n${pos.requirements.join("\n")}`,
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "RexonSoftTech",
+      "value": pos.id
+    },
+    "datePosted": "2026-08-25",
+    "validThrough": "2026-12-31T23:59:59",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "RexonSoftTech",
+      "sameAs": "https://rexonsofttech.in",
+      "logo": "https://rexonsofttech.in/rst_logo.png"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Block I, 5/1049, West, Aishwarya Colony, Thangam Colony, Anna Nagar",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600040",
+        "addressCountry": "IN"
+      }
+    },
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "INR",
+      "value": {
+        "@type": "QuantitativeValue",
+        "unitText": "YEAR"
+      }
+    }
+  }));
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {jobPostingsSchema.map((job, idx) => (
+        <script
+          key={idx}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(job) }}
+        />
+      ))}
       <Navbar />
       <main className="flex-grow pt-20">
         {/* Page Hero Header */}

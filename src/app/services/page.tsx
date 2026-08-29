@@ -12,12 +12,71 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "Software Development & Custom ERP Services | RexonSoftTech Chennai",
-  description: "Explore our full suite of technology services: custom ERP architecture, business automation, web applications, mobile apps, AI solutions, and cybersecurity audits."
+  description: "Comprehensive software engineering services: bespoke ERP platforms, billing software engines, web portals, mobile apps (iOS/Android), AI workflow automation, and cybersecurity audits in Chennai.",
+  keywords: [
+    "Custom ERP software Chennai",
+    "ERP development services",
+    "Steel fabrication ERP system",
+    "GST billing software development",
+    "Custom CRM platforms",
+    "Web application development Chennai",
+    "Mobile app development Tamil Nadu",
+    "Business automation tools",
+    "Cyber security audits VAPT Chennai"
+  ],
+  alternates: {
+    canonical: "https://rexonsofttech.in/services",
+  },
+  openGraph: {
+    title: "Software Development & Custom ERP Services | RexonSoftTech Chennai",
+    description: "Explore our full suite of enterprise software engineering: flagship ERP systems, business automation, web applications, mobile platforms, and cybersecurity.",
+    url: "https://rexonsofttech.in/services",
+    siteName: "RexonSoftTech",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://rexonsofttech.in/rst_logo.png",
+        width: 640,
+        height: 640,
+        alt: "RexonSoftTech Services & ERP",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Development & Custom ERP Services | RexonSoftTech Chennai",
+    description: "Bespoke ERP architecture, business automation, web & mobile platforms built for growth.",
+    images: ["https://rexonsofttech.in/rst_logo.png"],
+  }
 };
 
 export default function ServicesPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rexonsofttech.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services & ERP",
+        "item": "https://rexonsofttech.in/services"
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="flex-grow pt-20">
         {/* Page Hero Header */}

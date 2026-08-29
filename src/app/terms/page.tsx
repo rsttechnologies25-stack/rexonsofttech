@@ -3,7 +3,10 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Terms & Conditions | RexonSoftTech",
-  description: "Terms and conditions governing the use of the RexonSoftTech software development and cybersecurity consulting website."
+  description: "Terms and conditions governing the use of the RexonSoftTech software development and cybersecurity consulting website.",
+  alternates: {
+    canonical: "https://rexonsofttech.in/terms",
+  },
 };
 
 export default function TermsPage() {

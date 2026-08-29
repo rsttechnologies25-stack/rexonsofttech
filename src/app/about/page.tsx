@@ -12,12 +12,67 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "About RexonSoftTech | Custom Software & ERP Company Chennai",
-  description: "Learn about RexonSoftTech: our Chennai engineering team, agile development process, client-first philosophy, and track record in delivering enterprise software."
+  description: "Learn about RexonSoftTech: our Chennai headquarters, engineering philosophy, 8-stage SDLC process, 100% source code ownership pledge, and proven enterprise track record.",
+  keywords: [
+    "About RexonSoftTech",
+    "Software development company Anna Nagar Chennai",
+    "ERP developers Chennai",
+    "Custom software development team Tamil Nadu",
+    "Rexon Software Technologies founders"
+  ],
+  alternates: {
+    canonical: "https://rexonsofttech.in/about",
+  },
+  openGraph: {
+    title: "About RexonSoftTech | Custom Software & ERP Company Chennai",
+    description: "The team and engineering philosophy behind your software and ERP systems. Headquartered in Anna Nagar, Chennai.",
+    url: "https://rexonsofttech.in/about",
+    siteName: "RexonSoftTech",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://rexonsofttech.in/rst_logo.png",
+        width: 640,
+        height: 640,
+        alt: "About RexonSoftTech Chennai",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About RexonSoftTech | Custom Software & ERP Company Chennai",
+    description: "Learn about our Chennai engineering team, agile process, and 100% source code ownership pledge.",
+    images: ["https://rexonsofttech.in/rst_logo.png"],
+  }
 };
 
 export default function AboutPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rexonsofttech.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://rexonsofttech.in/about"
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="flex-grow pt-20">
         {/* Page Hero Header */}

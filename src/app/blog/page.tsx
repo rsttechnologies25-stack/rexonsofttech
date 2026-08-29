@@ -4,16 +4,72 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { BLOG_POSTS } from "@/lib/blog-data";
-import { Clock, Calendar, ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { Clock, Calendar, ArrowRight, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Engineering Blog & Tech Insights | RexonSoftTech",
-  description: "Practical guides, technical insights, and architectural advice on custom ERPs, business automation, GST billing, and web development for Indian businesses."
+  description: "Actionable engineering articles, ERP migration strategies, GST billing automation tutorials, and software architecture insights for Indian businesses and CTOs.",
+  keywords: [
+    "ERP implementation blog India",
+    "Custom software articles",
+    "GST billing automation guide",
+    "Spreadsheet to database migration",
+    "Website vs web application architecture",
+    "RexonSoftTech blog"
+  ],
+  alternates: {
+    canonical: "https://rexonsofttech.in/blog",
+  },
+  openGraph: {
+    title: "Engineering Blog & Tech Insights | RexonSoftTech",
+    description: "Practical guides and technical blueprints to help enterprises automate manual processes and scale digital operations.",
+    url: "https://rexonsofttech.in/blog",
+    siteName: "RexonSoftTech",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://rexonsofttech.in/rst_logo.png",
+        width: 640,
+        height: 640,
+        alt: "RexonSoftTech Engineering Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Blog & Tech Insights | RexonSoftTech",
+    description: "Actionable guides on custom ERPs, business automation, and web development for Indian businesses.",
+    images: ["https://rexonsofttech.in/rst_logo.png"],
+  }
 };
 
 export default function BlogPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rexonsofttech.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog & Insights",
+        "item": "https://rexonsofttech.in/blog"
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="flex-grow pt-20">
         {/* Page Hero Header */}

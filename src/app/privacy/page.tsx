@@ -3,7 +3,10 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Privacy Policy | RexonSoftTech",
-  description: "Privacy policy detailing how RexonSoftTech protects, stores, and handles visitor personal data and inquiry information."
+  description: "Privacy policy detailing how RexonSoftTech protects, stores, and handles visitor personal data and inquiry information.",
+  alternates: {
+    canonical: "https://rexonsofttech.in/privacy",
+  },
 };
 
 export default function PrivacyPage() {

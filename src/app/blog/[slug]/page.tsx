@@ -29,9 +29,46 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const postUrl = `https://rexonsofttech.in/blog/${post.slug}`;
+
   return {
     title: `${post.title} | RexonSoftTech Insights`,
-    description: post.excerpt
+    description: post.excerpt,
+    keywords: [
+      post.category,
+      "ERP software Chennai",
+      "Software engineering India",
+      "Business automation guide",
+      post.title
+    ],
+    alternates: {
+      canonical: postUrl,
+    },
+    openGraph: {
+      title: `${post.title} | RexonSoftTech Insights`,
+      description: post.excerpt,
+      url: postUrl,
+      siteName: "RexonSoftTech",
+      locale: "en_IN",
+      type: "article",
+      publishedTime: new Date(post.date).toISOString(),
+      authors: [post.author],
+      tags: [post.category, "Software Development", "ERP"],
+      images: [
+        {
+          url: "https://rexonsofttech.in/rst_logo.png",
+          width: 640,
+          height: 640,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: ["https://rexonsofttech.in/rst_logo.png"],
+    },
   };
 }
 
@@ -45,12 +82,75 @@ export default async function BlogPostPage({ params }: Props) {
 
   const otherPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
 
+  const postUrl = `https://rexonsofttech.in/blog/${post.slug}`;
   const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(
-    `Check out this article: "${post.title}" - https://rexonsofttech.in/blog/${post.slug}`
+    `Check out this article: "${post.title}" - ${postUrl}`
   )}`;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": postUrl
+    },
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": "https://rexonsofttech.in/rst_logo.png",
+    "author": {
+      "@type": "Organization",
+      "name": post.author,
+      "url": "https://rexonsofttech.in"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RexonSoftTech",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rexonsofttech.in/rst_logo.png"
+      }
+    },
+    "datePublished": new Date(post.date).toISOString(),
+    "dateModified": new Date(post.date).toISOString(),
+    "articleSection": post.category,
+    "inLanguage": "en-US"
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rexonsofttech.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://rexonsofttech.in/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": postUrl
+      }
+    ]
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="flex-grow pt-24 pb-20 bg-white">
         {/* Article Header & Hero */}
