@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center">
               <div className="w-10 h-10 rounded-xl overflow-hidden mr-3 bg-white flex items-center justify-center shadow-md p-0.5">
-                <Image src="/logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-contain w-full h-full" />
+                <Image src="/rst_logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-contain w-full h-full" />
               </div>
               <div>
                 <span className="text-xl font-bold tracking-tight text-white">

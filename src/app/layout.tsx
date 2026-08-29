@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://rexonsofttech.in/logo.png",
+        url: "https://rexonsofttech.in/rst_logo.png",
         width: 512,
         height: 512,
         alt: "RexonSoftTech Logo",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "RexonSoftTech | Custom Software Development & Flagship ERP Company Chennai",
     description: "RexonSoftTech is a full-service software development company in Chennai specializing in flagship custom ERP architecture, business automation, web applications, mobile apps, AI solutions, and cybersecurity services.",
-    images: ["https://rexonsofttech.in/logo.png"],
+    images: ["https://rexonsofttech.in/rst_logo.png"],
   },
 };
 

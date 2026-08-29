@@ -71,7 +71,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center">
             <div className="w-10 h-10 rounded-xl overflow-hidden mr-3 bg-white flex items-center justify-center shadow-md border border-slate-100 p-0.5">
-              <Image src="/logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-contain w-full h-full" priority />
+              <Image src="/rst_logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-contain w-full h-full" priority />
             </div>
             <div className="text-left">
               <span className={`text-xl font-bold tracking-tight ${isScrolled ? "text-navy-900" : "text-white"}`}>

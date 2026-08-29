@@ -7,7 +7,7 @@ export default function SchemaMarkup() {
     "name": "RexonSoftTech",
     "alternateName": "Rexon Software Technologies",
     "url": "https://rexonsofttech.in",
-    "logo": "https://rexonsofttech.in/logo.png",
+    "logo": "https://rexonsofttech.in/rst_logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-78716-54777",
@@ -25,7 +25,7 @@ export default function SchemaMarkup() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "RexonSoftTech",
-    "image": "https://rexonsofttech.in/logo.png",
+    "image": "https://rexonsofttech.in/rst_logo.png",
     "@id": "https://rexonsofttech.in/#local-business",
     "url": "https://rexonsofttech.in",
     "telephone": "+917871654777",
