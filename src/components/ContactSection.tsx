@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, MessageSquare, Send, CheckCircle2, Clock, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, ShieldCheck, ExternalLink } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function ContactSection() {
@@ -13,13 +13,59 @@ export default function ContactSection() {
     message: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submittedData, setSubmittedData] = useState<any>(null);
+  const [submittedData, setSubmittedData] = useState<{
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+    message: string;
+    mailtoUrl: string;
+    gmailUrl: string;
+  } | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formState.name && formState.email && formState.phone) {
-      setSubmittedData({ ...formState });
+      const subject = `Automation Consultation Request - ${formState.name} (${formState.company || "Business Owner"})`;
+      const body = 
+`Hi RexonSoftTech Engineering Team,
+
+I would like to request an automation consultation and technical blueprint for our business.
+
+Client Details:
+- Name: ${formState.name}
+- Phone / WhatsApp: ${formState.phone}
+- Corporate Email: ${formState.email}
+- Company / Business: ${formState.company || "N/A"}
+
+Manual Processes to Automate:
+${formState.message}
+
+Best regards,
+${formState.name}`;
+
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+      const mailtoUrl = `mailto:info@rexonsofttech.in?subject=${encodedSubject}&body=${encodedBody}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@rexonsofttech.in&su=${encodedSubject}&body=${encodedBody}`;
+
+      setSubmittedData({
+        ...formState,
+        mailtoUrl,
+        gmailUrl
+      });
       setIsSubmitted(true);
+
+      // Directly trigger opening the mail client with prefilled contents
+      try {
+        const link = document.createElement("a");
+        link.href = mailtoUrl;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch {
+        window.location.href = mailtoUrl;
+      }
     }
   };
 
@@ -35,27 +81,15 @@ export default function ContactSection() {
     });
   };
 
-  const whatsappUrl = submittedData
-    ? `https://wa.me/917871654777?text=${encodeURIComponent(
-        `Hi RexonSoftTech,\n\nI would like to book an automation consultation for my business.\n\nName: ${submittedData.name}\nCompany: ${submittedData.company || "N/A"}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone}\n\nManual Workflows to Automate:\n${submittedData.message}`
-      )}`
-    : `https://wa.me/917871654777?text=${encodeURIComponent(
-        "Hi RexonSoftTech, I have manual business processes I want to automate. Let's schedule a call."
-      )}`;
-
-  const mailtoUrl = submittedData
-    ? `mailto:info@rexonsofttech.in?subject=${encodeURIComponent(
-        `Automation Consultation Request - ${submittedData.name} (${submittedData.company || "Business Owner"})`
-      )}&body=${encodeURIComponent(
-        `Hi RexonSoftTech,\n\nI would like to schedule a consultation to automate our business operations.\n\nName: ${submittedData.name}\nCompany: ${submittedData.company || "N/A"}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone}\n\nCurrent Manual Processes & Needs:\n${submittedData.message}\n\nBest regards,\n${submittedData.name}`
-      )}`
-    : "mailto:info@rexonsofttech.in";
+  const directWhatsAppUrl = `https://wa.me/917871654777?text=${encodeURIComponent(
+    "Hi RexonSoftTech, I have manual business processes I want to automate. Let's schedule a call."
+  )}`;
 
   return (
     <section id="contact" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header - Sales & Urgency Driven */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center space-x-2 bg-accent-500/10 border border-accent-500/20 px-3.5 py-1.5 rounded-full">
             <Clock className="w-3.5 h-3.5 text-accent-500" />
@@ -85,7 +119,7 @@ export default function ContactSection() {
 
               {/* Direct WhatsApp Callout Button */}
               <a
-                href={whatsappUrl}
+                href={directWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white px-5 py-3.5 rounded-xl font-bold transition-all shadow-md hover:shadow-green-500/25 text-sm"
@@ -118,7 +152,7 @@ export default function ContactSection() {
                   <MapPin className="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-navy-900 block">Development Center</span>
-                    <span>Chennai, Tamil Nadu, India</span>
+                    <span>Block I, 5/1049, West, Aishwarya Colony, Thangam Colony, Anna Nagar, Chennai 600040</span>
                   </div>
                 </div>
               </div>
@@ -210,7 +244,7 @@ export default function ContactSection() {
 
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-accent-500/25 transition-all text-sm cursor-pointer"
+                    className="w-full inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-accent-500/25 transition-all text-sm cursor-pointer active:scale-[0.99]"
                   >
                     <Send className="w-4 h-4 mr-2" />
                     Submit & Request Free Automation Blueprint
@@ -226,28 +260,28 @@ export default function ContactSection() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-navy-900">Inquiry Received!</h3>
-                    <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
-                      Thank you, <span className="font-bold text-navy-900">{submittedData?.name}</span>. For immediate confirmation, you can forward this directly to our engineering WhatsApp or email:
+                    <h3 className="text-xl font-bold text-navy-900">Email Client Opened!</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                      Thank you, <span className="font-bold text-navy-900">{submittedData?.name}</span>. Your email application has been launched with all your inquiry details pre-filled. Please click <span className="font-bold text-navy-900">"Send"</span> in your email app to dispatch it to <span className="font-bold text-navy-900">info@rexonsofttech.in</span>.
                     </p>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-bold px-5 py-3 rounded-xl shadow-md transition-all"
-                    >
-                      <WhatsAppIcon className="w-4 h-4 mr-2" size={16} />
-                      Forward on WhatsApp
-                    </a>
-                    <a
-                      href={mailtoUrl}
-                      className="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-950 text-white text-xs font-bold px-5 py-3 rounded-xl shadow-md transition-all"
+                      href={submittedData?.mailtoUrl}
+                      className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white text-xs font-bold px-5 py-3 rounded-xl shadow-md transition-all"
                     >
                       <Mail className="w-4 h-4 mr-2" />
-                      Send via Email
+                      Re-open Default Email App
+                    </a>
+                    <a
+                      href={submittedData?.gmailUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-navy-900 text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 transition-all"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2 text-slate-500" />
+                      Open in Gmail (Browser)
                     </a>
                   </div>
 
