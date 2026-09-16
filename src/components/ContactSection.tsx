@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, ShieldCheck, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function ContactSection() {
@@ -15,56 +15,45 @@ export default function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState<{
     name: string;
-    email: string;
-    phone: string;
-    company: string;
-    message: string;
-    mailtoUrl: string;
-    gmailUrl: string;
+    whatsappUrl: string;
   } | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formState.name && formState.email && formState.phone) {
-      const subject = `Automation Consultation Request - ${formState.name} (${formState.company || "Business Owner"})`;
-      const body = 
+    if (formState.name && formState.phone) {
+      const messageText = 
 `Hi RexonSoftTech Engineering Team,
 
-I would like to request an automation consultation and technical blueprint for our business.
+I would like to request an automation consultation and custom software blueprint for our business.
 
 Client Details:
 - Name: ${formState.name}
-- Phone / WhatsApp: ${formState.phone}
-- Corporate Email: ${formState.email}
-- Company / Business: ${formState.company || "N/A"}
+- Phone: ${formState.phone}
+- Email: ${formState.email || "N/A"}
+- Company: ${formState.company || "N/A"}
 
-Manual Processes to Automate:
-${formState.message}
+Manual Workflows to Automate:
+${formState.message || "Looking for custom software / ERP automation consultation."}`;
 
-Best regards,
-${formState.name}`;
-
-      const encodedSubject = encodeURIComponent(subject);
-      const encodedBody = encodeURIComponent(body);
-      const mailtoUrl = `mailto:info@rexonsofttech.in?subject=${encodedSubject}&body=${encodedBody}`;
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@rexonsofttech.in&su=${encodedSubject}&body=${encodedBody}`;
+      const whatsappUrl = `https://wa.me/917871654777?text=${encodeURIComponent(messageText)}`;
 
       setSubmittedData({
-        ...formState,
-        mailtoUrl,
-        gmailUrl
+        name: formState.name,
+        whatsappUrl
       });
       setIsSubmitted(true);
 
-      // Directly trigger opening the mail client with prefilled contents
+      // Automatically redirect the client to WhatsApp with prefilled message
       try {
         const link = document.createElement("a");
-        link.href = mailtoUrl;
+        link.href = whatsappUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       } catch {
-        window.location.href = mailtoUrl;
+        window.location.href = whatsappUrl;
       }
     }
   };
@@ -202,11 +191,10 @@ ${formState.name}`;
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-navy-900 mb-1">
-                        Corporate Email *
+                        Email Address
                       </label>
                       <input
                         type="email"
-                        required
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="rajesh@company.com"
@@ -244,44 +232,38 @@ ${formState.name}`;
 
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-accent-500/25 transition-all text-sm cursor-pointer active:scale-[0.99]"
+                    className="w-full inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-green-500/25 transition-all text-sm cursor-pointer active:scale-[0.99]"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Submit & Request Free Automation Blueprint
+                    <WhatsAppIcon className="w-5 h-5 mr-2" size={18} />
+                    Submit & Connect on WhatsApp
                   </button>
 
                   <p className="text-[11px] text-center text-slate-400">
-                    We respond within 24 hours with an actionable architecture breakdown.
+                    Instantly opens WhatsApp with your details to connect directly with our engineering team.
                   </p>
                 </form>
               ) : (
                 <div className="py-8 text-center space-y-5">
-                  <div className="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
+                  <div className="w-16 h-16 bg-green-50 text-[#25D366] rounded-full flex items-center justify-center mx-auto shadow-inner border border-green-100">
+                    <WhatsAppIcon className="w-9 h-9" size={36} />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-navy-900">Email Client Opened!</h3>
+                    <h3 className="text-xl font-bold text-navy-900">Connecting to WhatsApp...</h3>
                     <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                      Thank you, <span className="font-bold text-navy-900">{submittedData?.name}</span>. Your email application has been launched with all your inquiry details pre-filled. Please click <span className="font-bold text-navy-900">"Send"</span> in your email app to dispatch it to <span className="font-bold text-navy-900">info@rexonsofttech.in</span>.
+                      Thank you, <span className="font-bold text-navy-900">{submittedData?.name}</span>. We've prepared your inquiry details. Simply click send in WhatsApp to start chatting with our engineering team.
                     </p>
                   </div>
 
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <div className="pt-2 flex justify-center">
                     <a
-                      href={submittedData?.mailtoUrl}
-                      className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white text-xs font-bold px-5 py-3 rounded-xl shadow-md transition-all"
-                    >
-                      <Mail className="w-4 h-4 mr-2" />
-                      Re-open Default Email App
-                    </a>
-                    <a
-                      href={submittedData?.gmailUrl}
+                      href={submittedData?.whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-navy-900 text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 transition-all"
+                      className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-green-500/25 transition-all"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2 text-slate-500" />
-                      Open in Gmail (Browser)
+                      <WhatsAppIcon className="w-4 h-4 mr-2" size={18} />
+                      Continue to WhatsApp
+                      <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
                   </div>
 
