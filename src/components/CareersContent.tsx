@@ -16,7 +16,9 @@ import {
   Copy,
   Check,
   X,
-  ExternalLink
+  ExternalLink,
+  AlertCircle,
+  Sparkles
 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { POSITIONS, JobPosition } from "@/lib/careers-data";
@@ -33,11 +35,35 @@ export default function CareersContent() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const getSubject = (title: string) => `Application for ${title} - [Your Name]`;
-  const getBody = (title: string) => 
-`Hi RexonSoftTech Hiring Team,
+  const getSubject = (job: JobPosition) => {
+    if (job.id === "marketing-bde") {
+      return `Application – Marketing / Business Development – [Full-Time/Part-Time] - [Your Name]`;
+    }
+    return `Application for ${job.title} - [Your Name]`;
+  };
 
-I would like to apply for the ${title} position.
+  const getBody = (job: JobPosition) => {
+    if (job.id === "marketing-bde") {
+      return `Hi RexonSoftTech Hiring Team,
+
+I am interested in applying for the Marketing Executive / Business Development Executive position.
+
+Full Name: 
+Current Location: 
+Experience Level (Fresher / Experienced): 
+Work Preference (Full-Time / Part-Time): 
+Contact Number: 
+Email ID: 
+LinkedIn / Portfolio (if any): 
+
+I acknowledge and understand that this role is a commission / performance-based opportunity. Attached is my CV/resume for your review.
+
+Best regards.`;
+    }
+
+    return `Hi RexonSoftTech Hiring Team,
+
+I would like to apply for the ${job.title} position.
 
 Full Name: 
 Phone / WhatsApp: 
@@ -48,27 +74,40 @@ Portfolio / GitHub / LinkedIn:
 Attached is my resume for your review.
 
 Best regards.`;
+  };
 
-  const getGmailUrl = (title: string) => {
-    const su = encodeURIComponent(getSubject(title));
-    const body = encodeURIComponent(getBody(title));
+  const getGmailUrl = (job: JobPosition) => {
+    const su = encodeURIComponent(getSubject(job));
+    const body = encodeURIComponent(getBody(job));
     return `https://mail.google.com/mail/?view=cm&fs=1&to=${corporateEmail}&su=${su}&body=${body}`;
   };
 
-  const getMailtoUrl = (title: string) => {
-    const su = encodeURIComponent(getSubject(title));
-    const body = encodeURIComponent(getBody(title));
+  const getMailtoUrl = (job: JobPosition) => {
+    const su = encodeURIComponent(getSubject(job));
+    const body = encodeURIComponent(getBody(job));
     return `mailto:${corporateEmail}?subject=${su}&body=${body}`;
   };
 
-  const getWhatsAppUrl = (title: string) => {
-    const text = encodeURIComponent(
-`Hi RexonSoftTech Hiring Team, I am interested in applying for the ${title} position at your Chennai office. Here is my brief profile:
+  const getWhatsAppUrl = (job: JobPosition) => {
+    const text = job.id === "marketing-bde"
+      ? encodeURIComponent(
+`Hi RexonSoftTech Hiring Team, I would like to apply for the Marketing / Business Development Executive position.
+
+Name: 
+Current Location: 
+Experience (Fresher / Experienced): 
+Full-Time or Part-Time: 
+Contact Number: 
+
+I understand that this role is a commission / performance-based opportunity. Here is my profile / resume link: `
+        )
+      : encodeURIComponent(
+`Hi RexonSoftTech Hiring Team, I am interested in applying for the ${job.title} position at your Chennai office. Here is my brief profile:
 
 Name: 
 Experience: 
 Portfolio/Resume Link: `
-    );
+        );
     return `https://wa.me/917871654777?text=${text}`;
   };
 
@@ -82,7 +121,7 @@ Portfolio/Resume Link: `
               Why Work With Us
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
-              Engineering-First Culture
+              Engineering-First & Growth Culture
             </h2>
           </div>
 
@@ -103,7 +142,7 @@ Portfolio/Resume Link: `
               </div>
               <h3 className="text-sm font-bold text-navy-900">Real-World Impact</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Your code directly runs factories, retail stores, and warehouse logistics across India.
+                Your work directly runs factories, retail stores, and warehouse logistics across India.
               </p>
             </div>
 
@@ -113,7 +152,7 @@ Portfolio/Resume Link: `
               </div>
               <h3 className="text-sm font-bold text-navy-900">Fast Career Growth</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Direct mentorship from lead architects without bureaucratic corporate layers.
+                Direct mentorship from leadership and architects without bureaucratic corporate layers.
               </p>
             </div>
 
@@ -121,9 +160,9 @@ Portfolio/Resume Link: `
               <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
                 <HeartHandshake className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-navy-900">Healthy Work Balance</h3>
+              <h3 className="text-sm font-bold text-navy-900">Supportive Dynamics</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Predictable sprint planning, supportive team dynamics, and competitive compensation.
+                Transparent expectations, training for freshers, flexible tracks, and performance incentives.
               </p>
             </div>
           </div>
@@ -141,7 +180,7 @@ Portfolio/Resume Link: `
               Current Opportunities
             </h2>
             <p className="text-sm text-slate-500">
-              Explore our open roles and find where your skills can make a difference.
+              Explore our open engineering, consulting, and business development roles.
             </p>
           </div>
 
@@ -161,7 +200,7 @@ Portfolio/Resume Link: `
                       {pos.title}
                     </h3>
                   </div>
-                  <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
+                  <div className="flex flex-wrap items-center gap-2.5 text-xs text-slate-500">
                     <span className="flex items-center">
                       <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400" />
                       {pos.location}
@@ -175,6 +214,18 @@ Portfolio/Resume Link: `
                     <span className="font-semibold text-slate-700">
                       {pos.experience}
                     </span>
+                    {pos.compensation && (
+                      <>
+                        <span>•</span>
+                        <span className={`px-2.5 py-0.5 rounded text-[11px] font-bold ${
+                          pos.id === "marketing-bde"
+                            ? "bg-amber-100 text-amber-800 border border-amber-300"
+                            : "bg-slate-100 text-slate-700"
+                        }`}>
+                          {pos.compensation}
+                        </span>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -182,6 +233,36 @@ Portfolio/Resume Link: `
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {pos.overview}
                 </p>
+
+                {/* Optional Compensation Warning/Notice */}
+                {pos.compensationNotice && (
+                  <div className="p-3.5 bg-amber-50 border border-amber-200/90 rounded-xl text-xs text-amber-900 flex items-start space-x-2.5">
+                    <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold block uppercase tracking-wider text-[10px] text-amber-800">
+                        Important – Compensation Model
+                      </span>
+                      <p className="mt-0.5 leading-relaxed text-amber-900/90">{pos.compensationNotice}</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Optional Highlights Box */}
+                {pos.highlights && pos.highlights.length > 0 && (
+                  <div className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                    <span className="text-[10px] font-bold text-navy-900 uppercase tracking-wider block mb-2">
+                      Role Highlights & Growth
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
+                      {pos.highlights.map((highlight, hIdx) => (
+                        <div key={hIdx} className="flex items-start">
+                          <Sparkles className="w-3.5 h-3.5 text-accent-500 mr-1.5 flex-shrink-0 mt-0.5" />
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Responsibilities & Requirements */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-600 pt-2">
@@ -201,7 +282,7 @@ Portfolio/Resume Link: `
 
                   <div className="space-y-2">
                     <h4 className="font-bold text-navy-900 uppercase tracking-wider text-[11px]">
-                      Qualifications
+                      Qualifications & Skills
                     </h4>
                     <ul className="space-y-1.5">
                       {pos.requirements.map((req, qIdx) => (
@@ -248,19 +329,19 @@ Portfolio/Resume Link: `
               Don't see a role that matches your skills?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
-              We are always on the lookout for talented software engineers, ERP consultants, and frontend designers. Send your resume and portfolio directly to our engineering team.
+              We are always on the lookout for talented software engineers, ERP consultants, business development executives, and frontend designers. Send your resume directly to our hiring team.
             </p>
             <div className="pt-2">
               <button
                 type="button"
                 onClick={() => setSelectedJob({
                   id: "general",
-                  title: "General Software Engineering Application",
-                  department: "Engineering / Consulting",
-                  location: "Chennai, Tamil Nadu",
-                  type: "Full-Time",
+                  title: "General Software Engineering & Business Application",
+                  department: "Engineering / Marketing",
+                  location: "Chennai / Hybrid / Remote",
+                  type: "Full-Time / Part-Time",
                   experience: "Open",
-                  overview: "General application for software engineering, design, or ERP consulting roles.",
+                  overview: "General application for software engineering, design, ERP consulting, or marketing/business development roles.",
                   responsibilities: [],
                   requirements: []
                 })}
@@ -278,7 +359,7 @@ Portfolio/Resume Link: `
       {/* Interactive Application Modal */}
       {selectedJob && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/70 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-100 text-left relative space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-100 text-left relative space-y-6 max-h-[90vh] overflow-y-auto">
             {/* Close button */}
             <button
               type="button"
@@ -298,15 +379,25 @@ Portfolio/Resume Link: `
                 Apply for {selectedJob.title}
               </h3>
               <p className="text-xs text-slate-500 mt-1">
-                Choose your preferred way to send your application & resume:
+                Choose your preferred way to send your application & CV/resume:
               </p>
             </div>
+
+            {/* Commission Notice inside Modal if applicable */}
+            {selectedJob.compensationNotice && (
+              <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start space-x-2">
+                <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                <p className="text-[11px] leading-relaxed">
+                  <strong className="font-semibold">Note:</strong> {selectedJob.compensationNotice}
+                </p>
+              </div>
+            )}
 
             {/* 3 Direct Application Channels */}
             <div className="space-y-3">
               {/* Option 1: Gmail Web Compose (Direct browser tab) */}
               <a
-                href={getGmailUrl(selectedJob.title)}
+                href={getGmailUrl(selectedJob)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3.5 rounded-xl border border-slate-200 hover:border-red-500/40 hover:bg-red-50/40 transition-all group"
@@ -327,7 +418,7 @@ Portfolio/Resume Link: `
 
               {/* Option 2: Default Mail App (Mailto) */}
               <a
-                href={getMailtoUrl(selectedJob.title)}
+                href={getMailtoUrl(selectedJob)}
                 className="flex items-center justify-between p-3.5 rounded-xl border border-slate-200 hover:border-accent-500/40 hover:bg-blue-50/40 transition-all group"
               >
                 <div className="flex items-center space-x-3">
@@ -346,7 +437,7 @@ Portfolio/Resume Link: `
 
               {/* Option 3: WhatsApp Direct Application */}
               <a
-                href={getWhatsAppUrl(selectedJob.title)}
+                href={getWhatsAppUrl(selectedJob)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3.5 rounded-xl border border-slate-200 hover:border-green-500/40 hover:bg-green-50/40 transition-all group"

@@ -6,9 +6,15 @@ import CareersContent from "@/components/CareersContent";
 import { POSITIONS } from "@/lib/careers-data";
 
 export const metadata: Metadata = {
-  title: "Careers at RexonSoftTech | Software Engineering Jobs in Chennai",
-  description: "Explore tech job openings at RexonSoftTech in Anna Nagar, Chennai. We are hiring Full-Stack Developers (React/Next.js), ERP Business Analysts, and UI/UX Designers.",
+  title: "Careers at RexonSoftTech | Tech & Business Development Jobs in Chennai",
+  description: "Explore career opportunities at RexonSoftTech in Anna Nagar, Chennai. We are hiring Full-Stack Developers, ERP Business Analysts, UI/UX Designers, and Marketing / Business Development Executives (Full-Time & Part-Time).",
   keywords: [
+    "Marketing Executive jobs Chennai",
+    "Business Development Executive IT",
+    "Software sales jobs Chennai",
+    "Commission based sales jobs Chennai",
+    "Part time marketing jobs Chennai",
+    "Fresher sales jobs IT",
     "Software jobs Chennai",
     "Next.js developer jobs Chennai",
     "React developer hiring Tamil Nadu",
@@ -20,8 +26,8 @@ export const metadata: Metadata = {
     canonical: "https://rexonsofttech.in/careers",
   },
   openGraph: {
-    title: "Careers at RexonSoftTech | Software Engineering Jobs in Chennai",
-    description: "Join our engineering team in Chennai. Build mission-critical ERP systems, high-performance web applications, and business automation platforms.",
+    title: "Careers at RexonSoftTech | Tech & Business Development Jobs in Chennai",
+    description: "Join our team in Chennai. Build mission-critical ERP systems, high-performance web applications, and expand our enterprise client base.",
     url: "https://rexonsofttech.in/careers",
     siteName: "RexonSoftTech",
     locale: "en_IN",
@@ -37,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Careers at RexonSoftTech | Software Engineering Jobs in Chennai",
-    description: "Join our Chennai engineering team to build custom ERPs and web platforms.",
+    title: "Careers at RexonSoftTech | Tech & Business Development Jobs in Chennai",
+    description: "Join our Chennai team in engineering, ERP consulting, and business development.",
     images: ["https://rexonsofttech.in/rst_logo.png"],
   }
 };
@@ -69,15 +75,17 @@ export default function CareersPage() {
     "title": pos.title,
     "description": `${pos.overview}\n\nKey Responsibilities:\n${pos.responsibilities.join(
       "\n"
-    )}\n\nQualifications:\n${pos.requirements.join("\n")}`,
+    )}\n\nQualifications:\n${pos.requirements.join("\n")}${
+      pos.compensationNotice ? `\n\nCompensation Model:\n${pos.compensationNotice}` : ""
+    }`,
     "identifier": {
       "@type": "PropertyValue",
       "name": "RexonSoftTech",
       "value": pos.id
     },
-    "datePosted": "2026-08-25",
+    "datePosted": "2026-09-16",
     "validThrough": "2026-12-31T23:59:59",
-    "employmentType": "FULL_TIME",
+    "employmentType": pos.type.includes("Part-Time") ? ["FULL_TIME", "PART_TIME"] : "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
       "name": "RexonSoftTech",
@@ -100,7 +108,7 @@ export default function CareersPage() {
       "currency": "INR",
       "value": {
         "@type": "QuantitativeValue",
-        "unitText": "YEAR"
+        "unitText": pos.compensation?.includes("Commission") ? "COMMISSION" : "YEAR"
       }
     }
   }));
@@ -126,13 +134,13 @@ export default function CareersPage() {
           
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
             <span className="text-xs font-bold text-accent-400 uppercase tracking-widest bg-accent-500/10 border border-accent-500/20 px-4 py-1.5 rounded-full">
-              Join Our Engineering Team
+              Join Our Growing Team
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-              Build Technology That Impacts Real Businesses
+              Build Technology & Accelerate Business Growth
             </h1>
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Join our Chennai team to engineer mission-critical custom ERPs, scalable web platforms, and automated software for growing industries.
+              Join RexonSoftTech in Chennai to engineer custom ERP platforms, develop scalable web solutions, or expand our enterprise client footprint.
             </p>
           </div>
         </section>
