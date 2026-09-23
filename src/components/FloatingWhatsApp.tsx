@@ -1,6 +1,7 @@
 "use client";
 
 import WhatsAppIcon from "./WhatsAppIcon";
+import { trackEvent } from "@/lib/analytics";
 
 export default function FloatingWhatsApp() {
   const whatsappNumber = "917871654777";
@@ -9,6 +10,10 @@ export default function FloatingWhatsApp() {
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
 
+  const handleClick = () => {
+    trackEvent("whatsapp_click", { location: "floating_button" });
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center group">
       {/* Tooltip on hover / desktop */}
@@ -16,6 +21,7 @@ export default function FloatingWhatsApp() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={handleClick}
         className="hidden md:flex items-center mr-3 bg-white text-navy-900 text-xs font-semibold px-3.5 py-2 rounded-full shadow-lg border border-slate-100 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 pointer-events-none group-hover:pointer-events-auto"
       >
         <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-ping" />
@@ -27,6 +33,7 @@ export default function FloatingWhatsApp() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={handleClick}
         aria-label="Chat on WhatsApp"
         className="relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-full shadow-2xl hover:shadow-green-500/40 transition-all duration-300 transform hover:scale-105 active:scale-95"
       >

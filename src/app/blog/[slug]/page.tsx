@@ -34,13 +34,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | RexonSoftTech Insights`,
     description: post.excerpt,
-    keywords: [
-      post.category,
-      "ERP software Chennai",
-      "Software engineering India",
-      "Business automation guide",
-      post.title
-    ],
     alternates: {
       canonical: postUrl,
     },
@@ -220,6 +213,27 @@ export default async function BlogPostPage({ params }: Props) {
                   <li>• You own your data, source code, and architecture with zero recurring per-user licensing fees.</li>
                 </ul>
               </div>
+
+              {/* Related Service Internal Link Box */}
+              {post.relatedServiceUrl && (
+                <div className="p-5 bg-blue-50/80 border border-blue-200/80 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-left">
+                  <div>
+                    <span className="text-[10px] font-bold text-accent-600 uppercase tracking-widest block">
+                      Related Engineering Capability
+                    </span>
+                    <p className="text-sm font-bold text-navy-900 mt-0.5">
+                      Ready to implement this solution in your business?
+                    </p>
+                  </div>
+                  <Link
+                    href={post.relatedServiceUrl}
+                    className="inline-flex items-center text-xs font-bold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2.5 rounded-xl transition-all shadow-sm flex-shrink-0"
+                  >
+                    {post.relatedServiceLabel || "View Related Service"}
+                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                  </Link>
+                </div>
+              )}
 
               {/* Share & WhatsApp Callout */}
               <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">

@@ -1,12 +1,14 @@
 "use client";
 
-import { Cpu, Terminal, Globe, LayoutGrid, Smartphone, BrainCircuit, ShieldAlert, Check } from "lucide-react";
+import Link from "next/link";
+import { Cpu, Terminal, Globe, LayoutGrid, Smartphone, BrainCircuit, ShieldAlert, Check, ArrowRight } from "lucide-react";
 
 export default function ServicesSection() {
   const services = [
     {
       icon: Cpu,
       title: "Enterprise Resource Planning (ERP)",
+      href: "/services/erp-development",
       description: "Complete ERP architecture tailored to unique enterprise workflows and custom processing industries.",
       items: [
         "Custom Workflow ERP Solutions",
@@ -20,6 +22,7 @@ export default function ServicesSection() {
     {
       icon: Terminal,
       title: "Custom Software Development",
+      href: "/services/custom-software-development",
       description: "Tailor-made software packages that adapt perfectly to your unique organizational pipelines.",
       items: [
         "Invoicing & Billing Software",
@@ -32,6 +35,7 @@ export default function ServicesSection() {
     {
       icon: Globe,
       title: "Website Development",
+      href: "/services/website-development",
       description: "Responsive, high-conversion web frontends optimized for SEO, speed, and brand credibility.",
       items: [
         "Premium Corporate Websites",
@@ -44,6 +48,7 @@ export default function ServicesSection() {
     {
       icon: LayoutGrid,
       title: "Web Application Development",
+      href: "/services/web-application-development",
       description: "Robust cloud-hosted web portals handling intricate logic and massive transactional loads.",
       items: [
         "Lead Generation Platforms",
@@ -55,6 +60,7 @@ export default function ServicesSection() {
     {
       icon: Smartphone,
       title: "Mobile Application Development",
+      href: "/services/mobile-app-development",
       description: "Native and cross-platform mobile apps providing seamless fluid experiences.",
       items: [
         "Native Android Applications",
@@ -66,6 +72,7 @@ export default function ServicesSection() {
     {
       icon: BrainCircuit,
       title: "AI & Automation Solutions",
+      href: "/services/ai-automation",
       description: "Leverage intelligent computing algorithms to reduce repetitive cognitive workflows.",
       items: [
         "Customer Support Chatbots",
@@ -77,6 +84,7 @@ export default function ServicesSection() {
     {
       icon: ShieldAlert,
       title: "Cyber Security Services",
+      href: "/services/cybersecurity-vapt",
       description: "Deep vulnerability assessments ensuring your intellectual property and data remain secured.",
       items: [
         "Penetration & Security Audits",
@@ -119,17 +127,19 @@ export default function ServicesSection() {
                   </div>
 
                   {/* Title & Description */}
-                  <div className="space-y-2.5">
-                    <h3 className="text-lg font-bold text-navy-900 group-hover:text-accent-500 transition-colors">
-                      {service.title}
-                    </h3>
+                  <div className="space-y-2.5 text-left">
+                    <Link href={service.href}>
+                      <h3 className="text-lg font-bold text-navy-900 group-hover:text-accent-500 transition-colors">
+                        {service.title}
+                      </h3>
+                    </Link>
                     <p className="text-xs text-slate-500 leading-relaxed">
                       {service.description}
                     </p>
                   </div>
 
                   {/* Bullets List */}
-                  <div className="pt-4 border-t border-slate-50 space-y-2">
+                  <div className="pt-4 border-t border-slate-50 space-y-2 text-left">
                     {service.items.map((bullet, idx) => (
                       <div key={idx} className="flex items-start space-x-2 text-slate-600">
                         <Check className="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0" />
@@ -137,6 +147,15 @@ export default function ServicesSection() {
                       </div>
                     ))}
                   </div>
+                </div>
+
+                <div className="pt-6 border-t border-slate-100 mt-6 text-left">
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 group-hover:translate-x-1 transition-transform"
+                  >
+                    Explore Service Architecture <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                  </Link>
                 </div>
               </div>
             );

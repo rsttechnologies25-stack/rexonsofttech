@@ -87,7 +87,7 @@ export default function AboutSection() {
             </div>
 
             <p className="text-base text-slate-600 leading-relaxed">
-              Founded in Chennai, <strong>RexonSoftTech</strong> was created to solve a persistent challenge faced by growing Indian businesses: off-the-shelf ERP and billing software is too rigid, too complex, and filled with features you will never use—while your actual workflows still end up being tracked on Excel sheets and WhatsApp groups.
+              Founded in 2026 in Chennai, <strong>RexonSoftTech</strong> was created to solve a persistent challenge faced by growing Indian businesses: off-the-shelf ERP and billing software is too rigid, too complex, and filled with features you will never use—while your actual workflows still end up being tracked on Excel sheets and WhatsApp groups.
             </p>
 
             <p className="text-base text-slate-600 leading-relaxed">

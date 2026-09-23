@@ -8,20 +8,6 @@ import { POSITIONS } from "@/lib/careers-data";
 export const metadata: Metadata = {
   title: "Careers at RexonSoftTech | Tech & Business Development Jobs in Chennai",
   description: "Explore career opportunities at RexonSoftTech in Anna Nagar, Chennai. We are hiring Full-Stack Developers, ERP Business Analysts, UI/UX Designers, and Marketing / Business Development Executives (Full-Time & Part-Time).",
-  keywords: [
-    "Marketing Executive jobs Chennai",
-    "Business Development Executive IT",
-    "Software sales jobs Chennai",
-    "Commission based sales jobs Chennai",
-    "Part time marketing jobs Chennai",
-    "Fresher sales jobs IT",
-    "Software jobs Chennai",
-    "Next.js developer jobs Chennai",
-    "React developer hiring Tamil Nadu",
-    "ERP consultant jobs Chennai",
-    "UI/UX designer jobs",
-    "RexonSoftTech careers"
-  ],
   alternates: {
     canonical: "https://rexonsofttech.in/careers",
   },

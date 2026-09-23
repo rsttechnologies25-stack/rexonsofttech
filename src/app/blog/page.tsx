@@ -9,14 +9,6 @@ import { Clock, Calendar, ArrowRight, BookOpen } from "lucide-react";
 export const metadata: Metadata = {
   title: "Engineering Blog & Tech Insights | RexonSoftTech",
   description: "Actionable engineering articles, ERP migration strategies, GST billing automation tutorials, and software architecture insights for Indian businesses and CTOs.",
-  keywords: [
-    "ERP implementation blog India",
-    "Custom software articles",
-    "GST billing automation guide",
-    "Spreadsheet to database migration",
-    "Website vs web application architecture",
-    "RexonSoftTech blog"
-  ],
   alternates: {
     canonical: "https://rexonsofttech.in/blog",
   },

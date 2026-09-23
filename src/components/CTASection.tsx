@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight, Phone, ShieldCheck, Clock, CheckCircle2 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import ScrollReveal from "./ScrollReveal";
+import { trackEvent } from "@/lib/analytics";
 
 export default function CTASection() {
   const whatsappUrl = `https://wa.me/917871654777?text=${encodeURIComponent(
@@ -10,6 +12,7 @@ export default function CTASection() {
   )}`;
 
   const scrollToContact = () => {
+    trackEvent("contact_form_start", { form_id: "cta_section" });
     const el = document.getElementById("contact");
     if (el) {
       const offset = 80;
@@ -59,6 +62,7 @@ export default function CTASection() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("whatsapp_click", { location: "cta_section" })}
               className="w-full sm:w-auto inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white px-7 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-green-500/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm sm:text-base"
             >
               <WhatsAppIcon className="w-5 h-5 mr-2" size={20} />
@@ -69,16 +73,24 @@ export default function CTASection() {
           <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-400 mt-8">
             <span className="flex items-center">
               <ShieldCheck className="w-4 h-4 text-green-400 mr-1.5" />
-              100% NDA Protected
+              Contractual NDA Protected (
+              <Link href="/privacy" className="text-accent-400 hover:underline ml-0.5">
+                Privacy Policy
+              </Link>
+              )
             </span>
             <span className="flex items-center">
               <CheckCircle2 className="w-4 h-4 text-accent-400 mr-1.5" />
               Direct Access to Lead Architects
             </span>
-            <span className="flex items-center">
+            <a
+              href="tel:+917871654777"
+              onClick={() => trackEvent("phone_click", { location: "cta_section" })}
+              className="flex items-center hover:text-white transition-colors"
+            >
               <Phone className="w-4 h-4 text-sky-400 mr-1.5" />
               Direct Support: +91 78716 54777
-            </span>
+            </a>
           </div>
         </ScrollReveal>
       </div>

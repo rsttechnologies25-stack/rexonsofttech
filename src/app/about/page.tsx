@@ -13,13 +13,6 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export const metadata: Metadata = {
   title: "About RexonSoftTech | Custom Software & ERP Company Chennai",
   description: "Learn about RexonSoftTech: our Chennai headquarters, engineering philosophy, 8-stage SDLC process, 100% source code ownership pledge, and proven enterprise track record.",
-  keywords: [
-    "About RexonSoftTech",
-    "Software development company Anna Nagar Chennai",
-    "ERP developers Chennai",
-    "Custom software development team Tamil Nadu",
-    "Rexon Software Technologies founders"
-  ],
   alternates: {
     canonical: "https://rexonsofttech.in/about",
   },

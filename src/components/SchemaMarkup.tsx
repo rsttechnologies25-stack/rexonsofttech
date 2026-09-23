@@ -10,6 +10,7 @@ export default function SchemaMarkup() {
     "name": "RexonSoftTech",
     "alternateName": ["Rexon Software Technologies", "RexonSoftTech Chennai", "RST"],
     "url": baseUrl,
+    "foundingDate": "2026",
     "logo": {
       "@type": "ImageObject",
       "url": `${baseUrl}/rst_logo.png`,
@@ -46,7 +47,6 @@ export default function SchemaMarkup() {
       "addressCountry": "IN"
     },
     "sameAs": [
-      "https://rexonsofttech.in",
       "https://wa.me/917871654777",
       "https://github.com/rsttechnologies25-stack"
     ]
@@ -115,7 +115,8 @@ export default function SchemaMarkup() {
           "itemOffered": {
             "@type": "Service",
             "name": "Custom ERP Solutions",
-            "description": "Bespoke ERP architecture tailored to unique enterprise workflows, steel fabrication, inventory tracking, and GST e-invoicing."
+            "description": "Bespoke ERP architecture tailored to unique enterprise workflows, steel fabrication, inventory tracking, and GST e-invoicing.",
+            "url": `${baseUrl}/services/erp-development`
           }
         },
         {
@@ -123,15 +124,26 @@ export default function SchemaMarkup() {
           "itemOffered": {
             "@type": "Service",
             "name": "Custom Software Development",
-            "description": "Tailor-made software packages, invoicing billing engines, advanced CRMs, and internal business management panels."
+            "description": "Tailor-made software packages, invoicing billing engines, advanced CRMs, and internal business management panels.",
+            "url": `${baseUrl}/services/custom-software-development`
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Web Application & Website Development",
-            "description": "High-conversion responsive websites, e-commerce storefronts, and multi-tenant cloud applications built with Next.js."
+            "name": "Website Development",
+            "description": "High-conversion responsive websites, corporate portals, and brand digital touchpoints built with Next.js.",
+            "url": `${baseUrl}/services/website-development`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Application Development",
+            "description": "High-performance multi-tenant web portals, internal dashboards, and database-driven cloud applications.",
+            "url": `${baseUrl}/services/web-application-development`
           }
         },
         {
@@ -139,7 +151,17 @@ export default function SchemaMarkup() {
           "itemOffered": {
             "@type": "Service",
             "name": "Mobile Application Development",
-            "description": "Cross-platform and native iOS & Android applications with offline data synchronization."
+            "description": "Cross-platform and native iOS & Android applications with offline data synchronization.",
+            "url": `${baseUrl}/services/mobile-app-development`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI & Automation Solutions",
+            "description": "Customer intelligence tools, AI chatbots, automated PDF reporting, and predictive analytics dashboards.",
+            "url": `${baseUrl}/services/ai-automation`
           }
         },
         {
@@ -147,7 +169,8 @@ export default function SchemaMarkup() {
           "itemOffered": {
             "@type": "Service",
             "name": "Cyber Security Audits & VAPT",
-            "description": "Comprehensive vulnerability assessments, penetration testing, and security audits to protect corporate assets."
+            "description": "Comprehensive vulnerability assessments, penetration testing, and security audits to protect corporate assets.",
+            "url": `${baseUrl}/services/cybersecurity-vapt`
           }
         }
       ]
@@ -162,14 +185,6 @@ export default function SchemaMarkup() {
     "url": baseUrl,
     "publisher": {
       "@id": `${baseUrl}/#organization`
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${baseUrl}/?s={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
     }
   };
 

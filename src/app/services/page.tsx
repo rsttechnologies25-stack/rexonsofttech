@@ -13,17 +13,6 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export const metadata: Metadata = {
   title: "Software Development & Custom ERP Services | RexonSoftTech Chennai",
   description: "Comprehensive software engineering services: bespoke ERP platforms, billing software engines, web portals, mobile apps (iOS/Android), AI workflow automation, and cybersecurity audits in Chennai.",
-  keywords: [
-    "Custom ERP software Chennai",
-    "ERP development services",
-    "Steel fabrication ERP system",
-    "GST billing software development",
-    "Custom CRM platforms",
-    "Web application development Chennai",
-    "Mobile app development Tamil Nadu",
-    "Business automation tools",
-    "Cyber security audits VAPT Chennai"
-  ],
   alternates: {
     canonical: "https://rexonsofttech.in/services",
   },

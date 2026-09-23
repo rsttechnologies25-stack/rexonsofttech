@@ -16,6 +16,7 @@ import {
   Sparkles
 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { trackEvent } from "@/lib/analytics";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -64,35 +65,39 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12] text-white">
-              We Build Software That{" "}
+              Custom ERP & Software Development for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-accent-500">
-                Runs Your Business
+                Growing Businesses
               </span>
             </h1>
 
-            {/* Subtitle */}
+            {/* Sub-headline */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
               From flagship custom ERP systems and business automation to high-performance corporate websites, mobile apps, and cybersecurity—we engineer custom technology solutions built around your exact workflows.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3.5 sm:space-y-0 sm:space-x-4 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <button
                 type="button"
-                onClick={scrollToContact}
-                className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-7 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-accent-500/25 hover:shadow-accent-500/35 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm sm:text-base"
+                onClick={() => {
+                  trackEvent("contact_form_start", { form_id: "hero_cta" });
+                  scrollToContact();
+                }}
+                className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-accent-500/25 transition-all text-sm group cursor-pointer active:scale-95"
               >
                 Book a Free Consultation
-                <ArrowRight className="ml-2 w-4 h-4" />
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <a
                 href={whatsappHeroUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm sm:text-base"
+                onClick={() => trackEvent("whatsapp_click", { location: "hero_button" })}
+                className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 text-white font-bold px-6 py-3.5 rounded-xl border border-white/15 backdrop-blur-sm transition-all text-sm group cursor-pointer"
               >
-                <WhatsAppIcon className="w-5 h-5 mr-2" size={20} />
+                <WhatsAppIcon className="w-4 h-4 mr-2" size={18} />
                 WhatsApp Us
               </a>
             </div>
@@ -163,7 +168,7 @@ export default function HeroSection() {
                     <span className="w-3 h-3 rounded-full bg-red-500/80" />
                     <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <span className="w-3 h-3 rounded-full bg-green-500/80" />
-                    <span className="text-xs text-slate-400 font-mono ml-2">rexon-tech-stack.cloud</span>
+                    <span className="text-xs text-slate-400 font-mono ml-2">rexonsofttech.in</span>
                   </div>
                   <div className="flex items-center space-x-1.5 text-[11px] bg-accent-500/10 text-accent-400 border border-accent-500/20 px-2.5 py-0.5 rounded-full font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />

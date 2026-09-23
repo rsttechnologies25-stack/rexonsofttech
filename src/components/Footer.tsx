@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight, ShieldCheck } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
   return (
@@ -27,14 +28,21 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Full-service software engineering company specializing in flagship custom ERP systems, business automation, web platforms, mobile apps, and cybersecurity.
+              Full-service software engineering company specializing in flagship custom ERP systems, business automation, web platforms, mobile apps, and cybersecurity in Chennai.
             </p>
             <div className="space-y-2.5 text-xs">
-              <a href="mailto:info@rexonsofttech.in" className="flex items-center hover:text-white transition-colors">
+              <a
+                href="mailto:info@rexonsofttech.in"
+                className="flex items-center hover:text-white transition-colors"
+              >
                 <Mail className="w-4 h-4 text-accent-500 mr-2.5 flex-shrink-0" />
                 info@rexonsofttech.in
               </a>
-              <a href="tel:+917871654777" className="flex items-center hover:text-white transition-colors">
+              <a
+                href="tel:+917871654777"
+                onClick={() => trackEvent("phone_click", { location: "footer" })}
+                className="flex items-center hover:text-white transition-colors"
+              >
                 <Phone className="w-4 h-4 text-accent-500 mr-2.5 flex-shrink-0" />
                 +91 78716 54777
               </a>
@@ -48,37 +56,42 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-xs">
               <li>
-                <Link href="/services#erp-solutions" className="hover:text-white transition-colors flex items-center">
+                <Link href="/services/erp-development" className="hover:text-white transition-colors flex items-center">
                   Custom ERP Architecture
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center">
+                <Link href="/erp/steel-fabrication" className="hover:text-white transition-colors flex items-center">
+                  Steel Fabrication ERP
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/custom-software-development" className="hover:text-white transition-colors flex items-center">
                   Custom Software Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center">
+                <Link href="/services/website-development" className="hover:text-white transition-colors flex items-center">
                   Website & E-Commerce Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center">
+                <Link href="/services/web-application-development" className="hover:text-white transition-colors flex items-center">
                   Web Applications & Portals
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center">
+                <Link href="/services/mobile-app-development" className="hover:text-white transition-colors flex items-center">
                   Mobile App Development (iOS & Android)
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center">
+                <Link href="/services/ai-automation" className="hover:text-white transition-colors flex items-center">
                   AI & Process Automation
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center">
+                <Link href="/services/cybersecurity-vapt" className="hover:text-white transition-colors flex items-center">
                   Cyber Security Audits & VAPT
                 </Link>
               </li>
@@ -97,13 +110,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services#portfolio" className="hover:text-white transition-colors flex items-center">
+                <Link href="/case-studies" className="hover:text-white transition-colors flex items-center">
                   Client Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/about#process" className="hover:text-white transition-colors flex items-center">
-                  Our Engineering Process
+                <Link href="/erp" className="hover:text-white transition-colors flex items-center">
+                  ERP Solutions Hub
+                </Link>
+              </li>
+              <li>
+                <Link href="/erp/inventory-management" className="hover:text-white transition-colors flex items-center">
+                  Warehouse Inventory Module
+                </Link>
+              </li>
+              <li>
+                <Link href="/erp/gst-billing" className="hover:text-white transition-colors flex items-center">
+                  GST Billing Engine
                 </Link>
               </li>
               <li>
@@ -138,15 +161,21 @@ export default function Footer() {
                   Anna Nagar, Chennai, Tamil Nadu 600040
                 </span>
               </div>
-              <div className="pt-2">
+              <div className="p-4 bg-navy-900/60 rounded-xl border border-navy-800 space-y-2">
+                <span className="font-bold text-white block">Immediate Engineering Inquiry</span>
+                <p className="text-[11px] text-slate-400 leading-normal">
+                  Connect with software architects directly for custom technical evaluation.
+                </p>
                 <a
-                  href="https://wa.me/917871654777?text=Hi%20RexonSoftTech%2C%20I%20would%20like%20to%20schedule%20a%20consultation."
+                  href="https://wa.me/917871654777?text=Hi%20RexonSoftTech%2C%20I'd%20like%20to%20discuss%20custom%20software%20%2F%20ERP%20development."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold px-4 py-2 rounded-lg text-xs transition-colors shadow-sm"
+                  onClick={() => trackEvent("whatsapp_click", { location: "footer" })}
+                  className="inline-flex items-center text-accent-400 hover:text-accent-300 font-bold text-xs pt-1 group"
                 >
-                  <WhatsAppIcon className="w-3.5 h-3.5 mr-1.5" size={14} />
-                  WhatsApp Direct Inquiry
+                  <WhatsAppIcon className="w-4 h-4 mr-1.5" size={16} />
+                  WhatsApp Direct Line
+                  <ArrowUpRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               </div>
             </div>
@@ -154,12 +183,21 @@ export default function Footer() {
 
         </div>
 
-        {/* Footer Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} RexonSoftTech. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 sm:mt-0">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+        {/* Bottom Legal Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>
+            © {new Date().getFullYear()} RexonSoftTech. All rights reserved. Headquartered in Chennai, India.
+          </p>
+          <div className="flex items-center space-x-6">
+            <Link href="/privacy" className="hover:text-slate-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-slate-400 transition-colors">
+              Terms & Conditions
+            </Link>
+            <a href="/.well-known/security.txt" className="hover:text-slate-400 transition-colors">
+              security.txt
+            </a>
           </div>
         </div>
       </div>

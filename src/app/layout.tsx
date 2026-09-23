@@ -23,21 +23,7 @@ export const metadata: Metadata = {
     default: "RexonSoftTech | Custom Software Development & Flagship ERP Company Chennai",
     template: "%s | RexonSoftTech"
   },
-  description: "RexonSoftTech is a premier full-service software development and custom ERP engineering company in Chennai. We engineer bespoke ERP platforms, web applications, mobile apps, business automation systems, and cybersecurity solutions.",
-  keywords: [
-    "ERP software Chennai",
-    "Custom ERP development",
-    "Software development company Chennai",
-    "Custom software development India",
-    "Steel fabrication ERP",
-    "GST billing software",
-    "Web application development",
-    "Mobile app development Chennai",
-    "Business automation software",
-    "Cybersecurity audits Chennai",
-    "RexonSoftTech",
-    "Rexon Software Technologies"
-  ],
+  description: "Custom ERP and software development in Chennai for growing businesses. Build ERP, automation, web applications and cybersecurity solutions.",
   authors: [{ name: "RexonSoftTech Engineering Team", url: "https://rexonsofttech.in" }],
   creator: "RexonSoftTech",
   publisher: "RexonSoftTech",

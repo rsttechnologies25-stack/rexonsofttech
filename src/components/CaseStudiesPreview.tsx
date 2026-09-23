@@ -2,35 +2,38 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, ArrowRight, CheckCircle2, Laptop } from "lucide-react";
+import { ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 export default function CaseStudiesPreview() {
   const featuredCases = [
     {
       title: "Perambur Srinivasa",
+      slug: "perambur-srinivasa",
       url: "https://www.perambursrinivasa.com/",
       category: "Retail E-Commerce",
       desc: "High-performance online ordering and delivery tracking system designed for rapid mobile checkout.",
-      result: "100% automated direct digital orders with seamless payment integration.",
+      result: "Direct online catalog & customer checkout integration",
       img: "/project_perambur.png",
       techs: ["Next.js", "Payment Gateway", "Mobile Optimization"]
     },
     {
       title: "Vinod Computers",
+      slug: "vinod-computers",
       url: "https://vinodcomputers.in",
       category: "IT Services & Lead Capture",
       desc: "Centralized service portal automating customer support tickets, repair lookups, and inquiry routing.",
-      result: "50% faster repair ticket logging and automated customer status follow-ups.",
+      result: "Centralized repair ticket logging & automated customer follow-ups",
       img: "/project_vinod.png",
       techs: ["Lead Capture Engine", "Tailwind CSS", "Support Routing"]
     },
     {
       title: "Paras Jewellers",
+      slug: "paras-jewellers",
       url: "https://parasjewellers.in",
       category: "Luxury Jewellery Showcase",
       desc: "Aesthetic gold and diamond product catalog engineered for high-resolution mobile browsing.",
-      result: "Over 3x surge in digital catalog shares and direct showroom visit inquiries.",
+      result: "High-resolution digital catalog & showroom inquiry booking",
       img: "/project_paras.png",
       techs: ["Luxury UI/UX", "High-Res Assets", "Mobile Web"]
     }
@@ -55,7 +58,7 @@ export default function CaseStudiesPreview() {
               </p>
             </div>
             <Link
-              href="/services#portfolio"
+              href="/case-studies"
               className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 bg-white border border-slate-200 px-5 py-3 rounded-xl shadow-sm hover:shadow transition-all self-start md:self-auto"
             >
               View All Case Studies
@@ -98,9 +101,11 @@ export default function CaseStudiesPreview() {
 
                   {/* Card Body */}
                   <div className="p-6 space-y-4 text-left">
-                    <h3 className="text-lg font-bold text-navy-900 group-hover:text-accent-500 transition-colors">
-                      {project.title}
-                    </h3>
+                    <Link href={`/case-studies/${project.slug}`}>
+                      <h3 className="text-lg font-bold text-navy-900 group-hover:text-accent-500 transition-colors">
+                        {project.title}
+                      </h3>
+                    </Link>
                     <p className="text-xs text-slate-600 leading-relaxed">
                       {project.desc}
                     </p>
@@ -114,17 +119,15 @@ export default function CaseStudiesPreview() {
                   </div>
                 </div>
 
-                {/* Bottom External Link */}
-                <div className="p-6 pt-0">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                {/* Bottom Action Links */}
+                <div className="p-6 pt-0 space-y-2">
+                  <Link
+                    href={`/case-studies/${project.slug}`}
                     className="w-full inline-flex items-center justify-center text-xs font-bold text-accent-600 bg-accent-500/10 hover:bg-accent-500 hover:text-white px-4 py-2.5 rounded-xl transition-all duration-200"
                   >
-                    Visit Live Website
-                    <ExternalLink className="ml-1.5 w-3.5 h-3.5" />
-                  </a>
+                    Read Technical Case Study
+                    <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>

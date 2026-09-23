@@ -22,7 +22,7 @@ export default function ServicesPreview() {
       isFlagship: true,
       description: "Bespoke enterprise resource planning platforms tailored to manufacturing, steel yards, jewellery, and high-volume retail operations.",
       features: ["Custom Workflows", "Multi-Rack Stock", "GST E-Invoicing"],
-      link: "/services#erp-solutions"
+      link: "/services/erp-development"
     },
     {
       icon: Terminal,
@@ -30,7 +30,7 @@ export default function ServicesPreview() {
       isFlagship: false,
       description: "Tailored business management software, billing modules, and automation tools built to match your operational logic with zero compromise.",
       features: ["Billing Engines", "Custom CRMs", "Internal Panels"],
-      link: "/services"
+      link: "/services/custom-software-development"
     },
     {
       icon: Globe,
@@ -38,7 +38,7 @@ export default function ServicesPreview() {
       isFlagship: false,
       description: "High-performance, SEO-optimized corporate websites and online storefronts designed for brand authority and lead conversion.",
       features: ["Corporate Showcases", "E-Commerce", "Speed & SEO"],
-      link: "/services"
+      link: "/services/website-development"
     },
     {
       icon: LayoutGrid,
@@ -46,7 +46,7 @@ export default function ServicesPreview() {
       isFlagship: false,
       description: "Complex, scalable cloud applications with secure multi-tenant architectures, interactive customer portals, and real-time APIs.",
       features: ["Client Portals", "Cloud Databases", "Secure APIs"],
-      link: "/services"
+      link: "/services/web-application-development"
     },
     {
       icon: Smartphone,
@@ -54,7 +54,7 @@ export default function ServicesPreview() {
       isFlagship: false,
       description: "Native and cross-platform iOS and Android mobile apps engineered for fluid performance, offline data sync, and field operations.",
       features: ["iOS & Android", "Field Staff Apps", "Offline Sync"],
-      link: "/services"
+      link: "/services/mobile-app-development"
     },
     {
       icon: BrainCircuit,
@@ -62,7 +62,7 @@ export default function ServicesPreview() {
       isFlagship: false,
       description: "Intelligent workflow automation, AI assistants, automated report generation, and data analytics that cut repetitive cognitive labor.",
       features: ["Workflow Bots", "PDF Auto-Reports", "Smart Dashboards"],
-      link: "/services"
+      link: "/services/ai-automation"
     },
     {
       icon: ShieldAlert,
@@ -70,7 +70,7 @@ export default function ServicesPreview() {
       isFlagship: false,
       description: "Vulnerability assessments, penetration testing, and security audits to protect your company's data and digital infrastructure.",
       features: ["Security Audits", "VAPT Testing", "OWASP Standards"],
-      link: "/services"
+      link: "/services/cybersecurity-vapt"
     }
   ];
 

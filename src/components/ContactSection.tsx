@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Send, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactSection() {
   const [formState, setFormState] = useState({
@@ -10,35 +12,52 @@ export default function ContactSection() {
     email: "",
     phone: "",
     company: "",
-    message: ""
+    message: "",
+    honeypot: ""
   });
+  const [formStarted, setFormStarted] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState<{
     name: string;
     whatsappUrl: string;
   } | null>(null);
 
+  const handleFieldFocus = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackEvent("contact_form_start", { form_id: "consultation_form" });
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formState.name && formState.phone) {
+
+    // Spam honeypot protection: bots fill hidden fields
+    if (formState.honeypot) {
+      return;
+    }
+
+    if (formState.name.trim() && formState.phone.trim()) {
+      trackEvent("lead_form_submit", { service: "consultation" });
+
       const messageText = 
 `Hi RexonSoftTech Engineering Team,
 
 I would like to request an automation consultation and custom software blueprint for our business.
 
 Client Details:
-- Name: ${formState.name}
-- Phone: ${formState.phone}
-- Email: ${formState.email || "N/A"}
-- Company: ${formState.company || "N/A"}
+- Name: ${formState.name.trim()}
+- Phone: ${formState.phone.trim()}
+- Email: ${formState.email.trim() || "N/A"}
+- Company: ${formState.company.trim() || "N/A"}
 
 Manual Workflows to Automate:
-${formState.message || "Looking for custom software / ERP automation consultation."}`;
+${formState.message.trim() || "Looking for custom software / ERP automation consultation."}`;
 
       const whatsappUrl = `https://wa.me/917871654777?text=${encodeURIComponent(messageText)}`;
 
       setSubmittedData({
-        name: formState.name,
+        name: formState.name.trim(),
         whatsappUrl
       });
       setIsSubmitted(true);
@@ -61,12 +80,14 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
   const handleReset = () => {
     setIsSubmitted(false);
     setSubmittedData(null);
+    setFormStarted(false);
     setFormState({
       name: "",
       email: "",
       phone: "",
       company: "",
-      message: ""
+      message: "",
+      honeypot: ""
     });
   };
 
@@ -111,6 +132,7 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
                 href={directWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("whatsapp_click", { location: "contact_left_panel" })}
                 className="w-full inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white px-5 py-3.5 rounded-xl font-bold transition-all shadow-md hover:shadow-green-500/25 text-sm"
               >
                 <WhatsAppIcon className="w-5 h-5 mr-2" size={20} />
@@ -120,6 +142,7 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
               {/* Direct Phone Call Button */}
               <a
                 href="tel:+917871654777"
+                onClick={() => trackEvent("phone_click", { location: "contact_left_panel" })}
                 className="w-full inline-flex items-center justify-center bg-navy-900 hover:bg-navy-950 text-white px-5 py-3.5 rounded-xl font-bold transition-all shadow-md text-sm"
               >
                 <Phone className="w-4 h-4 mr-2" />
@@ -146,9 +169,14 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center text-[11px] font-semibold text-green-700">
-                <ShieldCheck className="w-4 h-4 mr-1.5 flex-shrink-0" />
-                <span>NDA & Business Data Confidentiality Assured</span>
+              <div className="pt-2 flex items-start text-[11px] font-semibold text-slate-600">
+                <ShieldCheck className="w-4 h-4 mr-1.5 text-green-700 flex-shrink-0 mt-0.5" />
+                <span>
+                  Client confidentiality is protected through contractual NDA and controlled access practices.{" "}
+                  <Link href="/privacy" className="text-accent-600 hover:underline">
+                    View Privacy Policy
+                  </Link>
+                </span>
               </div>
             </div>
           </div>
@@ -158,14 +186,29 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
             <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4 text-left">
+                  {/* Honeypot field for anti-spam bots */}
+                  <input
+                    type="text"
+                    name="website_url"
+                    value={formState.honeypot}
+                    onChange={(e) => setFormState({ ...formState, honeypot: e.target.value })}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-navy-900 mb-1">
+                      <label htmlFor="contact-name" className="block text-xs font-bold text-navy-900 mb-1">
                         Your Name *
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
+                        maxLength={100}
+                        onFocus={handleFieldFocus}
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder="e.g. Rajesh Kumar"
@@ -174,12 +217,15 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-navy-900 mb-1">
+                      <label htmlFor="contact-phone" className="block text-xs font-bold text-navy-900 mb-1">
                         Phone / WhatsApp Number *
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         required
+                        maxLength={20}
+                        onFocus={handleFieldFocus}
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                         placeholder="+91 98765 43210"
@@ -190,11 +236,14 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-navy-900 mb-1">
+                      <label htmlFor="contact-email" className="block text-xs font-bold text-navy-900 mb-1">
                         Email Address
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
+                        maxLength={100}
+                        onFocus={handleFieldFocus}
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="rajesh@company.com"
@@ -203,11 +252,14 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-navy-900 mb-1">
+                      <label htmlFor="contact-company" className="block text-xs font-bold text-navy-900 mb-1">
                         Company / Business Name
                       </label>
                       <input
+                        id="contact-company"
                         type="text"
+                        maxLength={120}
+                        onFocus={handleFieldFocus}
                         value={formState.company}
                         onChange={(e) => setFormState({ ...formState, company: e.target.value })}
                         placeholder="e.g. Kumar Industries"
@@ -217,12 +269,15 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-navy-900 mb-1">
+                    <label htmlFor="contact-message" className="block text-xs font-bold text-navy-900 mb-1">
                       What Manual Process Do You Want to Automate? *
                     </label>
                     <textarea
+                      id="contact-message"
                       required
                       rows={4}
+                      maxLength={1000}
+                      onFocus={handleFieldFocus}
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       placeholder="Describe what you are currently managing in Excel, paper registers, or WhatsApp (e.g. GST billing, warehouse inventory, production tracking, staff payroll)..."
@@ -259,6 +314,7 @@ ${formState.message || "Looking for custom software / ERP automation consultatio
                       href={submittedData?.whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackEvent("whatsapp_click", { location: "contact_success_button" })}
                       className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-green-500/25 transition-all"
                     >
                       <WhatsAppIcon className="w-4 h-4 mr-2" size={18} />
