@@ -42,18 +42,18 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-white relative">
+    <section id="why-us" className="py-24 bg-[#FFF3E6] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-accent-500/5 border border-accent-500/10 px-3.5 py-1.5 rounded-full">
+          <span className="text-xs font-bold text-[#381932] uppercase tracking-widest bg-[#381932]/10 border border-[#381932]/20 px-3.5 py-1.5 rounded-full">
             The RexonSoftTech Advantage
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-navy-900 mt-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#381932] mt-3">
             Why Businesses Choose RexonSoftTech
           </h2>
-          <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#6B4E63] leading-relaxed">
             Five core reasons business owners trust us over rigid off-the-shelf software packages and generic freelancers.
           </p>
         </div>
@@ -65,36 +65,36 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={idx}
-                className="bg-slate-50/60 border border-slate-200/70 hover:border-accent-500/30 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col justify-between relative"
+                className="bg-[#FAF0E4] border border-[#EAD8C7] hover:border-[#381932]/30 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col justify-between relative"
               >
                 <div className="space-y-5 text-left">
                   {/* Top Bar: Number & Icon */}
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-black text-slate-300 group-hover:text-accent-500 transition-colors font-mono">
+                    <span className="text-2xl font-black text-[#D6BDAB] group-hover:text-[#381932] transition-colors font-mono">
                       {diff.number}
                     </span>
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 text-accent-500 flex items-center justify-center group-hover:bg-accent-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-[#FFF3E6] text-[#381932] border border-[#EAD8C7] flex items-center justify-center group-hover:bg-[#381932] group-hover:text-[#FFF3E6] transition-all duration-300 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="space-y-2">
-                    <span className="text-[10px] font-bold text-accent-500 uppercase tracking-wider">
+                    <span className="text-[10px] font-bold text-[#8C2969] uppercase tracking-wider">
                       {diff.subtitle}
                     </span>
-                    <h3 className="text-lg font-bold text-navy-900 group-hover:text-accent-600 transition-colors">
+                    <h3 className="text-lg font-bold text-[#381932] group-hover:text-[#8C2969] transition-colors">
                       {diff.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                    <p className="text-xs sm:text-sm text-[#5D4356] leading-relaxed pt-1">
                       {diff.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Assurance */}
-                <div className="pt-6 mt-6 border-t border-slate-200/60 flex items-center text-xs font-semibold text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                <div className="pt-6 mt-6 border-t border-[#EAD8C7] flex items-center text-xs font-semibold text-[#5D4356]">
+                  <CheckCircle2 className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
                   <span>Guaranteed in every contract</span>
                 </div>
               </div>

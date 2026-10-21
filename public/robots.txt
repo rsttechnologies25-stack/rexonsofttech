@@ -1,0 +1,20 @@
+# RexonSoftTech Robots Policy
+# https://rexonsofttech.in
+
+# Explicit Permissions for AI Answer Engines & Search Bots
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: ClaudeBot
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
+# Global Search Crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Canonical XML Sitemap
+Sitemap: https://rexonsofttech.in/sitemap.xml

@@ -8,9 +8,9 @@ import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 text-slate-300 pt-20 pb-10 border-t border-navy-900">
+    <footer className="bg-[#240F21] subtle-grain text-[#EAD8C7] pt-20 pb-10 border-t border-[#381932]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-navy-900 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-[#381932] text-left">
           
           {/* Brand Info */}
           <div className="space-y-6">
@@ -19,15 +19,15 @@ export default function Footer() {
                 <Image src="/rst_logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-contain w-full h-full" />
               </div>
               <div>
-                <span className="text-xl font-bold tracking-tight text-white">
+                <span className="text-xl font-bold tracking-tight text-[#FFF3E6]">
                   RexonSoftTech
                 </span>
-                <p className="text-[10px] tracking-widest font-semibold uppercase leading-none text-blue-300">
+                <p className="text-[10px] tracking-widest font-semibold uppercase leading-none text-[#D8B094]">
                   Software Development
                 </p>
               </div>
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-[#EAD8C7] leading-relaxed">
               Full-service software engineering company specializing in flagship custom ERP systems, business automation, web platforms, mobile apps, and cybersecurity in Chennai.
             </p>
             <div className="space-y-2.5 text-xs">
@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="text-white font-bold text-xs tracking-widest uppercase mb-6 border-l-2 border-accent-500 pl-3">
+            <h4 className="text-[#FFF3E6] font-bold text-xs tracking-widest uppercase mb-6 border-l-2 border-[#D8B094] pl-3">
               Services & ERP
             </h4>
             <ul className="space-y-3 text-xs">
@@ -100,18 +100,13 @@ export default function Footer() {
 
           {/* Quick Navigation & Company */}
           <div>
-            <h4 className="text-white font-bold text-xs tracking-widest uppercase mb-6 border-l-2 border-accent-500 pl-3">
+            <h4 className="text-[#FFF3E6] font-bold text-xs tracking-widest uppercase mb-6 border-l-2 border-[#D8B094] pl-3">
               Company & Resources
             </h4>
             <ul className="space-y-3 text-xs">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors flex items-center">
                   About RexonSoftTech
-                </Link>
-              </li>
-              <li>
-                <Link href="/case-studies" className="hover:text-white transition-colors flex items-center">
-                  Client Case Studies
                 </Link>
               </li>
               <li>
@@ -149,10 +144,10 @@ export default function Footer() {
 
           {/* Contact Details Column */}
           <div>
-            <h4 className="text-white font-bold text-xs tracking-widest uppercase mb-6 border-l-2 border-accent-500 pl-3">
+            <h4 className="text-[#FFF3E6] font-bold text-xs tracking-widest uppercase mb-6 border-l-2 border-[#D8B094] pl-3">
               Corporate Office
             </h4>
-            <div className="space-y-4 text-xs leading-relaxed text-slate-400">
+            <div className="space-y-4 text-xs leading-relaxed text-[#EAD8C7]">
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 text-accent-500 mr-2.5 mt-0.5 flex-shrink-0" />
                 <span>
@@ -161,9 +156,9 @@ export default function Footer() {
                   Anna Nagar, Chennai, Tamil Nadu 600040
                 </span>
               </div>
-              <div className="p-4 bg-navy-900/60 rounded-xl border border-navy-800 space-y-2">
-                <span className="font-bold text-white block">Immediate Engineering Inquiry</span>
-                <p className="text-[11px] text-slate-400 leading-normal">
+              <div className="p-4 bg-[#381932]/70 rounded-xl border border-[#4D2144] space-y-2">
+                <span className="font-bold text-[#FFF3E6] block">Immediate Engineering Inquiry</span>
+                <p className="text-[11px] text-[#EAD8C7] leading-normal">
                   Connect with software architects directly for custom technical evaluation.
                 </p>
                 <a
@@ -171,7 +166,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent("whatsapp_click", { location: "footer" })}
-                  className="inline-flex items-center text-accent-400 hover:text-accent-300 font-bold text-xs pt-1 group"
+                  className="inline-flex items-center text-[#FFF3E6] hover:text-[#D8B094] font-bold text-xs pt-1 group"
                 >
                   <WhatsAppIcon className="w-4 h-4 mr-1.5" size={16} />
                   WhatsApp Direct Line
@@ -184,20 +179,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#9E8597] gap-4">
           <p>
             © {new Date().getFullYear()} RexonSoftTech. All rights reserved. Headquartered in Chennai, India.
           </p>
           <div className="flex items-center space-x-6">
-            <Link href="/privacy" className="hover:text-slate-400 transition-colors">
+            <Link href="/privacy" className="hover:text-[#FFF3E6] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-slate-400 transition-colors">
+            <Link href="/terms" className="hover:text-[#FFF3E6] transition-colors">
               Terms & Conditions
             </Link>
-            <a href="/.well-known/security.txt" className="hover:text-slate-400 transition-colors">
-              security.txt
-            </a>
           </div>
         </div>
       </div>

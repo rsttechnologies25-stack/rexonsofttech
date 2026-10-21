@@ -62,8 +62,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md py-3 shadow-md border-b border-slate-100"
-          : "bg-navy-950/80 backdrop-blur-md py-4 border-b border-white/10"
+          ? "bg-[#FFF3E6]/95 backdrop-blur-md py-3 shadow-md border-b border-[#EAD8C7]"
+          : "bg-[#381932]/90 backdrop-blur-md py-4 border-b border-[#FFF3E6]/10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,10 +74,10 @@ export default function Navbar() {
               <Image src="/rst_logo.png" alt="RexonSoftTech Logo" width={40} height={40} className="object-contain w-full h-full" priority />
             </div>
             <div className="text-left">
-              <span className={`text-xl font-bold tracking-tight ${isScrolled ? "text-navy-900" : "text-white"}`}>
+              <span className={`text-xl font-bold tracking-tight ${isScrolled ? "text-[#381932]" : "text-[#FFF3E6]"}`}>
                 RexonSoftTech
               </span>
-              <p className={`text-[10px] tracking-widest font-semibold uppercase leading-none ${isScrolled ? "text-accent-600" : "text-blue-300"}`}>
+              <p className={`text-[10px] tracking-widest font-semibold uppercase leading-none ${isScrolled ? "text-[#8C2969]" : "text-[#D8B094]"}`}>
                 Software Development
               </p>
             </div>
@@ -94,11 +94,11 @@ export default function Navbar() {
                   className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
                     isScrolled
                       ? active
-                        ? "text-accent-600 bg-accent-500/10"
-                        : "text-slate-600 hover:text-navy-900 hover:bg-slate-50"
+                        ? "text-[#381932] bg-[#381932]/10 font-bold"
+                        : "text-[#5D4356] hover:text-[#381932] hover:bg-[#FAF0E4]"
                       : active
-                      ? "text-white bg-white/15 shadow-sm"
-                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                      ? "text-[#FFF3E6] bg-white/20 shadow-sm font-bold"
+                      : "text-[#EAD8C7] hover:text-[#FFF3E6] hover:bg-white/10"
                   }`}
                 >
                   {link.name}
@@ -111,8 +111,8 @@ export default function Navbar() {
               onClick={scrollToContact}
               className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all cursor-pointer ${
                 isScrolled
-                  ? "text-slate-600 hover:text-navy-900 hover:bg-slate-50"
-                  : "text-slate-300 hover:text-white hover:bg-white/10"
+                  ? "text-[#5D4356] hover:text-[#381932] hover:bg-[#FAF0E4]"
+                  : "text-[#EAD8C7] hover:text-[#FFF3E6] hover:bg-white/10"
               }`}
             >
               Contact
@@ -125,8 +125,8 @@ export default function Navbar() {
               onClick={scrollToContact}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 shadow-md active:scale-95 cursor-pointer ${
                 isScrolled
-                  ? "bg-accent-500 hover:bg-accent-600 text-white shadow-accent-500/20"
-                  : "bg-white text-navy-900 hover:bg-slate-100 shadow-black/20"
+                  ? "bg-[#381932] hover:bg-[#2C1327] text-[#FFF3E6] shadow-black/20"
+                  : "bg-[#FFF3E6] text-[#381932] hover:bg-[#F7EAE0] shadow-black/20"
               }`}
             >
               Book Consultation
@@ -137,7 +137,7 @@ export default function Navbar() {
           <div className="lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg ${isScrolled ? "text-navy-900 hover:bg-slate-100" : "text-white hover:bg-white/10"}`}
+              className={`p-2 rounded-lg ${isScrolled ? "text-[#381932] hover:bg-[#FAF0E4]" : "text-[#FFF3E6] hover:bg-white/10"}`}
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -148,7 +148,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-navy-950 border-b border-white/10 text-white px-5 pt-4 pb-8 space-y-2 text-left animate-fade-in shadow-2xl">
+        <div className="lg:hidden bg-[#381932] border-b border-[#FFF3E6]/10 text-[#FFF3E6] px-5 pt-4 pb-8 space-y-2 text-left animate-fade-in shadow-2xl">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (

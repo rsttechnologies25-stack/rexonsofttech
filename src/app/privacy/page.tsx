@@ -13,7 +13,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-grow bg-[#F5F7FA] pt-32 pb-24">
+      <main className="flex-grow bg-[#FFF3E6] pt-32 pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white border border-slate-100 rounded-3xl p-8 sm:p-12 shadow-sm space-y-8 text-left">
             

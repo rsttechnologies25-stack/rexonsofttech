@@ -83,6 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${postUrl}#article`,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": postUrl
@@ -91,12 +92,18 @@ export default async function BlogPostPage({ params }: Props) {
     "description": post.excerpt,
     "image": "https://rexonsofttech.in/rst_logo.png",
     "author": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": post.author,
-      "url": "https://rexonsofttech.in"
+      "jobTitle": post.authorRole,
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://rexonsofttech.in/#organization",
+        "name": "RexonSoftTech"
+      }
     },
     "publisher": {
       "@type": "Organization",
+      "@id": "https://rexonsofttech.in/#organization",
       "name": "RexonSoftTech",
       "logo": {
         "@type": "ImageObject",
@@ -106,7 +113,7 @@ export default async function BlogPostPage({ params }: Props) {
     "datePublished": new Date(post.date).toISOString(),
     "dateModified": new Date(post.date).toISOString(),
     "articleSection": post.category,
-    "inLanguage": "en-US"
+    "inLanguage": "en-IN"
   };
 
   const breadcrumbSchema = {
@@ -171,7 +178,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-300 pt-2 border-t border-white/10">
               <div className="flex items-center space-x-1.5">
                 <User className="w-4 h-4 text-accent-400" />
-                <span>{post.author}</span>
+                <span>{post.author} • <strong className="text-white font-medium">{post.authorRole}</strong></span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <Calendar className="w-4 h-4 text-accent-400" />
@@ -191,14 +198,26 @@ export default async function BlogPostPage({ params }: Props) {
             
             {/* Main Article Body (8 Cols) */}
             <article className="lg:col-span-8 space-y-6 text-left text-slate-700 leading-relaxed">
+              {/* Declarative Quick Technical Answer for AI Citations */}
+              <div className="p-5 bg-blue-50/70 border border-blue-200/90 rounded-2xl space-y-1.5">
+                <span className="text-[11px] font-bold text-accent-600 uppercase tracking-widest block">
+                  Quick Answer • Technical Digest
+                </span>
+                <p className="text-sm font-semibold text-navy-950 leading-relaxed">
+                  {post.quickAnswer}
+                </p>
+              </div>
+
               <p className="text-lg font-medium text-navy-900 leading-relaxed border-l-4 border-accent-500 pl-4 py-1 italic bg-slate-50 rounded-r-lg">
                 {post.excerpt}
               </p>
 
               {post.content.map((paragraph, idx) => (
-                <p key={idx} className="text-base text-slate-600 leading-relaxed">
-                  {paragraph}
-                </p>
+                <p 
+                  key={idx} 
+                  className="text-base text-slate-600 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
               ))}
 
               {/* Key Takeaways Box */}
@@ -207,10 +226,13 @@ export default async function BlogPostPage({ params }: Props) {
                   <CheckCircle2 className="w-4 h-4 text-green-600 mr-2" />
                   Key Takeaways
                 </h3>
-                <ul className="text-xs sm:text-sm text-slate-600 space-y-2">
-                  <li>• Custom software models your exact operational routines without forcing generic workarounds.</li>
-                  <li>• Eliminates manual duplicate entries, human calculation errors, and data fragmentation.</li>
-                  <li>• You own your data, source code, and architecture with zero recurring per-user licensing fees.</li>
+                <ul className="text-xs sm:text-sm text-slate-700 space-y-2">
+                  {post.keyTakeaways.map((takeaway, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-accent-500 font-bold mr-2">•</span>
+                      <span>{takeaway}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 

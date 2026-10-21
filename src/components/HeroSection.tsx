@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -13,12 +14,18 @@ import {
   Layers, 
   Database,
   Lock,
-  Sparkles
+  Sparkles,
+  Activity,
+  Server,
+  Zap,
+  Shield
 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { trackEvent } from "@/lib/analytics";
 
 export default function HeroSection() {
+  const [activeTab, setActiveTab] = useState<"erp" | "web" | "security">("erp");
+
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
@@ -40,7 +47,7 @@ export default function HeroSection() {
   )}`;
 
   return (
-    <section id="hero" className="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white pt-32 pb-24 lg:pt-36 lg:pb-32 overflow-hidden">
+    <section id="hero" className="relative bg-velvet-plum subtle-grain text-[#FFF3E6] pt-32 pb-24 lg:pt-36 lg:pb-32 overflow-hidden">
       {/* Decorative Glows */}
       <div className="hero-glow" />
       <div className="hero-glow-left" />
@@ -56,9 +63,9 @@ export default function HeroSection() {
             className="lg:col-span-7 space-y-7 text-left"
           >
             {/* Tag badge */}
-            <div className="inline-flex items-center space-x-2 bg-accent-500/10 border border-accent-500/25 px-4 py-1.5 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse" />
-              <span className="text-xs font-bold text-accent-400 uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 bg-[#FFF3E6]/10 border border-[#FFF3E6]/25 px-4 py-1.5 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-[#FFF3E6] animate-pulse" />
+              <span className="text-xs font-bold text-[#FFF3E6] uppercase tracking-wider">
                 Full-Service Software Development Company
               </span>
             </div>
@@ -66,13 +73,13 @@ export default function HeroSection() {
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12] text-white">
               Custom ERP & Software Development for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-accent-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF3E6] via-[#E8BCA0] to-accent-300">
                 Growing Businesses
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg text-[#EBD9C8] max-w-2xl leading-relaxed">
               From flagship custom ERP systems and business automation to high-performance corporate websites, mobile apps, and cybersecurity—we engineer custom technology solutions built around your exact workflows.
             </p>
 
@@ -84,7 +91,7 @@ export default function HeroSection() {
                   trackEvent("contact_form_start", { form_id: "hero_cta" });
                   scrollToContact();
                 }}
-                className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-accent-500/25 transition-all text-sm group cursor-pointer active:scale-95"
+                className="inline-flex items-center justify-center bg-[#FFF3E6] hover:bg-[#FCE9D7] text-[#381932] font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-black/25 transition-all text-sm group cursor-pointer active:scale-95"
               >
                 Book a Free Consultation
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -95,7 +102,7 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("whatsapp_click", { location: "hero_button" })}
-                className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 text-white font-bold px-6 py-3.5 rounded-xl border border-white/15 backdrop-blur-sm transition-all text-sm group cursor-pointer"
+                className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 text-[#FFF3E6] font-bold px-6 py-3.5 rounded-xl border border-white/15 backdrop-blur-sm transition-all text-sm group cursor-pointer"
               >
                 <WhatsAppIcon className="w-4 h-4 mr-2" size={18} />
                 WhatsApp Us
@@ -104,7 +111,7 @@ export default function HeroSection() {
 
             {/* Balanced Capabilities Bar */}
             <div className="pt-6 border-t border-white/10">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[#D8B094] mb-3">
                 Full Spectrum of Engineering Services
               </p>
               <div className="flex flex-wrap items-center gap-y-2 text-xs font-semibold text-slate-300">
@@ -147,7 +154,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right Column - Multi-Layer Technology Architecture Blueprint */}
+          {/* Right Column - Interactive Enterprise Software Control Panel */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -157,77 +164,233 @@ export default function HeroSection() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Glow backdrop */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent-500/30 to-blue-600/20 rounded-3xl blur-3xl opacity-40 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent-500/25 to-[#381932]/50 rounded-3xl blur-3xl opacity-50 pointer-events-none" />
 
               {/* Multi-Service Architecture Panel */}
-              <div className="relative glass-card rounded-2xl shadow-2xl border border-white/15 overflow-hidden backdrop-blur-xl bg-navy-950/75">
+              <div className="relative glass-card rounded-2xl shadow-2xl border border-[#FFF3E6]/15 overflow-hidden backdrop-blur-xl bg-[#281225]/90">
                 
                 {/* Header Bar */}
-                <div className="bg-navy-950 px-5 py-3.5 border-b border-white/10 flex items-center justify-between">
+                <div className="bg-[#1F0A1D] px-5 py-3.5 border-b border-[#FFF3E6]/10 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <span className="w-3 h-3 rounded-full bg-red-500/80" />
                     <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <span className="w-3 h-3 rounded-full bg-green-500/80" />
-                    <span className="text-xs text-slate-400 font-mono ml-2">rexonsofttech.in</span>
+                    <span className="text-xs text-[#D6BDAB] font-mono ml-2">rexonsofttech.in</span>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-[11px] bg-accent-500/10 text-accent-400 border border-accent-500/20 px-2.5 py-0.5 rounded-full font-medium">
+                  <div className="flex items-center space-x-1.5 text-[11px] bg-[#FFF3E6]/10 text-[#FFF3E6] border border-[#FFF3E6]/20 px-2.5 py-0.5 rounded-full font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <span>Full-Stack Platform</span>
+                    <span>Live Architecture</span>
                   </div>
                 </div>
 
-                {/* Body - Clean Layered Architecture */}
-                <div className="p-6 space-y-3.5">
-                  <div className="text-left pb-1">
-                    <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
-                      Integrated Software Stack
-                    </span>
-                    <p className="text-sm font-bold text-white mt-0.5">
-                      Tailored Digital Infrastructure
-                    </p>
-                  </div>
+                {/* Interactive Mode Tabs */}
+                <div className="bg-[#260E22]/80 p-2 border-b border-[#FFF3E6]/10 grid grid-cols-3 gap-1 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("erp")}
+                    className={`py-1.5 px-2 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                      activeTab === "erp"
+                        ? "bg-[#FFF3E6] text-[#381932] shadow-sm"
+                        : "text-[#D8B094] hover:text-[#FFF3E6] hover:bg-white/5"
+                    }`}
+                  >
+                    Flagship ERP
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("web")}
+                    className={`py-1.5 px-2 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                      activeTab === "web"
+                        ? "bg-[#FFF3E6] text-[#381932] shadow-sm"
+                        : "text-[#D8B094] hover:text-[#FFF3E6] hover:bg-white/5"
+                    }`}
+                  >
+                    Web & Apps
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("security")}
+                    className={`py-1.5 px-2 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                      activeTab === "security"
+                        ? "bg-[#FFF3E6] text-[#381932] shadow-sm"
+                        : "text-[#D8B094] hover:text-[#FFF3E6] hover:bg-white/5"
+                    }`}
+                  >
+                    Cybersecurity
+                  </button>
+                </div>
 
-                  {/* Layer 1: Flagship ERP & Core Automation */}
-                  <div className="p-3 bg-white/5 border border-accent-500/30 rounded-xl flex items-center justify-between">
-                    <div className="flex items-center space-x-3 text-left">
-                      <div className="w-8 h-8 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center flex-shrink-0">
-                        <Cpu className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="flex items-center space-x-2">
-                          <p className="text-xs font-bold text-white">Flagship Custom ERP</p>
-                          <span className="text-[9px] bg-accent-500 text-white font-bold px-1.5 py-0.2 rounded">Core</span>
+                {/* Body - Active Tab View */}
+                <div className="p-6 space-y-3.5 text-left">
+                  <AnimatePresence mode="wait">
+                    {activeTab === "erp" && (
+                      <motion.div
+                        key="erp"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.25 }}
+                        className="space-y-3"
+                      >
+                        <div className="p-3 bg-white/5 border border-accent-500/30 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center flex-shrink-0">
+                              <Cpu className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">GST 1 & 3B Engine</p>
+                              <p className="text-[10px] text-slate-400">Automated e-invoice & ledger sync</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] bg-green-500/20 text-green-300 border border-green-500/30 px-2 py-0.5 rounded-md font-mono">
+                            Auto-Synced
+                          </span>
                         </div>
-                        <p className="text-[10px] text-slate-400">GST billing, stock racks & production workflows</p>
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Layer 2: Web Applications & Customer Portals */}
-                  <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
-                    <div className="flex items-center space-x-3 text-left">
-                      <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0">
-                        <Globe className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-white">Web & Mobile Platforms</p>
-                        <p className="text-[10px] text-slate-400">High-conversion corporate sites, e-stores & apps</p>
-                      </div>
-                    </div>
-                  </div>
+                        <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-[#FFF3E6]/10 text-[#FFF3E6] flex items-center justify-center flex-shrink-0">
+                              <Layers className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">Multi-Rack Inventory</p>
+                              <p className="text-[10px] text-slate-400">14,820 SKUs live indexed by bay & rack</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] text-slate-300 font-mono">
+                            Zero Delay
+                          </span>
+                        </div>
 
-                  {/* Layer 3: Database & Cloud Integration */}
-                  <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
-                    <div className="flex items-center space-x-3 text-left">
-                      <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
-                        <Database className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-white">Secure Relational Databases</p>
-                        <p className="text-[10px] text-slate-400">Instant search indexing, role-based access & APIs</p>
-                      </div>
-                    </div>
-                  </div>
+                        <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                              <Activity className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">Production Work Orders</p>
+                              <p className="text-[10px] text-slate-400">Shop-floor cutting, assembly & dispatch flow</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] text-emerald-400 font-mono">
+                            99.98% SLA
+                          </span>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {activeTab === "web" && (
+                      <motion.div
+                        key="web"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.25 }}
+                        className="space-y-3"
+                      >
+                        <div className="p-3 bg-white/5 border border-accent-500/30 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-[#FFF3E6]/15 text-[#FFF3E6] flex items-center justify-center flex-shrink-0">
+                              <Globe className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">Next.js 16 Web Core</p>
+                              <p className="text-[10px] text-slate-400">Sub-second SSR & Core Web Vitals 99</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] bg-green-500/20 text-green-300 border border-green-500/30 px-2 py-0.5 rounded-md font-mono">
+                            Score 99
+                          </span>
+                        </div>
+
+                        <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0">
+                              <Server className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">Edge Global Delivery</p>
+                              <p className="text-[10px] text-slate-400">Cloudflare Edge CDN routing</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] text-slate-300 font-mono">
+                            0.24s TTFB
+                          </span>
+                        </div>
+
+                        <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center flex-shrink-0">
+                              <Smartphone className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">Mobile E-Store & PWA</p>
+                              <p className="text-[10px] text-slate-400">Direct WhatsApp checkout pipeline</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] text-green-400 font-mono">
+                            Connected
+                          </span>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {activeTab === "security" && (
+                      <motion.div
+                        key="security"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.25 }}
+                        className="space-y-3"
+                      >
+                        <div className="p-3 bg-white/5 border border-accent-500/30 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                              <ShieldCheck className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">OWASP Top 10 Hardened</p>
+                              <p className="text-[10px] text-slate-400">XSS, SQLi & CSRF defense verified</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] bg-green-500/20 text-green-300 border border-green-500/30 px-2 py-0.5 rounded-md font-mono">
+                            A+ Grade
+                          </span>
+                        </div>
+
+                        <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-[#FFF3E6]/10 text-[#FFF3E6] flex items-center justify-center flex-shrink-0">
+                              <Lock className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">Role-Based Access (RBAC)</p>
+                              <p className="text-[10px] text-slate-400">Restricted staff permissions & audit trails</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] text-slate-300 font-mono">
+                            Enforced
+                          </span>
+                        </div>
+
+                        <div className="p-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                              <Database className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">100% Owned Source Code</p>
+                              <p className="text-[10px] text-slate-400">Zero vendor lock-in or recurring fees</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] text-amber-300 font-mono">
+                            Client Owned
+                          </span>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                   {/* Security Footer in Mockup */}
                   <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
@@ -235,7 +398,7 @@ export default function HeroSection() {
                       <Lock className="w-3.5 h-3.5 mr-1.5" />
                       <span>Security & VAPT Audited</span>
                     </div>
-                    <span className="text-slate-500 font-mono">100% Owned Code</span>
+                    <span className="text-slate-500 font-mono">Headquartered in Chennai</span>
                   </div>
 
                 </div>
@@ -245,6 +408,7 @@ export default function HeroSection() {
           </motion.div>
 
         </div>
+
       </div>
     </section>
   );

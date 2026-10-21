@@ -114,54 +114,54 @@ Portfolio/Resume Link: `
   return (
     <>
       {/* Culture & Why Join Us */}
-      <section className="py-20 bg-white border-b border-slate-100">
+      <section className="py-20 bg-[#FFF3E6] border-b border-[#EAD8C7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-[#381932] uppercase tracking-widest bg-[#381932]/10 border border-[#381932]/20 px-3 py-1 rounded-full">
               Why Work With Us
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#381932]">
               Engineering-First & Growth Culture
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-left space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent-500 flex items-center justify-center">
+            <div className="p-6 bg-[#FAF0E4] border border-[#EAD8C7] rounded-2xl text-left space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#FFF3E6] text-[#381932] border border-[#EAD8C7] flex items-center justify-center">
                 <Code2 className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-navy-900">Modern Tech Stack</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <h3 className="text-sm font-bold text-[#381932]">Modern Tech Stack</h3>
+              <p className="text-xs text-[#5D4356] leading-relaxed">
                 Work with Next.js, React 19, TypeScript, PostgreSQL, and cloud infrastructure on production code.
               </p>
             </div>
 
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-left space-y-3">
+            <div className="p-6 bg-[#FAF0E4] border border-[#EAD8C7] rounded-2xl text-left space-y-3">
               <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-navy-900">Real-World Impact</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <h3 className="text-sm font-bold text-[#381932]">Real-World Impact</h3>
+              <p className="text-xs text-[#5D4356] leading-relaxed">
                 Your work directly runs factories, retail stores, and warehouse logistics across India.
               </p>
             </div>
 
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-left space-y-3">
+            <div className="p-6 bg-[#FAF0E4] border border-[#EAD8C7] rounded-2xl text-left space-y-3">
               <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
                 <Users className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-navy-900">Fast Career Growth</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <h3 className="text-sm font-bold text-[#381932]">Fast Career Growth</h3>
+              <p className="text-xs text-[#5D4356] leading-relaxed">
                 Direct mentorship from leadership and architects without bureaucratic corporate layers.
               </p>
             </div>
 
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-left space-y-3">
+            <div className="p-6 bg-[#FAF0E4] border border-[#EAD8C7] rounded-2xl text-left space-y-3">
               <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
                 <HeartHandshake className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-navy-900">Supportive Dynamics</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <h3 className="text-sm font-bold text-[#381932]">Supportive Dynamics</h3>
+              <p className="text-xs text-[#5D4356] leading-relaxed">
                 Transparent expectations, training for freshers, flexible tracks, and performance incentives.
               </p>
             </div>
@@ -170,16 +170,16 @@ Portfolio/Resume Link: `
       </section>
 
       {/* Active Openings */}
-      <section id="openings" className="py-24 bg-lightBg relative">
+      <section id="openings" className="py-24 bg-[#FAF0E4] relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-accent-500/10 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-[#381932] uppercase tracking-widest bg-[#381932]/10 border border-[#381932]/20 px-3 py-1 rounded-full">
               Active Positions
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-900">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#381932]">
               Current Opportunities
             </h2>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-[#6B4E63]">
               Explore our open engineering, consulting, and business development roles.
             </p>
           </div>
@@ -188,30 +188,30 @@ Portfolio/Resume Link: `
             {POSITIONS.map((pos) => (
               <div
                 key={pos.id}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all text-left space-y-6"
+                className="bg-white border border-[#EAD8C7] rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all text-left space-y-6"
               >
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAD8C7]">
                   <div>
-                    <span className="text-[10px] font-bold text-accent-500 uppercase tracking-wider bg-accent-500/10 px-2.5 py-0.5 rounded">
+                    <span className="text-[10px] font-bold text-[#381932] uppercase tracking-wider bg-[#381932]/10 px-2.5 py-0.5 rounded">
                       {pos.department}
                     </span>
-                    <h3 className="text-xl font-bold text-navy-900 mt-1.5">
+                    <h3 className="text-xl font-bold text-[#381932] mt-1.5">
                       {pos.title}
                     </h3>
                   </div>
-                  <div className="flex flex-wrap items-center gap-2.5 text-xs text-slate-500">
+                  <div className="flex flex-wrap items-center gap-2.5 text-xs text-[#6B4E63]">
                     <span className="flex items-center">
-                      <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400" />
+                      <MapPin className="w-3.5 h-3.5 mr-1 text-[#6B4E63]" />
                       {pos.location}
                     </span>
                     <span>•</span>
                     <span className="flex items-center">
-                      <Clock className="w-3.5 h-3.5 mr-1 text-slate-400" />
+                      <Clock className="w-3.5 h-3.5 mr-1 text-[#6B4E63]" />
                       {pos.type}
                     </span>
                     <span>•</span>
-                    <span className="font-semibold text-slate-700">
+                    <span className="font-semibold text-[#381932]">
                       {pos.experience}
                     </span>
                     {pos.compensation && (
@@ -220,7 +220,7 @@ Portfolio/Resume Link: `
                         <span className={`px-2.5 py-0.5 rounded text-[11px] font-bold ${
                           pos.id === "marketing-bde"
                             ? "bg-amber-100 text-amber-800 border border-amber-300"
-                            : "bg-slate-100 text-slate-700"
+                            : "bg-[#FFF3E6] text-[#381932]"
                         }`}>
                           {pos.compensation}
                         </span>
@@ -230,7 +230,7 @@ Portfolio/Resume Link: `
                 </div>
 
                 {/* Overview */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#5D4356] leading-relaxed">
                   {pos.overview}
                 </p>
 
@@ -297,13 +297,13 @@ Portfolio/Resume Link: `
 
                 {/* Apply Button & Direct Options */}
                 <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center space-x-2 text-[11px] text-slate-500">
+                  <div className="flex items-center space-x-2 text-[11px] text-[#6B4E63]">
                     <span>Send resume to:</span>
-                    <span className="font-semibold text-navy-900">{corporateEmail}</span>
+                    <span className="font-semibold text-[#381932]">{corporateEmail}</span>
                     <button
                       type="button"
                       onClick={handleCopyEmail}
-                      className="text-accent-600 hover:text-accent-700 font-medium underline flex items-center cursor-pointer ml-1"
+                      className="text-[#8C2969] hover:text-[#741E55] font-medium underline flex items-center cursor-pointer ml-1"
                     >
                       {copied ? <Check className="w-3 h-3 mr-0.5 text-green-600" /> : <Copy className="w-3 h-3 mr-0.5" />}
                       {copied ? "Copied!" : "Copy"}
@@ -313,7 +313,7 @@ Portfolio/Resume Link: `
                   <button
                     type="button"
                     onClick={() => setSelectedJob(pos)}
-                    className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white text-xs font-bold px-6 py-2.5 rounded-xl shadow-md shadow-accent-500/25 transition-all cursor-pointer w-full sm:w-auto active:scale-95"
+                    className="inline-flex items-center justify-center bg-[#381932] hover:bg-[#2C1327] text-[#FFF3E6] text-xs font-bold px-6 py-2.5 rounded-xl shadow-md transition-all cursor-pointer w-full sm:w-auto active:scale-95"
                   >
                     Apply for this Role
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
@@ -324,11 +324,11 @@ Portfolio/Resume Link: `
           </div>
 
           {/* General Application Box */}
-          <div className="mt-16 bg-white border border-slate-200/80 rounded-2xl p-8 text-center space-y-4 shadow-sm">
-            <h3 className="text-xl font-bold text-navy-900">
+          <div className="mt-16 bg-white border border-[#EAD8C7] rounded-2xl p-8 text-center space-y-4 shadow-sm">
+            <h3 className="text-xl font-bold text-[#381932]">
               Don't see a role that matches your skills?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#5D4356] max-w-xl mx-auto leading-relaxed">
               We are always on the lookout for talented software engineers, ERP consultants, business development executives, and frontend designers. Send your resume directly to our hiring team.
             </p>
             <div className="pt-2">
@@ -345,7 +345,7 @@ Portfolio/Resume Link: `
                   responsibilities: [],
                   requirements: []
                 })}
-                className="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-950 text-white text-xs font-bold px-6 py-3 rounded-xl transition-all cursor-pointer"
+                className="inline-flex items-center justify-center bg-[#381932] hover:bg-[#2C1327] text-[#FFF3E6] text-xs font-bold px-6 py-3 rounded-xl transition-all cursor-pointer"
               >
                 <Send className="w-3.5 h-3.5 mr-2" />
                 Submit General Application

@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#030712",
+  themeColor: "#381932",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -96,7 +96,7 @@ export default function RootLayout({
         <meta name="geo.position" content="13.0848037;80.1983057" />
         <meta name="ICBM" content="13.0848037, 80.1983057" />
       </head>
-      <body className="min-h-screen bg-[#F5F7FA] font-sans text-[#1E293B] overflow-x-hidden">
+      <body className="min-h-screen bg-[#FFF3E6] font-sans text-[#381932] overflow-x-hidden">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2CNVR5X55Y"
           strategy="afterInteractive"

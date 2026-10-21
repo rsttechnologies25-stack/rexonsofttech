@@ -16,7 +16,9 @@ import {
   FileSpreadsheet, 
   Clock, 
   BarChart3, 
-  Workflow 
+  Workflow,
+  Server,
+  Building2
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -69,6 +71,14 @@ export default function ERPDevelopmentPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Departmental ERP modules (such as Billing and Inventory) deploy in 2 to 4 weeks. Comprehensive multi-plant enterprise ERP systems typically deploy within 6 to 10 weeks, accompanied by staff onboarding and dedicated SLA maintenance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does custom ERP software development cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom ERP software costs in India depend on the number of enterprise modules (inventory, billing, production planning/BOM, job-work challans, HRMS), number of branch/plant locations, third-party hardware/API integrations (barcode scanners, weighing scales, WhatsApp API, GST portal), and legacy data migration scope. RexonSoftTech provides modular fixed-milestone pricing with 100% source code ownership and zero recurring user license fees."
         }
       }
     ]
@@ -127,6 +137,25 @@ export default function ERPDevelopmentPage() {
           </div>
         </section>
 
+        {/* Declarative AI Answer Snippet */}
+        <section className="bg-slate-50 border-b border-slate-200/80 py-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-accent-500/10 text-accent-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Layers className="w-5 h-5" />
+              </div>
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-bold text-accent-600 uppercase tracking-widest block">
+                  Quick Answer • Custom ERP Definition
+                </span>
+                <p className="text-sm font-semibold text-navy-950 leading-relaxed">
+                  <strong>Custom ERP software development</strong> is the engineering of tailored enterprise resource management systems built around an organization&apos;s proprietary manufacturing, inventory, procurement, and accounting workflows. Unlike rigid off-the-shelf software with recurring per-user licensing fees, custom ERP delivers 100% database and source code ownership, zero recurring user penalties, and native integration with Indian statutory compliance including GST e-invoicing and E-Way bills.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Problem Statement Section */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
@@ -177,6 +206,80 @@ export default function ERPDevelopmentPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Architecture Comparison Matrix Section */}
+        <section className="py-16 bg-slate-50 border-t border-slate-200/80">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-8">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+                Architectural Comparison
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                Custom ERP vs. Tier-1 Suites vs. Basic Accounting
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Why manufacturing and distribution enterprises transition from generic packages to tailored ERP architecture.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                <thead>
+                  <tr className="bg-navy-950 text-white border-b border-navy-900">
+                    <th className="p-4 sm:p-5 font-bold">Decision Criteria</th>
+                    <th className="p-4 sm:p-5 font-bold text-accent-400 bg-navy-900/80 border-x border-navy-800">
+                      RexonSoftTech Custom ERP
+                    </th>
+                    <th className="p-4 sm:p-5 font-bold">Commercial Tier-1 (SAP / Oracle)</th>
+                    <th className="p-4 sm:p-5 font-bold">Basic Accounting (Tally / Zoho)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-slate-700">
+                  <tr className="hover:bg-slate-50/80 transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-navy-900">Operational Logic Alignment</td>
+                    <td className="p-4 sm:p-5 bg-accent-50/30 border-x border-slate-200 font-medium text-accent-700">
+                      100% Bespoke; mirrors real shop floor, BOM, and warehouse workflows
+                    </td>
+                    <td className="p-4 sm:p-5">Rigid standardized processes; forces business to alter operational routines</td>
+                    <td className="p-4 sm:p-5">Basic double-entry ledgers; zero native shop-floor manufacturing modeling</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80 transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-navy-900">Licensing & User Costs</td>
+                    <td className="p-4 sm:p-5 bg-accent-50/30 border-x border-slate-200 font-medium text-accent-700">
+                      Zero per-user licensing; deploy across unlimited staff & terminals
+                    </td>
+                    <td className="p-4 sm:p-5">Escalating per-seat licensing fees and mandatory recurring maintenance contracts</td>
+                    <td className="p-4 sm:p-5">Annual software subscription or per-company/user renewal licenses</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80 transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-navy-900">Manufacturing & Work-Order Fit</td>
+                    <td className="p-4 sm:p-5 bg-accent-50/30 border-x border-slate-200 font-medium text-accent-700">
+                      Tailored multi-level BOM, cutting optimization, scrap tracking, and stage-gate audits
+                    </td>
+                    <td className="p-4 sm:p-5">Heavy, complex configuration requiring months of consultant implementation</td>
+                    <td className="p-4 sm:p-5">Not supported natively; requires separate Excel spreadsheets and manual tracking</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80 transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-navy-900">Indian Statutory GST Compliance</td>
+                    <td className="p-4 sm:p-5 bg-accent-50/30 border-x border-slate-200 font-medium text-accent-700">
+                      Direct automated CGST/SGST/IGST splits, E-Way bills, UPI QR codes, & GSTR digests
+                    </td>
+                    <td className="p-4 sm:p-5">Requires specialized localization packages, third-party middleware, or manual bridges</td>
+                    <td className="p-4 sm:p-5">Built-in GST accounting, but lacks automated shop-floor to invoice integration</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80 transition-colors">
+                    <td className="p-4 sm:p-5 font-semibold text-navy-900">Source Code & Data Ownership</td>
+                    <td className="p-4 sm:p-5 bg-accent-50/30 border-x border-slate-200 font-medium text-accent-700">
+                      100% Client-owned database, code assets, and server hosting control
+                    </td>
+                    <td className="p-4 sm:p-5">Proprietary vendor cloud lock-in with restricted direct database querying</td>
+                    <td className="p-4 sm:p-5">Proprietary data formats; export hurdles and dependency on vendor ecosystem</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -239,6 +342,82 @@ export default function ERPDevelopmentPage() {
           </div>
         </section>
 
+        {/* Cost Factors & Pricing Guidance */}
+        <section className="py-20 bg-slate-50 border-t border-slate-200/80">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-12">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-accent-500/10 px-3 py-1 rounded-full">
+                Investment Transparency
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                How Custom ERP Development Costs Are Calculated
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Understanding the technical determinants that shape enterprise ERP scope, rollout timelines, and total cost of ownership in India.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent-500 flex items-center justify-center">
+                  <Workflow className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-navy-900 text-sm">1. Operational Modules</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Depth of functional modules: multi-tier BOM, cutting optimization, scrap tracking, job-work challans, and customer credit matrices.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
+                  <Building2 className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-navy-900 text-sm">2. Multi-Depot Locations</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Single-plant operations vs. distributed multi-warehouse stock transfer challans with centralized headquarter auditing.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-navy-900 text-sm">3. Hardware & API Bridges</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Integration with weighing scales, barcode/QR scanners, POS thermal printers, GST e-invoicing APIs, and WhatsApp alert gateways.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+                  <Database className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-navy-900 text-sm">4. Data Cleansing & Onboarding</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Extracting and cleansing historical customer ledgers and stock masters from Tally/Excel, plus hands-on staff onboarding.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-600 uppercase tracking-widest">
+                Milestone-Driven Fixed Investment
+              </span>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                Unlike global enterprise ERP vendors that charge compounding monthly user subscriptions and steep implementation fees, RexonSoftTech builds custom ERP systems with <strong>fixed-scope milestone pricing</strong> and <strong>100% intellectual property transfer</strong>.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center text-xs sm:text-sm font-bold text-accent-600 hover:text-accent-700 hover:underline"
+                >
+                  Request a Transparent ERP Feasibility Proposal <ArrowRight className="w-4 h-4 ml-1" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Lead Magnet Checklist */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <LeadMagnetSection />
@@ -273,6 +452,14 @@ export default function ERPDevelopmentPage() {
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Departmental ERP modules (such as Billing and Inventory) deploy in 2 to 4 weeks. Comprehensive multi-plant enterprise ERP systems typically deploy within 6 to 10 weeks, accompanied by staff onboarding and dedicated SLA maintenance.
+                </p>
+              </div>
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How much does custom ERP software development cost in India?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Custom ERP software costs in India depend on the number of enterprise modules (inventory, billing, production planning/BOM, job-work challans, HRMS), number of branch/plant locations, third-party hardware/API integrations (barcode scanners, weighing scales, WhatsApp API, GST portal), and legacy data migration scope. RexonSoftTech provides modular fixed-milestone pricing with 100% source code ownership and zero recurring user license fees.
                 </p>
               </div>
             </div>

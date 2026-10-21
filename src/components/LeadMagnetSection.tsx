@@ -203,7 +203,7 @@ export default function LeadMagnetSection() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white font-bold py-3 px-5 rounded-xl text-xs shadow-lg shadow-accent-500/25 transition-all cursor-pointer active:scale-95"
+                className="w-full inline-flex items-center justify-center bg-[#FFF3E6] hover:bg-[#FCE9D7] text-[#381932] font-bold py-3 px-5 rounded-xl text-xs shadow-lg shadow-black/25 transition-all cursor-pointer active:scale-95"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download Instant PDF Checklist

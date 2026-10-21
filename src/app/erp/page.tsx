@@ -6,7 +6,24 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ContactSection from "@/components/ContactSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { Layers, CheckCircle2, ArrowRight, Database, FileSpreadsheet, BarChart3, ShieldCheck, Factory, Box, Receipt } from "lucide-react";
+import { 
+  Layers, 
+  CheckCircle2, 
+  ArrowRight, 
+  Database, 
+  FileSpreadsheet, 
+  BarChart3, 
+  ShieldCheck, 
+  Factory, 
+  Box, 
+  Receipt,
+  Truck,
+  Store,
+  HardHat,
+  Workflow,
+  Building2,
+  Wrench
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "ERP Solutions Hub | Custom ERP Software Architecture Chennai | RexonSoftTech",
@@ -32,6 +49,70 @@ export const metadata: Metadata = {
 };
 
 export default function ERPHubPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://rexonsofttech.in/erp#service",
+    "name": "Enterprise Resource Planning (ERP) Engineering",
+    "serviceType": "Custom Enterprise ERP Architecture & Implementation",
+    "description": "Custom ERP development for Indian enterprises across manufacturing, wholesale distribution, retail chains, and construction infrastructure with GST compliance and zero user licensing fees.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://rexonsofttech.in/#local-business",
+      "name": "RexonSoftTech",
+      "url": "https://rexonsofttech.in",
+      "telephone": "+91 78716 54777",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Block I, 5/1049, West, Aishwarya Colony, Thangam Colony, Anna Nagar",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600040",
+        "addressCountry": "IN"
+      }
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Chennai" },
+      { "@type": "State", "name": "Tamil Nadu" },
+      { "@type": "Country", "name": "India" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Industry ERP Solutions",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Manufacturing & Industrial Engineering ERP"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wholesale Trading & Multi-Warehouse B2B ERP"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Multi-Branch Retail & Point-of-Sale (POS) ERP"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Construction & Infrastructure Project Operations ERP"
+          }
+        }
+      ]
+    }
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -43,25 +124,26 @@ export default function ERPHubPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <Navbar />
 
       <main className="flex-grow pt-20">
-        <section className="bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white py-20 border-b border-white/10 text-center relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-500/10 blur-[100px] pointer-events-none" />
+        <section className="bg-gradient-to-br from-[#260E22] via-[#381932] to-[#260E22] text-[#FFF3E6] py-20 border-b border-[#FFF3E6]/10 text-center relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#FFF3E6]/5 blur-[100px] pointer-events-none" />
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
-            <span className="text-xs font-bold text-accent-400 uppercase tracking-widest bg-accent-500/10 border border-accent-500/20 px-4 py-1.5 rounded-full">
+            <span className="text-xs font-bold text-[#FFF3E6] uppercase tracking-widest bg-[#FFF3E6]/10 border border-[#FFF3E6]/20 px-4 py-1.5 rounded-full">
               Flagship ERP Architecture
             </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#FFF3E6] leading-tight">
               Enterprise Resource Planning (ERP) Solutions
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-[#EAD8C7] max-w-2xl mx-auto leading-relaxed">
               Explore specialized ERP engines custom-engineered for regional manufacturing facilities, steel yards, multi-warehouse distributors, and retail counters.
             </p>
             <div className="pt-4 flex flex-wrap justify-center gap-4">
-              <a href="#contact" className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all">
+              <a href="#contact" className="inline-flex items-center justify-center bg-[#FFF3E6] hover:bg-[#FCE9D7] text-[#381932] text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all">
                 Request an ERP Blueprint <ArrowRight className="w-4 h-4 ml-2" />
               </a>
               <a href="https://wa.me/917871654777?text=Hi%20RexonSoftTech%2C%20I'm%20interested%20in%20an%20ERP%20consultation." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all">
@@ -71,13 +153,32 @@ export default function ERPHubPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        {/* Declarative AI Answer Snippet */}
+        <section className="bg-[#2D1328] border-b border-[#FFF3E6]/10 py-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="p-6 bg-[#381932] rounded-2xl border border-[#FFF3E6]/20 shadow-md flex flex-col md:flex-row items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#FFF3E6]/10 text-[#FFF3E6] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Layers className="w-5 h-5" />
+              </div>
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-bold text-[#EAD8C7] uppercase tracking-widest block">
+                  Quick Answer • Enterprise ERP Architecture
+                </span>
+                <p className="text-sm font-semibold text-[#FFF3E6] leading-relaxed">
+                  <strong>RexonSoftTech Enterprise ERP</strong> delivers modular, custom-engineered resource planning systems for Indian manufacturing facilities, wholesale distributors, retail chains, and construction contractors. Built around your exact shop-floor protocols, inventory bins, and billing workflows, our ERP architecture includes native GST e-invoicing, automated multi-warehouse reconciliation, and 100% source code ownership with zero recurring per-user licensing fees.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#FFF3E6]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#381932]">
                 Specialized ERP Engines
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600">
+              <p className="text-xs sm:text-sm text-[#5D4356]">
                 Each module is purpose-built to eliminate paper registers, Excel formulas, and disconnected accounting.
               </p>
             </div>
@@ -144,6 +245,158 @@ export default function ERPHubPage() {
                 <Link href="/erp/gst-billing" className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 pt-4">
                   Explore GST Billing Engine →
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Cross-Industry ERP Capabilities */}
+        <section className="py-20 bg-white border-t border-slate-200/80">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-12">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+                Cross-Sector Specialization
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                Tailored ERP Systems Across Key Indian Industry Sectors
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Custom operational logic engineered for your sector&apos;s exact procurement, production, and distribution realities.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Sector 1: Manufacturing & Industrial */}
+              <div className="p-8 bg-slate-50 border border-slate-200 rounded-3xl space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-accent-500 flex items-center justify-center">
+                  <Factory className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-navy-900">Manufacturing & Industrial Engineering</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Tailored for CNC workshops, automotive component vendors, electrical assembly plants, plastics, and precision engineering units across Ambattur, Guindy, Sriperumbudur, and Coimbatore.
+                </p>
+                <div className="pt-2 space-y-2 text-xs text-slate-700">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Multi-Level BOM & Routing:</strong> Dynamic sub-assemblies, machine run-time allocation, and scrap loss calculation.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Job-Work & Outward Challans:</strong> Real-time tracking of raw material dispatched to third-party heat treatment or coating vendors.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Stage-Gate Quality Control:</strong> Inward inspection logs, line rejection tracking, and Mill Test Certificate (MTC) archiving.</span>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-slate-200/80">
+                  <Link href="/erp/steel-fabrication" className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 hover:underline">
+                    Explore Steel & Fabrication ERP Architecture →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Sector 2: Trading & Wholesale Distribution */}
+              <div className="p-8 bg-slate-50 border border-slate-200 rounded-3xl space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-navy-900">Wholesale Trading & B2B Distribution</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Built for electronic component importers, industrial equipment distributors, FMCG wholesalers, and dealer networks operating across regional depot networks.
+                </p>
+                <div className="pt-2 space-y-2 text-xs text-slate-700">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Multi-Depot Stock Synchronization:</strong> Real-time in-transit transfer challans with barcode verification at receiving branch.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Dealer Credit & Tiered Pricing:</strong> Dynamic price books by dealer tier, credit day limits, and automated WhatsApp balance notices.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Batch Expiry & Serial Tracking:</strong> Automated FIFO dispatch enforcement preventing aged inventory write-offs.</span>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-slate-200/80">
+                  <Link href="/case-studies/vinod-computers" className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 hover:underline">
+                    View Hardware Distribution Case Study →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Sector 3: Multi-Branch Retail & Commerce */}
+              <div className="p-8 bg-slate-50 border border-slate-200 rounded-3xl space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center">
+                  <Store className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-navy-900">Multi-Branch Retail & Point of Sale (POS)</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Engineered for retail chains, jewellery showrooms, electronics stores, and hardware outlets needing high-speed billing and consolidated headquarters auditing.
+                </p>
+                <div className="pt-2 space-y-2 text-xs text-slate-700">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Sub-Second Counter Billing:</strong> Fast barcode check-out with instant dynamic UPI QR codes and thermal receipt printing.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Centralized Master Catalog:</strong> Centrally update prices and schemes across all retail branches in real time.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Daily Cashier Day-End Audits:</strong> Cash drawer reconciliation, digital payments digest, and automated WhatsApp sales reports.</span>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-slate-200/80 flex flex-wrap gap-x-4 gap-y-1">
+                  <Link href="/case-studies/paras-jewellers" className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 hover:underline">
+                    Paras Jewellers Case Study →
+                  </Link>
+                  <Link href="/case-studies/vinod-electronics" className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 hover:underline">
+                    Vinod Electronics Case Study →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Sector 4: Construction & Infrastructure Operations */}
+              <div className="p-8 bg-slate-50 border border-slate-200 rounded-3xl space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
+                  <HardHat className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-navy-900">Construction & Infrastructure Operations</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Engineered for civil engineering contractors, EPC infrastructure firms, structural fabricators, and commercial interior builders.
+                </p>
+                <div className="pt-2 space-y-2 text-xs text-slate-700">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Site Material Allocation:</strong> Requisition tracking, dispatch receipts, and concrete/steel site consumption audits.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Equipment & Machinery Logs:</strong> Diesel consumption logs, daily machine working hours, and preventive maintenance triggers.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span><strong>Milestone & RA Billing:</strong> Running Account (RA) contractor billing, retention money ledgers, and TDS compliance tracking.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-bold text-accent-500 uppercase tracking-wider block">Enterprise Flexibility</span>
+                <p className="text-sm font-bold text-navy-900">Need an ERP tailored for your specific operating model or factory floor?</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Link href="/services/erp-development" className="text-xs font-bold text-accent-600 hover:underline">
+                  Full ERP Services →
+                </Link>
+                <a href="#contact" className="inline-flex items-center text-xs font-bold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2.5 rounded-xl transition-all shadow-sm">
+                  Schedule Blueprint Call <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                </a>
               </div>
             </div>
           </div>

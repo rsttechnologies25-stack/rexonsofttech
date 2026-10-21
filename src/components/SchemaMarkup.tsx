@@ -8,9 +8,15 @@ export default function SchemaMarkup() {
     "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
     "name": "RexonSoftTech",
-    "alternateName": ["Rexon Software Technologies", "RexonSoftTech Chennai", "RST"],
+    "legalName": "RexonSoftTech",
+    "alternateName": [
+      "Rexon Software Technologies",
+      "RexonSoftTech Chennai",
+      "RexonSoftTech Anna Nagar",
+      "RST"
+    ],
     "url": baseUrl,
-    "foundingDate": "2026",
+    "foundingDate": "2025",
     "logo": {
       "@type": "ImageObject",
       "url": `${baseUrl}/rst_logo.png`,
@@ -19,20 +25,41 @@ export default function SchemaMarkup() {
       "caption": "RexonSoftTech Official Logo"
     },
     "image": `${baseUrl}/rst_logo.png`,
-    "description": "RexonSoftTech is a premier full-service software development and custom ERP engineering company headquartered in Anna Nagar, Chennai, India.",
+    "description": "RexonSoftTech is a premier full-service software development and custom ERP engineering company headquartered in Anna Nagar, Chennai, India. Specializing in bespoke ERP architecture, business automation, web portals, mobile apps, and cybersecurity.",
+    "disambiguatingDescription": "RexonSoftTech is a bespoke software development and custom ERP engineering company headquartered at Anna Nagar West, Chennai (PIN 600040), operating officially at https://rexonsofttech.in. It is distinct and unaffiliated with Rexontech IT Solutions in Pallikaranai.",
     "email": "info@rexonsofttech.in",
-    "telephone": "+91-78716-54777",
+    "telephone": "+91 78716 54777",
+    "knowsAbout": [
+      "Custom ERP Software Development",
+      "Enterprise Resource Planning",
+      "GST Billing & E-Invoicing Engines",
+      "Multi-Warehouse Inventory Management",
+      "Steel Fabrication Production Software",
+      "Manufacturing & Industrial Engineering ERP",
+      "Wholesale Trading & B2B Distribution Systems",
+      "Multi-Branch Retail & Point-of-Sale ERP",
+      "Construction & Infrastructure Operations Software",
+      "Custom Software Development",
+      "Web Application Development",
+      "Next.js High-Performance Web Engineering",
+      "Mobile App Development",
+      "React Native Enterprise Mobility",
+      "Cybersecurity & VAPT Auditing",
+      "OWASP Top 10 Security Assessment",
+      "Business Process Automation",
+      "Cloudflare Edge Deployment"
+    ],
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+91-78716-54777",
+        "telephone": "+91 78716 54777",
         "contactType": "customer service",
         "areaServed": ["IN", "AE", "US", "SG"],
         "availableLanguage": ["English", "Tamil"]
       },
       {
         "@type": "ContactPoint",
-        "telephone": "+91-78716-54777",
+        "telephone": "+91 78716 54777",
         "contactType": "sales",
         "areaServed": "IN",
         "availableLanguage": ["English", "Tamil"]
@@ -48,22 +75,27 @@ export default function SchemaMarkup() {
     },
     "sameAs": [
       "https://wa.me/917871654777",
-      "https://github.com/rsttechnologies25-stack"
+      "https://github.com/rsttechnologies25-stack",
+      "https://www.linkedin.com/company/rexonsofttech"
     ]
   };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["ProfessionalService", "LocalBusiness"],
     "@id": `${baseUrl}/#local-business`,
+    "parentOrganization": {
+      "@id": `${baseUrl}/#organization`
+    },
     "name": "RexonSoftTech",
     "image": `${baseUrl}/rst_logo.png`,
     "url": baseUrl,
-    "telephone": "+917871654777",
+    "telephone": "+91 78716 54777",
     "email": "info@rexonsofttech.in",
     "priceRange": "₹₹",
     "currenciesAccepted": "INR, USD",
     "paymentAccepted": "Bank Transfer, UPI, Credit Card, Cash",
+    "hasMap": "https://maps.google.com/?q=13.0848037,80.1983057",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Block I, 5/1049, West, Aishwarya Colony, Thangam Colony, Anna Nagar",
@@ -81,6 +113,30 @@ export default function SchemaMarkup() {
       {
         "@type": "City",
         "name": "Chennai"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Ambattur Industrial Estate"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Sriperumbudur & Oragadam"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Guindy Industrial Estate"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Old Mahabalipuram Road (OMR)"
+      },
+      {
+        "@type": "City",
+        "name": "Coimbatore"
+      },
+      {
+        "@type": "City",
+        "name": "Hosur"
       },
       {
         "@type": "State",
@@ -183,8 +239,14 @@ export default function SchemaMarkup() {
     "@id": `${baseUrl}/#website`,
     "name": "RexonSoftTech",
     "url": baseUrl,
+    "inLanguage": "en-IN",
     "publisher": {
       "@id": `${baseUrl}/#organization`
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${baseUrl}/services?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
     }
   };
 

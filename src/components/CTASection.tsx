@@ -27,24 +27,24 @@ export default function CTASection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white relative overflow-hidden">
+    <section className="py-24 bg-velvet-plum subtle-grain text-[#FFF3E6] relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#FFF3E6]/5 blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
         <ScrollReveal>
-          <div className="inline-flex items-center space-x-2 bg-accent-500/10 border border-accent-500/20 px-3.5 py-1.5 rounded-full mb-2">
-            <Clock className="w-3.5 h-3.5 text-accent-400" />
-            <span className="text-xs font-bold text-accent-400 uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 bg-[#FFF3E6]/10 border border-[#FFF3E6]/20 px-3.5 py-1.5 rounded-full mb-2">
+            <Clock className="w-3.5 h-3.5 text-[#FFF3E6]" />
+            <span className="text-xs font-bold text-[#FFF3E6] uppercase tracking-widest">
               Let's Build Your Solution
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#FFF3E6] max-w-3xl mx-auto leading-tight">
             Ready to Replace Manual Inefficiencies with Custom Software?
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mt-4">
+          <p className="text-base sm:text-lg text-[#EAD8C7] max-w-2xl mx-auto leading-relaxed mt-4">
             Whether you need a bespoke ERP system, automated GST billing tool, a corporate web portal, or a mobile app—our Chennai engineering team is ready to help.
           </p>
 
@@ -52,7 +52,7 @@ export default function CTASection() {
             <button
               type="button"
               onClick={scrollToContact}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/35 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm sm:text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#FFF3E6] hover:bg-[#FCE9D7] text-[#381932] px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-black/25 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm sm:text-base"
             >
               Book a Free Consultation Call
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -70,17 +70,17 @@ export default function CTASection() {
             </a>
           </div>
 
-          <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-400 mt-8">
+          <div className="pt-8 border-t border-[#FFF3E6]/15 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-[#EAD8C7] mt-8">
             <span className="flex items-center">
               <ShieldCheck className="w-4 h-4 text-green-400 mr-1.5" />
               Contractual NDA Protected (
-              <Link href="/privacy" className="text-accent-400 hover:underline ml-0.5">
+              <Link href="/privacy" className="text-[#FFF3E6] underline ml-0.5">
                 Privacy Policy
               </Link>
               )
             </span>
             <span className="flex items-center">
-              <CheckCircle2 className="w-4 h-4 text-accent-400 mr-1.5" />
+              <CheckCircle2 className="w-4 h-4 text-[#FFF3E6] mr-1.5" />
               Direct Access to Lead Architects
             </span>
             <a
@@ -88,7 +88,7 @@ export default function CTASection() {
               onClick={() => trackEvent("phone_click", { location: "cta_section" })}
               className="flex items-center hover:text-white transition-colors"
             >
-              <Phone className="w-4 h-4 text-sky-400 mr-1.5" />
+              <Phone className="w-4 h-4 text-[#D8B094] mr-1.5" />
               Direct Support: +91 78716 54777
             </a>
           </div>

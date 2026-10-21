@@ -40,26 +40,26 @@ export default function CaseStudiesPreview() {
   ];
 
   return (
-    <section id="portfolio-preview" className="py-28 bg-lightBg relative overflow-hidden">
+    <section id="portfolio-preview" className="py-28 bg-[#FFF3E6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="text-left space-y-3 max-w-2xl">
-              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-accent-500/5 border border-accent-500/10 px-3.5 py-1.5 rounded-full">
+              <span className="text-xs font-bold text-[#381932] uppercase tracking-widest bg-[#381932]/10 border border-[#381932]/20 px-3.5 py-1.5 rounded-full">
                 Proven Track Record
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-navy-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#381932]">
                 Selected Client Case Studies
               </h2>
-              <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#6B4E63] leading-relaxed">
                 Explore a handpicked selection of custom systems, corporate web applications, and e-commerce platforms delivered for our clients.
               </p>
             </div>
             <Link
               href="/case-studies"
-              className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 bg-white border border-slate-200 px-5 py-3 rounded-xl shadow-sm hover:shadow transition-all self-start md:self-auto"
+              className="inline-flex items-center text-xs font-bold text-[#FFF3E6] hover:bg-[#4D2144] bg-[#381932] border border-[#381932] px-5 py-3 rounded-xl shadow-sm hover:shadow transition-all self-start md:self-auto"
             >
               View All Case Studies
               <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -71,11 +71,11 @@ export default function CaseStudiesPreview() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredCases.map((project, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1}>
-              <div className="bg-white border border-slate-200/80 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between overflow-hidden h-full">
+              <div className="bg-[#FAF0E4] border border-[#EAD8C7] rounded-2xl shadow-sm hover-card-glow group flex flex-col justify-between overflow-hidden h-full">
                 <div>
                   {/* Visual Mockup Header */}
-                  <div className="h-44 bg-slate-50 border-b border-slate-100 relative p-3 flex items-end justify-center overflow-hidden group-hover:bg-blue-50/30 transition-colors">
-                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur border border-slate-200/80 px-2.5 py-0.5 rounded-full text-[10px] font-bold text-accent-500 uppercase tracking-wider shadow-sm z-10">
+                  <div className="h-44 bg-[#FFF3E6] border-b border-[#EAD8C7] relative p-3 flex items-end justify-center overflow-hidden group-hover:bg-[#FFF3E6]/60 transition-colors">
+                    <div className="absolute top-3 left-3 bg-[#381932] border border-[#381932]/20 px-2.5 py-0.5 rounded-full text-[10px] font-bold text-[#FFF3E6] uppercase tracking-wider shadow-sm z-10">
                       {project.category}
                     </div>
 
@@ -102,11 +102,11 @@ export default function CaseStudiesPreview() {
                   {/* Card Body */}
                   <div className="p-6 space-y-4 text-left">
                     <Link href={`/case-studies/${project.slug}`}>
-                      <h3 className="text-lg font-bold text-navy-900 group-hover:text-accent-500 transition-colors">
+                      <h3 className="text-lg font-bold text-[#381932] group-hover:text-[#8C2969] transition-colors">
                         {project.title}
                       </h3>
                     </Link>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-xs text-[#5D4356] leading-relaxed">
                       {project.desc}
                     </p>
 
@@ -123,7 +123,7 @@ export default function CaseStudiesPreview() {
                 <div className="p-6 pt-0 space-y-2">
                   <Link
                     href={`/case-studies/${project.slug}`}
-                    className="w-full inline-flex items-center justify-center text-xs font-bold text-accent-600 bg-accent-500/10 hover:bg-accent-500 hover:text-white px-4 py-2.5 rounded-xl transition-all duration-200"
+                    className="w-full inline-flex items-center justify-center text-xs font-bold text-[#381932] bg-[#381932]/10 hover:bg-[#381932] hover:text-[#FFF3E6] px-4 py-2.5 rounded-xl transition-all duration-200"
                   >
                     Read Technical Case Study
                     <ArrowRight className="ml-1.5 w-3.5 h-3.5" />

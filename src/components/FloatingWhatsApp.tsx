@@ -22,7 +22,7 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleClick}
-        className="hidden md:flex items-center mr-3 bg-white text-navy-900 text-xs font-semibold px-3.5 py-2 rounded-full shadow-lg border border-slate-100 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 pointer-events-none group-hover:pointer-events-auto"
+        className="hidden md:flex items-center mr-3 bg-white text-[#381932] text-xs font-semibold px-3.5 py-2 rounded-full shadow-lg border border-[#EAD8C7] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 pointer-events-none group-hover:pointer-events-auto"
       >
         <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-ping" />
         Chat on WhatsApp
