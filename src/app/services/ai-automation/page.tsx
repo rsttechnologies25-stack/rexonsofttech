@@ -108,6 +108,30 @@ export default function AIAutomationPage() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "What practical business problems does AI automation solve for SMBs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI automation eliminates hours of repetitive manual data entry by extracting line items from supplier PDF invoices into ERPs, routing customer inquiries automatically across WhatsApp in English and Tamil, generating automated payment reminders, and flagging inventory stockout risks before shelves empty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who provides custom AI and business automation services in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RexonSoftTech provides production-grade AI and workflow automation engineering in Chennai, located in Anna Nagar (PIN 600040). We design private, secure automation pipelines that connect directly to your existing ERP, CRM, and WhatsApp Business API."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does custom AI automation implementation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focused workflow automation pilots (like invoice OCR parsing or WhatsApp FAQ bots) deploy in 2 to 3 weeks. Complex multi-system agentic automations integrated across ERP and supplier portals typically take 4 to 6 weeks."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "How does automated PDF document parsing work with diverse supplier invoices?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -451,7 +475,31 @@ export default function AIAutomationPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">
               AI & Automation FAQs
             </h2>
-            <div className="space-y-4">
+                        <div className="space-y-4">
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  What practical business problems does AI automation solve for SMBs?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  AI automation eliminates manual human bottlenecks: <strong>1) Document OCR</strong> reads supplier invoice PDFs directly into ERP stock registers, <strong>2) Multilingual WhatsApp Bots</strong> handle order status and price queries 24/7 in English and Tamil, and <strong>3) Predictive Reorder Triggers</strong> calculate stock consumption velocity to prevent costly raw material outages.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Who provides custom AI and business automation services in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>RexonSoftTech</strong> provides production-grade AI and workflow automation engineering in Chennai, located in Anna Nagar (PIN 600040). We design private, secure automation pipelines that connect directly to your existing ERP, CRM, and WhatsApp Business API.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How long does custom AI automation implementation take?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Focused workflow automation pilots (like invoice OCR parsing or WhatsApp FAQ bots) deploy in <strong>2 to 3 weeks</strong>. Complex multi-system agentic automations integrated across ERP and supplier portals typically take <strong>4 to 6 weeks</strong>.
+                </p>
+              </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
                   How does automated PDF document parsing work with diverse supplier invoices?

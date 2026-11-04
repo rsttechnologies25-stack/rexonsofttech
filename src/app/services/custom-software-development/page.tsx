@@ -133,6 +133,22 @@ export default function CustomSoftwarePage() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Who provides custom software development services in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RexonSoftTech provides custom software engineering services in Chennai, based in Anna Nagar (PIN 600040). We specialize in bespoke ERP modules, internal admin portals, custom CRM engines, and HRMS platforms with 100% source code ownership and zero recurring user licensing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What features are included in custom HRMS and payroll software for Indian companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A custom HRMS software engineered for Indian businesses includes: 1) Biometric fingerprint/facial attendance machine integration, 2) Multi-shift roster scheduling, 3) Automated statutory payroll deductions (Provident Fund/EPF, ESI, Professional Tax, and TDS), 4) One-click payslip generation and WhatsApp/email delivery, and 5) Employee self-service leave management."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Who owns the source code of custom software built by RexonSoftTech?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -547,7 +563,23 @@ export default function CustomSoftwarePage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">
               Custom Software Development FAQs
             </h2>
-            <div className="space-y-4">
+                        <div className="space-y-4">
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Who provides custom software development services in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>RexonSoftTech</strong> provides end-to-end custom software engineering in Chennai, located in Anna Nagar (PIN 600040). We design, develop, and maintain tailor-made web portals, ERP platforms, CRM systems, and HRMS solutions with 100% source code ownership and zero vendor lock-in.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  What features are included in custom HRMS and payroll software for Indian companies?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Our custom HRMS engines feature: <strong>1) Biometric Device Integration</strong> (fingerprint, facial recognition, and RFID cards), <strong>2) Multi-Shift Roster & Overtime Rules</strong>, <strong>3) Indian Statutory Payroll Compliance</strong> (automated calculation of EPF, ESI, Professional Tax, and TDS), <strong>4) Form 16 & Payslip PDF Generation</strong> with WhatsApp delivery, and <strong>5) Employee Self-Service Mobile Web Portals</strong> for leave tracking.
+                </p>
+              </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
                   Who owns the source code of custom software built by RexonSoftTech?

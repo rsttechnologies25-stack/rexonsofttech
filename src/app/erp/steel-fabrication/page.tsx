@@ -103,7 +103,7 @@ export default function SteelFabricationERPPage() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
+{
         "@type": "Question",
         "name": "How does the ERP track heat numbers and mill test certificates (MTC)?",
         "acceptedAnswer": {
@@ -125,6 +125,30 @@ export default function SteelFabricationERPPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. The ERP generates statutory Job Work Outward Delivery Challans tracking raw material weight sent out, expected scrap percentage, and finished goods reconciliation upon return."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does steel fabrication ERP software cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Steel fabrication ERP software typically ranges from ₹3.5 Lakhs for single-yard cutting and MTC tracking modules to ₹10–14 Lakhs for multi-plant structural steel ERP systems with CNC nesting integration, job-work reconciliations, and weighbridge automation. RexonSoftTech offers milestone-based pricing with zero per-user software licensing fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does remnant scrap inventory recovery increase steel yard margins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In conventional yards, cut plate remnants and beam off-cuts are treated as scrap or lost in yard clutter. RexonSoftTech's ERP catalogs remnant pieces with dimensional length, breadth, thickness, and heat numbers in a reusable scrap register, enabling fabricators to reuse off-cuts on secondary jobs and recover 15% to 20% of raw material costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to implement steel fabrication ERP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implementation typically takes 4 to 8 weeks, including initial shop-floor routing analysis, raw material GRN and MTC database setup, weighbridge API calibration, worker training, and live trial fabrication dispatches."
         }
       }
     ]
@@ -261,6 +285,81 @@ export default function SteelFabricationERPPage() {
                   Read Case Study <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </Link>
               </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How much does custom steel fabrication ERP software cost in India?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Bespoke steel fabrication ERP typically ranges between <strong>₹3.5 Lakhs and ₹12 Lakhs</strong> depending on factory scale, CNC machine integrations, and multi-location yard synchronization. RexonSoftTech provides milestone contracts with zero recurring user license fees.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How does remnant off-cut recovery increase yard profit margins?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Instead of writing off plate and structural beam off-cuts as scrap, the ERP assigns barcodes and dimensional coordinates to usable remnants, ensuring estimators consume existing yard remnants before approving new steel coil or plate purchases.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How long does implementation take for a structural fabrication yard?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  A typical fabrication yard implementation takes <strong>4 to 8 weeks</strong>. It covers raw material master setup, nesting routing, weighbridge calibration, job-work dispatch workflows, and hands-on yard worker onboarding.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+                {/* Comparison Table: Steel Fabrication ERP vs Spreadsheets */}
+        <section className="py-20 bg-white border-t border-slate-200/80">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-10">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+                Engineering Comparison
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                Bespoke Steel Fabrication ERP vs. Generic Accounting & Spreadsheets
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Why structural steel fabricators and PEB plants require purpose-built dimensional tracking.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr className="bg-navy-950 text-white border-b border-navy-900">
+                    <th className="p-4 sm:p-5 font-bold">Operational Requirement</th>
+                    <th className="p-4 sm:p-5 font-bold text-accent-400 bg-navy-900/80">RexonSoftTech Steel ERP</th>
+                    <th className="p-4 sm:p-5 font-bold text-slate-300">Generic Accounting / Excel</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-slate-700">
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Heat Number & MTC Traceability</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Automated GRN mapping to cut pieces and final inspection dossier</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Manual paper certificate matching, high compliance audit risk</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Remnant Off-Cut Scrap Tracking</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Dimensional recovery register; re-allocated to secondary jobs</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Off-cuts written off as scrap loss (15-20% margin drain)</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Outsourced Job Work Challans</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Statutory delivery challans with weight reconciliation & scrap variance</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Uncontrolled material leakage at galvanizing/cutting vendors</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Weighbridge & Billing Reconciliation</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Direct weighbridge integration with automated tolerance billing</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Manual weight ticket data entry prone to billing disputes</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

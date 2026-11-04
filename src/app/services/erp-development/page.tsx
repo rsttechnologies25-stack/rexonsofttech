@@ -108,10 +108,34 @@ export default function ERPDevelopmentPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How does a custom ERP differ from off-the-shelf software like SAP or Tally?",
+        "name": "Who provides custom ERP development in Chennai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Off-the-shelf ERP platforms enforce rigid generic workflows and charge perpetual per-user licensing fees. Custom ERP is engineered around your exact operational routines, models your real shop floor procedures, and gives you 100% source code ownership with zero recurring user penalties."
+          "text": "RexonSoftTech provides end-to-end custom ERP software development in Chennai, based in Anna Nagar (PIN 600040). We engineer tailor-made ERP systems for Tamil Nadu manufacturers, fabricators, distributors, and engineering enterprises with 100% source code ownership and local on-site support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does ERP software cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom ERP software costs in India typically range from ₹2.5 Lakhs for focused modular systems (such as Inventory + GST Billing) to ₹8.5 Lakhs+ for comprehensive multi-plant manufacturing and distribution architectures. RexonSoftTech delivers fixed-price milestones with 100% source code ownership and zero recurring user licenses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does manufacturing ERP software work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A manufacturing ERP coordinates five critical stages: raw material receipt with weight reconciliation, multi-level Bill of Materials (BOM) explosion, job-work challan tracking with stage-gate QA, finished goods batch barcoding, and automated GST e-invoicing upon dispatch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between custom ERP and ready-made ERP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ready-made ERP platforms like SAP, Tally, or Zoho enforce rigid generic workflows and charge perpetual per-user licensing fees. Custom ERP is engineered around your exact operational routines, models your real shop floor procedures, and gives you 100% source code ownership with zero recurring user penalties."
         }
       },
       {
@@ -132,10 +156,10 @@ export default function ERPDevelopmentPage() {
       },
       {
         "@type": "Question",
-        "name": "How much does custom ERP software development cost in India?",
+        "name": "How to choose the right custom ERP development company in Chennai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Custom ERP software costs in India depend on the number of enterprise modules (inventory, billing, production planning/BOM, job-work challans, HRMS), number of branch/plant locations, third-party hardware/API integrations (barcode scanners, weighing scales, WhatsApp API, GST portal), and legacy data migration scope. RexonSoftTech provides modular fixed-milestone pricing with 100% source code ownership and zero recurring user license fees."
+          "text": "When evaluating ERP providers in Chennai, verify five criteria: 1) local engineering presence with on-site shop floor study capability, 2) full source code ownership without vendor lock-in, 3) proven experience migrating legacy Excel/Tally data, 4) native support for Indian GST/e-invoicing compliance, and 5) post-launch warranty and SLA support."
         }
       }
     ]
@@ -487,13 +511,37 @@ export default function ERPDevelopmentPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">
               Custom ERP Frequently Asked Questions
             </h2>
-            <div className="space-y-4">
+                        <div className="space-y-4">
               <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
-                  How does a custom ERP differ from off-the-shelf software like SAP or Tally?
+                  Who provides custom ERP development in Chennai?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Off-the-shelf ERP platforms enforce rigid generic workflows and charge perpetual per-user licensing fees. Custom ERP is engineered around your exact operational routines, models your real shop floor procedures, and gives you 100% source code ownership with zero recurring user penalties.
+                  <strong>RexonSoftTech</strong> provides end-to-end custom ERP software development in Chennai, based at Anna Nagar (PIN 600040). We engineer tailor-made ERP systems for Tamil Nadu manufacturers, fabricators, distributors, and engineering enterprises with 100% source code ownership, zero recurring user fees, and dedicated local on-site support.
+                </p>
+              </div>
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  What does ERP software cost in India?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Custom ERP software in India typically costs between <strong>₹2.5 Lakhs and ₹8.5 Lakhs+</strong> depending on system scope (inventory, GST billing, multi-level BOM production, job-work challans, HRMS), number of plants/branches, and hardware/API integrations. RexonSoftTech operates on transparent fixed milestones with zero perpetual per-seat licensing penalties.
+                </p>
+              </div>
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How does manufacturing ERP software work?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  A manufacturing ERP connects the entire production pipeline into a single database: <strong>1) Raw Material Receipt & Weight Verification</strong>, <strong>2) Multi-Level BOM Explosion</strong> for component planning, <strong>3) Job-Work Challan Dispatch</strong> with vendor reconciliation, <strong>4) Stage-Gate Quality Checks</strong> on the shop floor, and <strong>5) Batch Barcoding with Automated GST E-Invoicing</strong> upon finished dispatch.
+                </p>
+              </div>
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  What is the difference between custom ERP and ready-made ERP?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Ready-made ERP platforms (SAP, Tally, Zoho) enforce rigid generic workflows and charge perpetual per-user licensing fees. Custom ERP is engineered around your exact operational routines, models your real shop floor procedures, and gives you 100% source code ownership with zero recurring user penalties.
                 </p>
               </div>
               <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
@@ -514,10 +562,10 @@ export default function ERPDevelopmentPage() {
               </div>
               <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
-                  How much does custom ERP software development cost in India?
+                  How to choose the right custom ERP development company in Chennai?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Custom ERP software costs in India depend on the number of enterprise modules (inventory, billing, production planning/BOM, job-work challans, HRMS), number of branch/plant locations, third-party hardware/API integrations (barcode scanners, weighing scales, WhatsApp API, GST portal), and legacy data migration scope. RexonSoftTech provides modular fixed-milestone pricing with 100% source code ownership and zero recurring user license fees.
+                  When evaluating ERP development companies in Chennai, look for five key indicators: <strong>1) Local engineering presence</strong> for on-site shop floor study, <strong>2) 100% IP and source code ownership</strong> to avoid vendor lock-in, <strong>3) Proven legacy data migration</strong> capabilities, <strong>4) Native Indian GST & e-invoicing compliance</strong>, and <strong>5) Direct post-launch warranty and SLA support</strong>.
                 </p>
               </div>
             </div>

@@ -113,6 +113,61 @@ export default function ERPHubPage() {
     }
   };
 
+    const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who provides custom ERP software development in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RexonSoftTech is a premier custom ERP software development company based in Anna Nagar, Chennai. RexonSoftTech engineers bespoke ERP systems for manufacturing plants, structural steel yards, multi-warehouse distributors, and retail chains across Ambattur, Guindy, Sriperumbudur, and Tamil Nadu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does custom ERP software development cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom ERP development in India typically ranges from ₹2.5 Lakhs for focused departmental modules (such as Inventory, Billing, and Job Work) to ₹8–18 Lakhs for comprehensive multi-plant enterprise ERP systems. RexonSoftTech provides transparent milestone-based pricing with 100% source code ownership and zero recurring per-user licensing fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does custom ERP differ from off-the-shelf software like SAP, Tally, or Zoho?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Off-the-shelf software imposes rigid generic workflows and charges perpetual per-user monthly subscription penalties. Custom ERP is engineered around your exact manufacturing protocols, bin-level warehouse layouts, and dealer credit structures, providing 100% data ownership, custom GST e-invoicing, and zero per-seat fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does custom ERP implementation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focused ERP modules typically deploy within 2 to 4 weeks. Full-scale multi-plant enterprise ERP solutions deploy in 6 to 10 weeks, including database architecture, legacy Excel/Tally data migration, user acceptance testing (UAT), and on-site staff training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who needs custom ERP software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Growing enterprises with 15 to 500+ employees that have outgrown Excel spreadsheets or basic accounting software need custom ERP. This includes discrete manufacturers, structural steel fabricators, wholesale distributors with multiple warehouses, and multi-branch retail operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you evaluate and choose the right ERP provider in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To choose the right ERP provider, verify: (1) 100% full source code and database ownership, (2) proven engineering experience in your specific industry vertical, (3) direct native integration with Indian GST e-invoicing and e-way bill portals, (4) local Chennai engineering support for on-site onboarding, and (5) fixed-milestone pricing with no hidden per-seat licensing penalties."
+        }
+      }
+    ]
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -126,6 +181,7 @@ export default function ERPHubPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Navbar />
 
@@ -397,6 +453,132 @@ export default function ERPHubPage() {
                 <a href="#contact" className="inline-flex items-center text-xs font-bold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2.5 rounded-xl transition-all shadow-sm">
                   Schedule Blueprint Call <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+                {/* Comparison Matrix: Custom ERP vs Tier-1 vs Spreadsheets */}
+        <section className="py-20 bg-slate-50 border-t border-slate-200/80">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+                Architectural Evaluation
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                Custom ERP vs. Tier-1 ERP Suites vs. Spreadsheets
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Compare workflow fit, cost structures, and operational control to make an informed decision for your business.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr className="bg-navy-950 text-white border-b border-navy-900">
+                    <th className="p-4 sm:p-5 font-bold">Decision Criteria</th>
+                    <th className="p-4 sm:p-5 font-bold text-accent-400 bg-navy-900/80">RexonSoftTech Custom ERP</th>
+                    <th className="p-4 sm:p-5 font-bold text-slate-300">Tier-1 ERP (SAP / Oracle)</th>
+                    <th className="p-4 sm:p-5 font-bold text-slate-300">Tally / Spreadsheets</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-slate-700">
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Workflow Alignment</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">100% Tailored to Shop-Floor & Godowns</td>
+                    <td className="p-4 sm:p-5">Rigid generic processes require internal re-engineering</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Disconnected Excel silos, manual double-entry</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Licensing Model</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">One-time milestone investment, 0 user fees</td>
+                    <td className="p-4 sm:p-5">Expensive recurring monthly per-seat licenses</td>
+                    <td className="p-4 sm:p-5">Single-user or local LAN license limits</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Source Code & IP</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">100% Client Ownership, zero vendor lock-in</td>
+                    <td className="p-4 sm:p-5">Proprietary vendor lock-in, recurring maintenance</td>
+                    <td className="p-4 sm:p-5">Proprietary black-box desktop files</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">GST E-Invoicing & E-Way Bills</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Native automated API generation at invoice save</td>
+                    <td className="p-4 sm:p-5">Requires costly third-party GSP connector add-ons</td>
+                    <td className="p-4 sm:p-5">Manual JSON upload or external browser utility</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Implementation Timeline</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">4 to 10 Weeks with phased go-live</td>
+                    <td className="p-4 sm:p-5">6 to 18 Months high-friction rollout</td>
+                    <td className="p-4 sm:p-5">Immediate but permanently fragmented</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Question-Based AEO Knowledge Section & FAQs */}
+        <section className="py-20 bg-white border-t border-slate-200/80">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-12">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+                Knowledge Base & Guidance
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                Frequently Asked Questions About Custom ERP
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                Clear, direct answers to common questions about ERP planning, budgeting, and provider evaluation.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-base sm:text-lg">
+                  Who provides custom ERP software development in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>RexonSoftTech</strong> is a full-service custom ERP software engineering company headquartered in Anna Nagar, Chennai. RexonSoftTech designs, architects, and implements bespoke ERP systems for industrial manufacturers, steel fabrication yards, wholesale distributors, and multi-branch retail enterprises across Chennai (Ambattur, Guindy, Sriperumbudur, Oragadam) and Tamil Nadu.
+                </p>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-base sm:text-lg">
+                  What does custom ERP software development cost in India?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Custom ERP development in India typically costs between <strong>₹2.5 Lakhs and ₹6 Lakhs</strong> for focused operational modules (such as Inventory Control, GST Billing, and Outward Job-Work Challans) and <strong>₹8 Lakhs to ₹18 Lakhs</strong> for full-scale, multi-plant enterprise ERP systems. RexonSoftTech provides milestone-based fixed contracts with 100% source code ownership and zero recurring user licensing penalties.
+                </p>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-base sm:text-lg">
+                  What is the difference between custom ERP and off-the-shelf software?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Off-the-shelf ERP platforms (such as SAP, Oracle, or generic accounting apps) enforce predetermined generic workflows and require costly per-user monthly subscription fees. Custom ERP is engineered from the ground up around your exact production protocols, warehouse bin locations, and commercial customer pricing structures—giving your business complete data sovereignty and zero seat-license fees.
+                </p>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-base sm:text-lg">
+                  How long does custom ERP development take from kick-off to deployment?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Departmental modules typically deploy in <strong>2 to 4 weeks</strong>. Full-scale multi-plant enterprise ERP solutions deploy in <strong>6 to 10 weeks</strong>, following a phased milestone roadmap: workflow discovery, database design, iterative module development, legacy data migration from Excel/Tally, user acceptance testing, and on-site staff training.
+                </p>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-base sm:text-lg">
+                  How should a company evaluate and choose the right ERP provider in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  When selecting an ERP provider, evaluate: (1) <strong>Full IP & Source Code Ownership:</strong> Ensure the client owns the software with zero proprietary lock-in; (2) <strong>Domain Experience:</strong> Look for demonstrable engineering experience in your specific industry (e.g., steel, trading, retail); (3) <strong>Statutory Integration:</strong> Verify automated integration with the Indian GST e-invoicing and e-way bill portals; and (4) <strong>Local On-Site Support:</strong> Choose a Chennai-based engineering partner that provides hands-on staff onboarding.
+                </p>
               </div>
             </div>
           </div>

@@ -117,6 +117,14 @@ export default function WebsiteDevelopmentPage() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Who provides high-performance website development services in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RexonSoftTech provides enterprise-grade, high-speed website development in Chennai, based in Anna Nagar (PIN 600040). We engineer custom Next.js websites optimized for sub-second load times, Core Web Vitals, Google SEO, and Generative Engine Optimization (GEO)."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Why do you use Next.js instead of WordPress for corporate websites?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -532,13 +540,21 @@ export default function WebsiteDevelopmentPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">
               Website Development FAQs
             </h2>
-            <div className="space-y-4">
+                        <div className="space-y-4">
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Who provides high-performance website development services in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>RexonSoftTech</strong> provides enterprise-grade, high-speed website development in Chennai, based in Anna Nagar (PIN 600040). We engineer custom Next.js websites optimized for sub-second load times, 95+ Core Web Vitals, Google SEO, and AI answer engine discoverability.
+                </p>
+              </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
                   Why do you use Next.js instead of WordPress for corporate websites?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Next.js provides sub-second load times, superior SEO indexability, zero plugin security vulnerabilities, and 95+ Core Web Vitals scores compared to legacy WordPress themes.
+                  Next.js provides sub-second load times, superior SEO indexability, zero plugin security vulnerabilities, and 95+ Core Web Vitals scores compared to legacy WordPress themes that become bloated and fragile with third-party plugins.
                 </p>
               </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
@@ -562,7 +578,7 @@ export default function WebsiteDevelopmentPage() {
                   How long does a corporate website development project take?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Most high-performance corporate websites launch within 2 to 4 weeks, including custom UI design, responsive development, technical SEO setup, and content integration.
+                  Most high-performance corporate websites launch within <strong>2 to 4 weeks</strong>, including custom UI design, responsive development, technical SEO setup, and content integration.
                 </p>
               </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">

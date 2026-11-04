@@ -106,6 +106,30 @@ export default function CybersecurityVAPTPage() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Why does a company need cybersecurity testing and VAPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A company needs cybersecurity testing and VAPT to identify exploitable code defects, SQL injections, broken authentication, and data leakage channels before criminal hackers do. Regular VAPT is also required to comply with RBI, SEBI, ISO 27001, SOC 2, and DPDP Act data protection regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who provides VAPT and cybersecurity services in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RexonSoftTech provides certified VAPT and cybersecurity penetration testing services in Chennai, headquartered in Anna Nagar (PIN 600040). Our ethical security researchers conduct authenticated web, mobile, network, and API penetration testing following OWASP Top 10 and NIST SP 800-115 methodologies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a comprehensive VAPT assessment take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard web application or API VAPT assessment typically takes 5 to 10 business days, covering automated vulnerability scans, manual exploit verification, proof-of-concept documentation, executive remediation debrief, and a complimentary verification re-test."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What is the difference between vulnerability scanning and penetration testing?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -451,7 +475,31 @@ export default function CybersecurityVAPTPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">
               Cybersecurity & VAPT FAQs
             </h2>
-            <div className="space-y-4">
+                        <div className="space-y-4">
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Why does a company need cybersecurity testing and VAPT?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Companies need cybersecurity testing to uncover critical zero-day vulnerabilities, API authentication leaks, and business logic flaws before malicious threat actors exploit them. Periodic VAPT is also mandatory for vendor security questionnaires, ISO 27001 certification, and regulatory compliance under the Indian DPDP Act, RBI, and SEBI cyber guidelines.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Who provides VAPT and cybersecurity services in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>RexonSoftTech</strong> provides enterprise VAPT and cybersecurity testing services in Chennai, based in Anna Nagar (PIN 600040). Our team conducts manual and automated security audits covering web portals, mobile apps, ERP backends, and cloud networks.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How long does a comprehensive VAPT assessment take?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  A typical web application or cloud API penetration test requires <strong>5 to 10 business days</strong>. This timeframe includes scoped reconnaissance, automated vulnerability scanning, manual exploit validation, Proof-of-Concept (PoC) authoring, executive debriefing, and a free follow-up re-test.
+                </p>
+              </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
                   What is the difference between vulnerability scanning and penetration testing?

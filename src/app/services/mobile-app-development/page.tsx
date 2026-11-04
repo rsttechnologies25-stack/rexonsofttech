@@ -109,6 +109,30 @@ export default function MobileAppPage() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Who provides mobile app development services in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RexonSoftTech provides native and cross-platform mobile application development in Chennai, based in Anna Nagar (PIN 600040). We engineer enterprise Android and iOS apps with offline SQLite sync, barcode scanning, and direct ERP/CRM connectivity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does mobile app development take from concept to Play Store and App Store release?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An MVP enterprise mobile application typically takes 6 to 10 weeks, encompassing UI/UX wireframing, frontend engineering in React Native/Flutter, offline sync database setup, backend API integration, and app store compliance submissions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who owns the mobile application source code and developer accounts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your company owns 100% of the mobile application source code, database architecture, and intellectual property. The application is published directly under your own Google Play Console and Apple Developer accounts."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Do you develop for both iOS and Android simultaneously?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -452,7 +476,31 @@ export default function MobileAppPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">
               Mobile Application Development FAQs
             </h2>
-            <div className="space-y-4">
+                        <div className="space-y-4">
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Who provides mobile app development services in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>RexonSoftTech</strong> provides native and cross-platform mobile application development in Chennai, based in Anna Nagar (PIN 600040). We engineer enterprise Android and iOS apps with offline SQLite sync, barcode scanning, and direct ERP/CRM connectivity.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How long does mobile app development take from concept to app store release?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  An MVP enterprise mobile app typically takes <strong>6 to 10 weeks</strong>, covering interactive UI/UX prototyping, React Native/Flutter development, offline SQLite synchronization, backend REST API integration, and deployment to Google Play Console and Apple App Store.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Who owns the mobile application source code and developer accounts?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Your business retains <strong>100% complete source code ownership</strong> and intellectual property rights. The binaries are released under your corporate Google Play and Apple Developer accounts with zero recurring vendor royalties.
+                </p>
+              </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
                   Do you develop for both iOS and Android simultaneously?

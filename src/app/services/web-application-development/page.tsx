@@ -107,6 +107,22 @@ export default function WebApplicationPage() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Who provides custom web application development in Chennai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RexonSoftTech engineers custom cloud web applications in Chennai, located in Anna Nagar (PIN 600040). We design multi-tenant enterprise portals, client dashboards, B2B wholesale ordering engines, and database systems with complete source code ownership."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does custom web application development take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard cloud web application MVP typically takes 4 to 8 weeks, covering system architecture design, PostgreSQL database modeling, API development, responsive React frontend implementation, and security penetration testing."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What is the key difference between a website and a web application?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -453,7 +469,23 @@ export default function WebApplicationPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">
               Web Application Development FAQs
             </h2>
-            <div className="space-y-4">
+                        <div className="space-y-4">
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  Who provides custom web application development in Chennai?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>RexonSoftTech</strong> engineers bespoke cloud web applications in Chennai, located in Anna Nagar (PIN 600040). We specialize in customer portals, internal management consoles, B2B wholesale engines, and relational database systems with 100% source code ownership.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How long does custom web application development take?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  An MVP custom web application typically deploys in <strong>4 to 8 weeks</strong>. Our sprint delivery covers database ERD design, RESTful/GraphQL API engineering, responsive React/Next.js UI development, and rigorous OWASP security testing.
+                </p>
+              </div>
               <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
                 <h3 className="font-bold text-navy-900 text-sm sm:text-base">
                   What is the key difference between a website and a web application?

@@ -138,7 +138,7 @@ export default function GSTBillingPage() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
+{
         "@type": "Question",
         "name": "Does the system support interstate and intrastate GST tax calculations?",
         "acceptedAnswer": {
@@ -160,6 +160,30 @@ export default function GSTBillingPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No. Unlike commercial SaaS billing platforms, RexonSoftTech provides 100% source code and database ownership with zero recurring per-user or per-counter penalty fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost of custom GST billing software in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A custom GST billing and e-invoicing engine for Indian SMBs typically ranges from ₹1.5 Lakhs to ₹3.5 Lakhs. This is a one-time investment with 100% source code ownership, unlimited cashier counter terminals, and zero recurring monthly user licenses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does GST billing software setup and deployment take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implementation typically takes 10 to 14 business days. This includes customer and vendor ledger import from Excel/Tally, thermal/laser print format customization, UPI dynamic QR code setup, and cashier training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does automated e-invoicing and IRN generation work in the billing engine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For B2B sales exceeding the mandatory turnover threshold, our billing engine connects directly to the Invoice Registration Portal (IRP) via government-approved APIs to generate a 64-character Invoice Reference Number (IRN) and digitally signed QR code in real time."
         }
       }
     ]
@@ -221,6 +245,30 @@ export default function GSTBillingPage() {
                 </span>
                 <p className="text-sm font-semibold text-navy-950 leading-relaxed">
                   <strong>RexonSoft Billing Engine</strong> is an enterprise-grade GST billing and invoicing software engineered for Indian retailers, wholesalers, and manufacturers. It automates intrastate CGST/SGST and interstate IGST tax splits, embeds dynamic instant UPI QR codes on PDF invoices, dispatches bills via WhatsApp, generates GSTR-1 and GSTR-3B summary reports, and eliminates recurring per-user software licensing penalties with complete database ownership.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  What is the cost of custom GST billing software in India?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  A custom GST billing engine typically costs between <strong>₹1.5 Lakhs and ₹3.5 Lakhs</strong> depending on counter volume, hardware printer drivers, barcode workflows, and ERP database sync. It is a one-time project fee with full source code ownership and zero monthly per-counter license fees.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How long does it take to implement and deploy custom billing software?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Deployment takes approximately <strong>10 to 14 business days</strong>. RexonSoftTech migrates customer ledgers and stock catalogs, sets up thermal receipt and laser A4 formats, integrates dynamic UPI payment QR codes, and trains your billing staff.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How does automated e-invoicing and IRN generation work in the billing engine?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  When a B2B sales invoice is finalized, the software automatically validates mandatory tax details (GSTIN, HSN, tax rate) and transmits data directly to the Invoice Registration Portal (IRP) via API. The IRP immediately returns the 64-character IRN and digitally signed QR code embedded on the printed invoice.
                 </p>
               </div>
             </div>
@@ -359,6 +407,68 @@ export default function GSTBillingPage() {
                   Explore Full ERP <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+                {/* Comparison Table: Custom GST Engine vs Manual Portal vs Basic Apps */}
+        <section className="py-20 bg-white border-t border-slate-200/80">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-10">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+                Billing Comparison Matrix
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                Custom GST Billing Engine vs. Manual Govt Portal vs. Basic Accounting Apps
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                How an automated invoicing engine accelerates checkout speed, compliance, and cash collection.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr className="bg-navy-950 text-white border-b border-navy-900">
+                    <th className="p-4 sm:p-5 font-bold">Feature / Capability</th>
+                    <th className="p-4 sm:p-5 font-bold text-accent-400 bg-navy-900/80">RexonSoftTech GST Engine</th>
+                    <th className="p-4 sm:p-5 font-bold text-slate-300">Govt Portal (Manual Entry)</th>
+                    <th className="p-4 sm:p-5 font-bold text-slate-300">Basic Desktop Apps (Tally/Vyapar)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-slate-700">
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Intrastate / Interstate Tax Split</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Instant auto split (CGST+SGST vs IGST) from customer GSTIN prefix</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Manual field selection on portal, high human error risk</td>
+                    <td className="p-4 sm:p-5">Semi-automatic, requires correct ledger tax master tagging</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Dynamic UPI QR Code on Invoices</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Auto-embeds dynamic QR with exact payable invoice amount</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Not supported on standard portal prints</td>
+                    <td className="p-4 sm:p-5">Static merchant QR only (customer must type amount manually)</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Instant WhatsApp & Email Dispatch</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Automated branded PDF dispatch to customer WhatsApp upon saving</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Manual download and separate attachment sending</td>
+                    <td className="p-4 sm:p-5">Requires 3rd-party paid add-ons or manual PDF export</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">E-Invoicing (IRN) & E-Way Bill Sync</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Direct IRP API connector with real-time signed QR generation</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Tedious manual line-item typing on slow government portals</td>
+                    <td className="p-4 sm:p-5">Often requires extra recurring subscription tier or connectors</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Licensing & Source Code Ownership</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">100% source code ownership, zero recurring per-user or seat fees</td>
+                    <td className="p-4 sm:p-5">Free government utility, but zero workflow integration</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Annual recurring subscription, pay-per-counter/seat licenses</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

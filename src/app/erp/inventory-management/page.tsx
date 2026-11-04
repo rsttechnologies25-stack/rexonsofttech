@@ -138,7 +138,7 @@ export default function InventoryERPPage() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
+{
         "@type": "Question",
         "name": "Does the system support handheld barcode scanners and mobile cameras?",
         "acceptedAnswer": {
@@ -160,6 +160,30 @@ export default function InventoryERPPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. You can define customized safety buffers, reorder minimums, and lead times per warehouse, triggering automated replenishment alerts on WhatsApp or email."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a multi-warehouse inventory management system cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A custom multi-warehouse inventory management ERP module in India typically ranges from ₹2.5 Lakhs to ₹5.5 Lakhs, covering barcode scanning, automated in-transit transfer challans, batch tracking, and WhatsApp reorder alerts with 100% source code ownership."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does inventory ERP implementation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implementation typically takes 2 to 4 weeks. This includes SKU catalog cleansing, bin and rack coordinate assignment, handheld scanner testing, and warehouse staff training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does barcode check-in prevent inventory shrinkage and misplacement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every inbound carton or raw material item receives a 1D/2D barcode or QR label verified against the vendor PO. Physical warehouse pickers scan the shelf bin and item barcode during order fulfillment, preventing pick errors and inventory discrepancy."
         }
       }
     ]
@@ -221,6 +245,30 @@ export default function InventoryERPPage() {
                 </span>
                 <p className="text-sm font-semibold text-navy-950 leading-relaxed">
                   <strong>RexonSoft Storage & Warehouse ERP</strong> is an enterprise inventory management platform engineered for Indian manufacturers, distributors, and logistics hubs. It delivers real-time multi-warehouse stock synchronization, rack-and-bin coordinate mapping, mobile barcode check-in, FIFO and batch expiry tracking, and automated purchase reorder triggers with 100% source code ownership.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How much does a multi-warehouse inventory management system cost?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  A custom multi-warehouse inventory ERP module typically ranges from <strong>₹2.5 Lakhs to ₹5.5 Lakhs</strong> depending on the number of depot branches, barcode integration, and mobile scanner devices. All modules come with complete source code ownership.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How long does inventory ERP implementation take?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Deployment typically takes <strong>2 to 4 weeks</strong>. RexonSoftTech handles master SKU catalog data migration from Excel, bin coordinate setup, barcode printer and handheld scanner testing, and godown staff onboarding.
+                </p>
+              </div>
+              <div className="p-6 bg-white border border-slate-200/80 rounded-2xl space-y-2">
+                <h3 className="font-bold text-navy-900 text-sm sm:text-base">
+                  How does barcode scanning prevent warehouse picking errors?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  When fulfilling customer or branch orders, pickers scan the pick-list barcode and the physical item barcode. The ERP flags mismatches immediately, ensuring the correct variant, batch, and SKU are shipped.
                 </p>
               </div>
             </div>
@@ -344,6 +392,62 @@ export default function InventoryERPPage() {
                   Read Guide <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+                {/* Comparison Table: Inventory ERP vs Spreadsheets vs Basic Apps */}
+        <section className="py-20 bg-white border-t border-slate-200/80">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-10">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <span className="text-xs font-bold text-accent-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">
+                Warehouse Systems Matrix
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                Multi-Warehouse ERP vs. Excel Spreadsheets vs. Basic Apps
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600">
+                How enterprise inventory automation eliminates stock reconciliation bottlenecks.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr className="bg-navy-950 text-white border-b border-navy-900">
+                    <th className="p-4 sm:p-5 font-bold">Inventory Capability</th>
+                    <th className="p-4 sm:p-5 font-bold text-accent-400 bg-navy-900/80">RexonSoftTech Inventory ERP</th>
+                    <th className="p-4 sm:p-5 font-bold text-slate-300">Excel / Google Sheets</th>
+                    <th className="p-4 sm:p-5 font-bold text-slate-300">Basic Accounting Apps</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-slate-700">
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Multi-Location Stock Sync</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Real-time instant synchronization across regional godowns</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Disconnected offline files, conflicting entries</td>
+                    <td className="p-4 sm:p-5">Single-location only or delayed sync intervals</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">Bin & Rack Coordinate Barcoding</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Exact aisle/shelf/bin coordinate mapping with scanner check-out</td>
+                    <td className="p-4 sm:p-5 text-rose-600">No physical location mapping, high picker transit lag</td>
+                    <td className="p-4 sm:p-5">Basic SKU count without physical coordinate mapping</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">In-Transit Transfer Challans</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Digital transfer challans with dispatch deduction & receipt scan</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Manual stock adjustment without in-transit visibility</td>
+                    <td className="p-4 sm:p-5">Basic journal entry without shipment tracking</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/80">
+                    <td className="p-4 sm:p-5 font-bold text-navy-900">FIFO Batch Expiry Enforcement</td>
+                    <td className="p-4 sm:p-5 font-semibold text-accent-700 bg-accent-50/30">Automated oldest-batch picking allocation prevents aged losses</td>
+                    <td className="p-4 sm:p-5 text-rose-600">Requires manual date inspection, high spoilage risk</td>
+                    <td className="p-4 sm:p-5">Informational expiry dates without forced pick logic</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
