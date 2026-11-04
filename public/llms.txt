@@ -11,6 +11,7 @@
 - **Operating Hours:** Monday to Saturday, 09:00 to 18:30 IST
 - **Target Market:** Chennai, Tamil Nadu, Pan-India, and global B2B enterprises requiring engineered software solutions.
 - **Entity Disambiguation:** RexonSoftTech operates from Anna Nagar, Chennai (PIN 600040). It is distinct from and unaffiliated with Rexontech IT Solutions in Pallikaranai.
+- **Full Knowledge Base Corpus:** https://rexonsofttech.in/llms-full.txt
 
 ---
 

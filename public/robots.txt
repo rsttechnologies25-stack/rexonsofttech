@@ -1,52 +1,108 @@
-# RexonSoftTech Robots Policy
+# RexonSoftTech Universal Robots Policy
 # Website: https://rexonsofttech.in
+# Entity: RexonSoftTech, Anna Nagar, Chennai, Tamil Nadu, India
 # Contact: info@rexonsofttech.in
+# Last Updated: 2026-11-04
 
 # ==============================================================================
-# 1. Primary Search Engine Crawlers (Indexing & Organic Discovery)
+# 1. Global Search Engine Crawlers (Organic Search & Discovery)
 # ==============================================================================
 User-agent: Googlebot
 User-agent: Googlebot-Image
 User-agent: Googlebot-News
+User-agent: Google-InspectionTool
 User-agent: Bingbot
 User-agent: Applebot
 User-agent: DuckDuckBot
 User-agent: Slurp
 User-agent: YandexBot
+User-agent: Baiduspider
+User-agent: Bravebot
+User-agent: SeznamBot
+User-agent: NaverBot
 Allow: /
 Disallow: /api/
 
 # ==============================================================================
-# 2. AI Search & Real-Time Retrieval Crawlers (Answer Engines & Citations)
+# 2. AI Search, Retrieval & User-Initiated Answer Engine Crawlers
+#    (Permitted for real-time citations, search queries, and AI overviews)
 # ==============================================================================
+# OpenAI Search & Retrieval (ChatGPT Search / SearchGPT)
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+# Anthropic Real-Time Search & User Retrieval (Claude Search)
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+
+# Perplexity AI Search & Retrieval (Perplexity Engine)
 User-agent: PerplexityBot
-User-agent: Claude-Web
-User-agent: GoogleOther
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+
+# Meta AI Assistant Web Retrieval
 User-agent: Meta-ExternalAgent
+User-agent: meta-externalagent
+Allow: /
+Disallow: /api/
+
+# Amazon Alexa & Voice / AI Search
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+Disallow: /api/
+
+# Google Non-Search Support & Web Utilities
+User-agent: GoogleOther
 Allow: /
 Disallow: /api/
 
 # ==============================================================================
 # 3. AI Foundation Model Training Crawlers
+#    (Separated from Search & Real-Time Retrieval to Protect Proprietary IP)
 # ==============================================================================
-User-agent: GPTBot
-User-agent: ClaudeBot
+# Google Gemini / Vertex AI model training
 User-agent: Google-Extended
+Disallow: /
+
+# Apple Intelligence generative foundation training
 User-agent: Applebot-Extended
-Allow: /
-Disallow: /api/
+Disallow: /
+
+# OpenAI foundational model training crawler (separate from OAI-SearchBot)
+User-agent: GPTBot
+Disallow: /
+
+# Anthropic foundational model training crawler (separate from Claude-SearchBot)
+User-agent: ClaudeBot
+Disallow: /
 
 # ==============================================================================
-# 4. Global Fallback
+# 4. Aggressive Scrapers & Bulk Training Harvesters (Blocked)
+# ==============================================================================
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: Diffbot
+Disallow: /
+
+# ==============================================================================
+# 5. Global Fallback for Verified Crawlers
 # ==============================================================================
 User-agent: *
 Allow: /
 Disallow: /api/
 
 # ==============================================================================
-# 5. Sitemaps & Host Authority
+# 6. Sitemaps & Host Directives
 # ==============================================================================
 Sitemap: https://rexonsofttech.in/sitemap.xml
 Host: https://rexonsofttech.in
