@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Multi-Warehouse Inventory ERP System | RexonSoftTech Chennai",
+  title: "Multi-Warehouse Inventory ERP System",
   description: "Multi-warehouse inventory management ERP in Chennai. Bin-and-rack location mapping, FIFO batch tracking, barcode scanning, and automated WhatsApp reorder alerts.",
   alternates: {
     canonical: "https://rexonsofttech.in/erp/inventory-management",

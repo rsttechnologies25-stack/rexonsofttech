@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Steel Fabrication ERP Software in Chennai | RexonSoftTech",
+  title: "Steel Fabrication ERP Software in Chennai",
   description: "Specialized steel fabrication ERP in Chennai for PEB fabricators and metal yards. MTC heat code tracking, remnant scrap inventory recovery & job work challans.",
   alternates: {
     canonical: "https://rexonsofttech.in/erp/steel-fabrication",

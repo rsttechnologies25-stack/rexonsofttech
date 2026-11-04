@@ -12,7 +12,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About RexonSoftTech | Custom Software & ERP Company Chennai",
+  title: "About Us | Software & ERP Company Chennai",
   description: "Learn about RexonSoftTech: our Chennai headquarters, engineering philosophy, 8-stage SDLC process, 100% source code ownership pledge, and proven enterprise track record.",
   alternates: {
     canonical: "https://rexonsofttech.in/about",
@@ -47,7 +47,7 @@ export default function AboutPage() {
     "@type": "AboutPage",
     "@id": "https://rexonsofttech.in/about#webpage",
     "url": "https://rexonsofttech.in/about",
-    "name": "About RexonSoftTech | Custom Software & ERP Company Chennai",
+    "name": "About RexonSoftTech",
     "description": "Learn about RexonSoftTech: our Chennai headquarters in Anna Nagar, engineering philosophy, 100% source code ownership pledge, and enterprise track record.",
     "mainEntity": {
       "@id": "https://rexonsofttech.in/#organization"

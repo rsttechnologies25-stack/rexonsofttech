@@ -9,7 +9,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { ArrowRight, ExternalLink, CheckCircle2, ShieldCheck, Building2, Layers, Cpu, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Case Study: Perambur Srinivasa E-Commerce Platform | RexonSoftTech",
+  title: "Perambur Srinivasa Platform Case Study",
   description: "How RexonSoftTech engineered a high-performance e-commerce platform and retail product catalog for Perambur Srinivasa in Chennai.",
   alternates: {
     canonical: "https://rexonsofttech.in/case-studies/perambur-srinivasa",
@@ -26,6 +26,34 @@ export const metadata: Metadata = {
 };
 
 export default function PeramburSrinivasaCaseStudy() {
+    const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://rexonsofttech.in/case-studies/perambur-srinivasa#article",
+    "headline": "Perambur Srinivasa: Traditional Sweets E-Commerce Platform",
+    "description": "Engineering a high-performance digital presence with frictionless festive gifting workflows and multi-branch retail store locator.",
+    "image": "https://rexonsofttech.in/project_perambur.png",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://rexonsofttech.in/#organization",
+      "name": "RexonSoftTech Engineering Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://rexonsofttech.in/#organization",
+      "name": "RexonSoftTech",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rexonsofttech.in/rst_logo.png"
+      }
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "Perambur Srinivasa Sweets and Snacks"
+    },
+    "inLanguage": "en-IN"
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -38,6 +66,7 @@ export default function PeramburSrinivasaCaseStudy() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <Navbar />

@@ -9,7 +9,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { ArrowRight, ExternalLink, CheckCircle2, Tv } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Case Study: Vinod Electronics Consumer Tech Catalog | RexonSoftTech",
+  title: "Vinod Electronics Platform Case Study",
   description: "How RexonSoftTech built a modern digital product showcase and consumer electronics catalog for Vinod Electronics.",
   alternates: {
     canonical: "https://rexonsofttech.in/case-studies/vinod-electronics",
@@ -26,6 +26,34 @@ export const metadata: Metadata = {
 };
 
 export default function VinodElectronicsCaseStudy() {
+    const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://rexonsofttech.in/case-studies/vinod-electronics#article",
+    "headline": "Vinod Electronics: Consumer Tech Catalog & Showroom Portal",
+    "description": "Scalable multi-category home appliances and consumer electronics showcase driving verified store footfall across Chennai.",
+    "image": "https://rexonsofttech.in/project_rexon.png",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://rexonsofttech.in/#organization",
+      "name": "RexonSoftTech Engineering Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://rexonsofttech.in/#organization",
+      "name": "RexonSoftTech",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rexonsofttech.in/rst_logo.png"
+      }
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "Vinod Electronics"
+    },
+    "inLanguage": "en-IN"
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -38,6 +66,7 @@ export default function VinodElectronicsCaseStudy() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <Navbar />
@@ -82,7 +111,7 @@ export default function VinodElectronicsCaseStudy() {
             </div>
 
             <div className="relative h-80 sm:h-96 w-full rounded-3xl overflow-hidden border border-slate-200 shadow-md">
-              <Image src="/project_rexon.png" alt="Vinod Electronics Platform" fill className="object-cover object-top" />
+              <Image src="/project_rexon.png" alt="Vinod Electronics Platform" fill priority sizes="(max-width: 768px) 100vw, 896px" className="object-cover object-top" />
             </div>
 
             <div className="space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">

@@ -6,7 +6,7 @@ import CareersContent from "@/components/CareersContent";
 import { POSITIONS } from "@/lib/careers-data";
 
 export const metadata: Metadata = {
-  title: "Careers at RexonSoftTech | Tech & Business Development Jobs in Chennai",
+  title: "Careers - Tech & Engineering Jobs in Chennai",
   description: "Explore career opportunities at RexonSoftTech in Anna Nagar, Chennai. We are hiring Full-Stack Developers, ERP Business Analysts, UI/UX Designers, and Marketing / Business Development Executives (Full-Time & Part-Time).",
   alternates: {
     canonical: "https://rexonsofttech.in/careers",

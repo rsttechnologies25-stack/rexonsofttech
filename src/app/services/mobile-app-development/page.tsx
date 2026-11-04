@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development Company in Chennai | iOS & Android | RexonSoftTech",
+  title: "Mobile App Development Company in Chennai",
   description: "Mobile app development company in Chennai. Cross-platform React Native and Flutter mobile apps with offline data sync for sales, warehouse & logistics teams.",
   alternates: {
     canonical: "https://rexonsofttech.in/services/mobile-app-development",

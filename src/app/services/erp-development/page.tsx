@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom ERP Development Company in Chennai | RexonSoftTech",
+  title: "Custom ERP Development Company in Chennai",
   description: "Bespoke ERP software development for Indian manufacturers, distributors, and steel fabrication yards. Eliminate Excel bottlenecks with 100% tailored workflow systems.",
   alternates: {
     canonical: "https://rexonsofttech.in/services/erp-development",
@@ -45,6 +45,63 @@ export const metadata: Metadata = {
 };
 
 export default function ERPDevelopmentPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://rexonsofttech.in/services/erp-development#service",
+    "name": "Custom ERP Development Services",
+    "serviceType": "Enterprise Resource Planning (ERP) Software Engineering",
+    "description": "Bespoke ERP software development for Indian manufacturers, distributors, and steel fabrication yards. Tailor-made workflow systems, multi-warehouse inventory, and GST billing with zero per-seat license fees.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://rexonsofttech.in/#local-business",
+      "name": "RexonSoftTech",
+      "url": "https://rexonsofttech.in",
+      "telephone": "+91 78716 54777",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Block I, 5/1049, West, Aishwarya Colony, Thangam Colony, Anna Nagar",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600040",
+        "addressCountry": "IN"
+      }
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Chennai" },
+      { "@type": "State", "name": "Tamil Nadu" },
+      { "@type": "Country", "name": "India" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "ERP Development Modules",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Manufacturing & Production ERP"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Multi-Warehouse Inventory Control"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "GST Billing & Automated E-Invoicing Engine"
+          }
+        }
+      ]
+    }
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -96,6 +153,7 @@ export default function ERPDevelopmentPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 

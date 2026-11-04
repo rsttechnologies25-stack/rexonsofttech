@@ -22,8 +22,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://rexonsofttech.in"),
   title: {
-    default: "RexonSoftTech | Custom Software Development & Flagship ERP Company Chennai",
-    template: "%s | RexonSoftTech"
+    template: "%s | RexonSoftTech",
+    default: "RexonSoftTech | Custom Software Development & ERP Solutions in Chennai",
   },
   description: "Custom ERP and software development in Chennai for growing businesses. Build ERP, automation, web applications and cybersecurity solutions.",
   authors: [{ name: "RexonSoftTech Engineering Team", url: "https://rexonsofttech.in" }],

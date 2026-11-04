@@ -1,20 +1,52 @@
 # RexonSoftTech Robots Policy
-# https://rexonsofttech.in
+# Website: https://rexonsofttech.in
+# Contact: info@rexonsofttech.in
 
-# Explicit Permissions for AI Answer Engines & Search Bots
-User-agent: GPTBot
+# ==============================================================================
+# 1. Primary Search Engine Crawlers (Indexing & Organic Discovery)
+# ==============================================================================
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: Slurp
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+
+# ==============================================================================
+# 2. AI Search & Real-Time Retrieval Crawlers (Answer Engines & Citations)
+# ==============================================================================
+User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
 User-agent: PerplexityBot
-User-agent: Google-Extended
+User-agent: Claude-Web
+User-agent: GoogleOther
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /api/
+
+# ==============================================================================
+# 3. AI Foundation Model Training Crawlers
+# ==============================================================================
+User-agent: GPTBot
 User-agent: ClaudeBot
+User-agent: Google-Extended
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /api/
 
-# Global Search Crawlers
+# ==============================================================================
+# 4. Global Fallback
+# ==============================================================================
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# Canonical XML Sitemap
+# ==============================================================================
+# 5. Sitemaps & Host Authority
+# ==============================================================================
 Sitemap: https://rexonsofttech.in/sitemap.xml
+Host: https://rexonsofttech.in

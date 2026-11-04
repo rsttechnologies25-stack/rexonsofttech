@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Cybersecurity & VAPT Services in Chennai | RexonSoftTech",
+  title: "Cybersecurity & VAPT Services in Chennai",
   description: "VAPT and cybersecurity services in Chennai. OWASP Top 10 web application penetration testing, API vulnerability assessments & developer-ready remediation reports.",
   alternates: {
     canonical: "https://rexonsofttech.in/services/cybersecurity-vapt",

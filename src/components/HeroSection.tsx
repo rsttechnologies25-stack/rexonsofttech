@@ -72,7 +72,7 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12] text-white">
-              Custom ERP & Software Development for{" "}
+              Custom ERP &amp; Software Development for&nbsp;
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF3E6] via-[#E8BCA0] to-accent-300">
                 Growing Businesses
               </span>

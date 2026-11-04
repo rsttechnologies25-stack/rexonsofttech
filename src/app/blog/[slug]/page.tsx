@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const postUrl = `https://rexonsofttech.in/blog/${post.slug}`;
 
   return {
-    title: `${post.title} | RexonSoftTech Insights`,
+    title: post.title,
     description: post.excerpt,
     alternates: {
       canonical: postUrl,

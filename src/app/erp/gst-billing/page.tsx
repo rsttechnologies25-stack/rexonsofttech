@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "GST Billing Software & E-Invoicing Engine | RexonSoftTech Chennai",
+  title: "GST Billing Software & E-Invoicing Engine",
   description: "Fast GST billing software in Chennai for Indian SMBs. Auto CGST/SGST/IGST tax splits, instant UPI payment QR codes, GSTR summary digests, and customer ledgers.",
   alternates: {
     canonical: "https://rexonsofttech.in/erp/gst-billing",

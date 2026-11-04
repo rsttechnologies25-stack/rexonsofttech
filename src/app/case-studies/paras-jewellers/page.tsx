@@ -9,7 +9,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { ArrowRight, ExternalLink, CheckCircle2, Gem } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Case Study: Paras Jewellers Luxury Digital Showcase | RexonSoftTech",
+  title: "Paras Jewellers Platform Case Study",
   description: "How RexonSoftTech engineered a luxury jewellery digital showcase and bridal collection catalog for Paras Jewellers.",
   alternates: {
     canonical: "https://rexonsofttech.in/case-studies/paras-jewellers",
@@ -26,6 +26,34 @@ export const metadata: Metadata = {
 };
 
 export default function ParasJewellersCaseStudy() {
+    const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://rexonsofttech.in/case-studies/paras-jewellers#article",
+    "headline": "Paras Jewellers: Luxury Digital Showcase Platform",
+    "description": "Showcasing bespoke bridal jewellery, antique gold collections, and bullion with high-resolution imagery and private showroom appointment booking.",
+    "image": "https://rexonsofttech.in/project_paras.png",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://rexonsofttech.in/#organization",
+      "name": "RexonSoftTech Engineering Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://rexonsofttech.in/#organization",
+      "name": "RexonSoftTech",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rexonsofttech.in/rst_logo.png"
+      }
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "Paras Jewellers"
+    },
+    "inLanguage": "en-IN"
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -38,6 +66,7 @@ export default function ParasJewellersCaseStudy() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <Navbar />
@@ -82,7 +111,7 @@ export default function ParasJewellersCaseStudy() {
             </div>
 
             <div className="relative h-80 sm:h-96 w-full rounded-3xl overflow-hidden border border-slate-200 shadow-md">
-              <Image src="/project_paras.png" alt="Paras Jewellers Platform" fill className="object-cover object-top" />
+              <Image src="/project_paras.png" alt="Paras Jewellers Platform" fill priority sizes="(max-width: 768px) 100vw, 896px" className="object-cover object-top" />
             </div>
 
             <div className="space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">

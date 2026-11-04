@@ -9,7 +9,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { ArrowRight, ExternalLink, CheckCircle2, ShieldCheck, Sparkles, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Client Case Studies & Engineering Portfolio | RexonSoftTech Chennai",
+  title: "Client Case Studies & Engineering Portfolio",
   description: "Explore real-world software engineering case studies from RexonSoftTech. Retail e-commerce, IT services portals, consumer electronics showcases, and luxury jewellery systems.",
   alternates: {
     canonical: "https://rexonsofttech.in/case-studies",
@@ -75,6 +75,30 @@ const FEATURED_STUDIES = [
 ];
 
 export default function CaseStudiesIndexPage() {
+  const portfolioCatalogSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://rexonsofttech.in/case-studies#catalog",
+    "name": "RexonSoftTech Client Case Studies",
+    "description": "Real-world engineering case studies across retail e-commerce, IT hardware distribution, consumer electronics, and luxury jewellery.",
+    "itemListElement": FEATURED_STUDIES.map((study, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "item": {
+        "@type": "Article",
+        "name": `${study.client} Case Study`,
+        "url": `https://rexonsofttech.in/case-studies/${study.slug}`,
+        "description": study.summary,
+        "image": `https://rexonsofttech.in${study.image}`,
+        "author": {
+          "@type": "Organization",
+          "@id": "https://rexonsofttech.in/#organization",
+          "name": "RexonSoftTech"
+        }
+      }
+    }))
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -86,6 +110,7 @@ export default function CaseStudiesIndexPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioCatalogSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <Navbar />
@@ -118,6 +143,7 @@ export default function CaseStudiesIndexPage() {
                       src={study.image}
                       alt={`${study.client} platform screenshot`}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover object-top hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#260E22]/80 via-transparent to-transparent" />

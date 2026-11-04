@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development Company in Chennai | RexonSoftTech",
+  title: "Custom Software Development Company Chennai",
   description: "Custom software development company in Chennai. We engineer bespoke business software, internal operations portals, CRM workflows, and scalable cloud databases.",
   alternates: {
     canonical: "https://rexonsofttech.in/services/custom-software-development",

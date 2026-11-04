@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI & Business Automation Solutions in Chennai | RexonSoftTech",
+  title: "AI & Business Automation Solutions Chennai",
   description: "AI and business automation in Chennai. Intelligent PDF invoice parsing, WhatsApp customer service bots & automated ERP reporting to eliminate manual clerical work.",
   alternates: {
     canonical: "https://rexonsofttech.in/services/ai-automation",

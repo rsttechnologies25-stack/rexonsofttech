@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
-  title: "RexonSoftTech | Custom Software Development & Flagship ERP Company Chennai",
+  title: { absolute: "RexonSoftTech | Custom Software Development & ERP Solutions in Chennai" },
   description: "Custom ERP and software development in Chennai for growing businesses. Build ERP, automation, web applications and cybersecurity solutions.",
   alternates: {
     canonical: "https://rexonsofttech.in",

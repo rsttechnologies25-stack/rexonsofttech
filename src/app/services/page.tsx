@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
-  title: "Software Development & Custom ERP Services | RexonSoftTech Chennai",
+  title: "Software Development & Custom ERP Services",
   description: "Comprehensive software engineering services: bespoke ERP platforms, billing software engines, web portals, mobile apps (iOS/Android), AI workflow automation, and cybersecurity audits in Chennai.",
   alternates: {
     canonical: "https://rexonsofttech.in/services",
@@ -40,6 +40,86 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const serviceCatalogSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://rexonsofttech.in/services#catalog",
+    "name": "RexonSoftTech Engineering Services",
+    "description": "Comprehensive bespoke software engineering, enterprise ERP systems, web and mobile platforms, AI automation, and cybersecurity auditing services.",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Service",
+          "name": "Custom ERP Development",
+          "url": "https://rexonsofttech.in/services/erp-development",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Service",
+          "name": "Custom Software Development",
+          "url": "https://rexonsofttech.in/services/custom-software-development",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "name": "Website Development",
+          "url": "https://rexonsofttech.in/services/website-development",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Service",
+          "name": "Web Application Development",
+          "url": "https://rexonsofttech.in/services/web-application-development",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Service",
+          "name": "Mobile Application Development",
+          "url": "https://rexonsofttech.in/services/mobile-app-development",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Service",
+          "name": "AI & Business Automation",
+          "url": "https://rexonsofttech.in/services/ai-automation",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Service",
+          "name": "Cybersecurity & VAPT Audits",
+          "url": "https://rexonsofttech.in/services/cybersecurity-vapt",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      }
+    ]
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -61,6 +141,10 @@ export default function ServicesPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceCatalogSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

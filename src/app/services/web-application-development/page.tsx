@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Web Application Development Company in Chennai | RexonSoftTech",
+  title: "Web Application Development Company Chennai",
   description: "Enterprise web application development in Chennai. Custom cloud portals, internal business dashboards, database applications & secure APIs built on Next.js.",
   alternates: {
     canonical: "https://rexonsofttech.in/services/web-application-development",

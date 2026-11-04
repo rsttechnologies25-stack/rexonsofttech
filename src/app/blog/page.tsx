@@ -7,7 +7,7 @@ import { BLOG_POSTS } from "@/lib/blog-data";
 import { Clock, Calendar, ArrowRight, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Engineering Blog & Tech Insights | RexonSoftTech",
+  title: "Engineering Blog & Technology Insights",
   description: "Actionable engineering articles, ERP migration strategies, GST billing automation tutorials, and software architecture insights for Indian businesses and CTOs.",
   alternates: {
     canonical: "https://rexonsofttech.in/blog",
@@ -37,6 +37,29 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const blogListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://rexonsofttech.in/blog#catalog",
+    "name": "RexonSoftTech Engineering Blog & Technical Insights",
+    "description": "Technical insights on custom ERP systems, manufacturing software, inventory tracking, GST e-invoicing, and cybersecurity from RexonSoftTech.",
+    "itemListElement": BLOG_POSTS.map((post, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "item": {
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "url": `https://rexonsofttech.in/blog/${post.slug}`,
+        "description": post.excerpt,
+        "datePublished": new Date(post.date).toISOString(),
+        "author": {
+          "@type": "Person",
+          "name": post.author
+        }
+      }
+    }))
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -58,6 +81,10 @@ export default function BlogPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Privacy Policy | RexonSoftTech",
+  title: "Privacy Policy",
   description: "Privacy policy detailing how RexonSoftTech protects, stores, and handles visitor personal data and inquiry information.",
   alternates: {
     canonical: "https://rexonsofttech.in/privacy",
@@ -10,8 +10,21 @@ export const metadata = {
 };
 
 export default function PrivacyPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rexonsofttech.in" },
+      { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://rexonsofttech.in/privacy" }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       <main className="flex-grow bg-[#FFF3E6] pt-32 pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

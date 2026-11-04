@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Website Development Company in Chennai | RexonSoftTech",
+  title: "Website Development Company in Chennai",
   description: "High-performance website development in Chennai. Fast-loading, Next.js corporate websites and conversion-focused web portals engineered for growing businesses.",
   alternates: {
     canonical: "https://rexonsofttech.in/services/website-development",

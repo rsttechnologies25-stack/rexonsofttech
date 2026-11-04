@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ERP Solutions Hub | Custom ERP Software Architecture Chennai | RexonSoftTech",
+  title: "Custom ERP Software Architecture in Chennai",
   description: "Explore RexonSoftTech's custom ERP solutions: Steel Fabrication ERP, Multi-Warehouse Inventory Management, and GST Billing Automation for Indian enterprises.",
   alternates: {
     canonical: "https://rexonsofttech.in/erp",

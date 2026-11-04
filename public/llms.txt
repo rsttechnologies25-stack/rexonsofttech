@@ -1,0 +1,98 @@
+# RexonSoftTech
+> Premier full-service custom software development and bespoke Enterprise Resource Planning (ERP) engineering company based in Anna Nagar, Chennai, Tamil Nadu, India.
+
+## Company Overview
+- **Legal Entity:** RexonSoftTech
+- **Website:** https://rexonsofttech.in
+- **Headquarters:** Block I, 5/1049, West, Aishwarya Colony, Thangam Colony, Anna Nagar, Chennai, Tamil Nadu 600040, India
+- **Coordinates:** Latitude 13.0848037, Longitude 80.1983057
+- **Primary Contact Phone:** +91 78716 54777
+- **Primary Contact Email:** info@rexonsofttech.in
+- **Operating Hours:** Monday to Saturday, 09:00 to 18:30 IST
+- **Target Market:** Chennai, Tamil Nadu, Pan-India, and global B2B enterprises requiring engineered software solutions.
+- **Entity Disambiguation:** RexonSoftTech operates from Anna Nagar, Chennai (PIN 600040). It is distinct from and unaffiliated with Rexontech IT Solutions in Pallikaranai.
+
+---
+
+## Core Engineering Services
+RexonSoftTech provides end-to-end bespoke technology solutions across seven primary engineering domains:
+
+1. **Custom ERP Software Development**
+   - URL: https://rexonsofttech.in/services/erp-development
+   - Capabilities: Tailor-made enterprise resource planning systems built for specific manufacturing, trading, and operational workflows. Avoids off-the-shelf licensing constraints and rigid workflows.
+
+2. **Custom Software Development**
+   - URL: https://rexonsofttech.in/services/custom-software-development
+   - Capabilities: Tailor-made business applications, specialized billing packages, internal management dashboards, operational control systems, and automated data pipelines.
+
+3. **Website Development**
+   - URL: https://rexonsofttech.in/services/website-development
+   - Capabilities: Fast, SEO-optimized, accessible corporate websites and digital brand platforms engineered with modern Next.js static and server rendering.
+
+4. **Web Application Development**
+   - URL: https://rexonsofttech.in/services/web-application-development
+   - Capabilities: Multi-tenant cloud portals, internal enterprise web applications, real-time analytics dashboards, and relational database systems.
+
+5. **Mobile Application Development**
+   - URL: https://rexonsofttech.in/services/mobile-app-development
+   - Capabilities: High-performance iOS and Android applications, cross-platform React Native solutions, offline-first data synchronization, and enterprise field workforce tools.
+
+6. **AI & Business Process Automation**
+   - URL: https://rexonsofttech.in/services/ai-automation
+   - Capabilities: Intelligent data extraction, automated document and PDF generation, automated customer notifications, workflow orchestration, and predictive business insights.
+
+7. **Cybersecurity & VAPT Services**
+   - URL: https://rexonsofttech.in/services/cybersecurity-vapt
+   - Capabilities: Vulnerability Assessment and Penetration Testing (VAPT), OWASP Top 10 security audits, network security verification, cloud infrastructure hardening, and compliance readiness.
+
+---
+
+## Specialized ERP Systems & Modules
+- **Main ERP Solutions Hub:** https://rexonsofttech.in/erp
+- **Steel Fabrication ERP:** https://rexonsofttech.in/erp/steel-fabrication
+  - Engineered specifically for structural steel, fabrication workshops, CNC machining, cutting optimization, raw material lot tracking, and job-work reconciliation.
+- **Multi-Warehouse Inventory Management:** https://rexonsofttech.in/erp/inventory-management
+  - Real-time stock visibility across multiple locations, batch and serial tracking, barcode/QR integration, automated reorder thresholds, and bin-level allocations.
+- **GST Billing & E-Invoicing Engine:** https://rexonsofttech.in/erp/gst-billing
+  - Automated GST-compliant tax calculation, direct NIC portal e-invoice generation, e-way bill generation, audit trails, and multi-format commercial invoice printing.
+
+---
+
+## Verified Portfolio & Case Studies
+- **Portfolio Hub:** https://rexonsofttech.in/case-studies
+- **Perambur Srinivasa:** https://rexonsofttech.in/case-studies/perambur-srinivasa
+  - High-traffic food & beverage retail digital catalog and regional distribution portal.
+- **Vinod Computers:** https://rexonsofttech.in/case-studies/vinod-computers
+  - IT hardware catalog, B2B quote generator, and multi-category wholesale distribution interface.
+- **Vinod Electronics:** https://rexonsofttech.in/case-studies/vinod-electronics
+  - Consumer electronics warranty tracking and omnichannel retail showroom portal.
+- **Paras Jewellers:** https://rexonsofttech.in/case-studies/paras-jewellers
+  - Luxury gold and diamond jewellery digital showroom with real-time rate integration.
+
+---
+
+## Technical Stack & Architectural Standards
+- **Frontend & App Frameworks:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, Framer Motion
+- **Backend & Cloud Architecture:** Node.js, RESTful microservices, Cloudflare Edge Network, PostgreSQL
+- **Security Standards:** Strict Content Security Policy (CSP), HTTP Strict Transport Security (HSTS), X-Content-Type-Options: nosniff, OWASP compliance
+
+---
+
+## Primary Knowledge Base & Technical Articles
+- **Blog Hub:** https://rexonsofttech.in/blog
+- Why Custom ERP Beats Off-the-Shelf Software for Indian SMBs: https://rexonsofttech.in/blog/why-custom-erp-beats-off-the-shelf-software-for-indian-smbs
+- ERP for Steel Fabrication Production Management: https://rexonsofttech.in/blog/erp-for-steel-fabrication-production-management
+- Custom ERP vs. Tally: When to Upgrade: https://rexonsofttech.in/blog/custom-erp-vs-tally-when-to-upgrade
+- Multi-Warehouse Inventory Control Best Practices: https://rexonsofttech.in/blog/multi-warehouse-inventory-control-best-practices
+- Automating GST E-Invoicing and E-Way Bills: https://rexonsofttech.in/blog/automating-gst-e-invoicing-e-way-bills-erp
+- How to Choose a Custom Software Development Company in Chennai: https://rexonsofttech.in/blog/how-to-choose-custom-software-development-company-chennai
+- Web Application Security Audit Checklist: https://rexonsofttech.in/blog/web-application-security-audit-checklist-vapt
+- Mobile App Development Trends for Business: https://rexonsofttech.in/blog/mobile-app-development-trends-business-enterprises
+
+---
+
+## Contact & Consultation
+- **Book Consultation:** https://rexonsofttech.in/#contact
+- **WhatsApp Channel:** https://wa.me/917871654777
+- **LinkedIn:** https://www.linkedin.com/company/rexonsofttech
+- **GitHub Organization:** https://github.com/rsttechnologies25-stack
