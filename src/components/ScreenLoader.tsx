@@ -17,38 +17,39 @@ export default function ScreenLoader() {
       t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
     const startTime = performance.now();
-    const duration = 2400; // 2.4 seconds to complete 100%
+    const TOTAL_ANIMATION_DURATION = 4000; // Exactly 4.0s full cycle
+    const COUNTER_FILL_DURATION = 2400; // Counter reaches 100% at 2.4s (synchronized with CSS 60%)
 
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = ease(progress);
-      const currentPercent = Math.round(easedProgress * 100);
 
+      // 1. Calculate counter percentage up to 100%
+      const countProgress = Math.min(elapsed / COUNTER_FILL_DURATION, 1);
+      const easedProgress = ease(countProgress);
+      const currentPercent = Math.round(easedProgress * 100);
       setPercent(String(currentPercent).padStart(3, '0') + '%');
 
-      if (progress < 1) {
+      // 2. Keep the animation running until the full 4.0s sequence completely displays
+      if (elapsed < TOTAL_ANIMATION_DURATION) {
         animationFrameRef.current = requestAnimationFrame(animate);
       } else {
-        // Hold for brief beat at 100% so user sees full reveal, then fade out
+        // Animation has completed displaying in full. Gracefully fade out to reveal the site.
+        setIsFading(true);
+        document.body.style.overflow = originalOverflow;
         setTimeout(() => {
-          setIsFading(true);
-          document.body.style.overflow = originalOverflow;
-          setTimeout(() => {
-            setIsDestroyed(true);
-          }, 550);
-        }, 220);
+          setIsDestroyed(true);
+        }, 650);
       }
     };
 
     animationFrameRef.current = requestAnimationFrame(animate);
 
-    // Fallback timer: guarantee dismissal after 3.6s under all circumstances
+    // Fallback timer: guarantee dismissal after 5.5s under all circumstances
     const safetyTimeout = setTimeout(() => {
       setIsFading(true);
       document.body.style.overflow = originalOverflow;
-      setTimeout(() => setIsDestroyed(true), 550);
-    }, 3600);
+      setTimeout(() => setIsDestroyed(true), 650);
+    }, 5500);
 
     return () => {
       if (animationFrameRef.current) {
@@ -144,22 +145,22 @@ export default function ScreenLoader() {
 
 .rst-l-R {
   background-image: var(--rst-loader-R);
-  animation: rst-R 4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  animation: rst-R 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .rst-l-S {
   background-image: var(--rst-loader-S);
-  animation: rst-S 4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  animation: rst-S 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .rst-l-T {
   background-image: var(--rst-loader-T);
-  animation: rst-T 4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  animation: rst-T 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .rst-l-W {
   clip-path: inset(54% 9% 28% 9%);
-  animation: rst-W 4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  animation: rst-W 4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 @keyframes rst-R {
@@ -167,12 +168,9 @@ export default function ScreenLoader() {
     opacity: 0;
     transform: translateX(-70px);
   }
-  22%, 86% {
+  22%, 100% {
     opacity: 1;
     transform: none;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
@@ -181,12 +179,9 @@ export default function ScreenLoader() {
     opacity: 0;
     transform: translateY(70px) scale(0.8);
   }
-  30%, 86% {
+  30%, 100% {
     opacity: 1;
     transform: none;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
@@ -195,12 +190,9 @@ export default function ScreenLoader() {
     opacity: 0;
     transform: translateX(70px);
   }
-  38%, 86% {
+  38%, 100% {
     opacity: 1;
     transform: none;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
@@ -209,12 +201,8 @@ export default function ScreenLoader() {
     opacity: 0;
     clip-path: inset(54% 50% 28% 50%);
   }
-  58%, 86% {
+  58%, 100% {
     opacity: 1;
-    clip-path: inset(54% 9% 28% 9%);
-  }
-  100% {
-    opacity: 0;
     clip-path: inset(54% 9% 28% 9%);
   }
 }
@@ -228,7 +216,7 @@ export default function ScreenLoader() {
   background: linear-gradient(90deg, transparent, var(--rst-loader-gold), transparent);
   box-shadow: 0 0 14px var(--rst-loader-gold);
   opacity: 0;
-  animation: rst-beam 4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  animation: rst-beam 4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 @keyframes rst-beam {
@@ -275,7 +263,7 @@ export default function ScreenLoader() {
   inset: 0;
   transform-origin: left;
   background: linear-gradient(90deg, var(--rst-loader-ink), var(--rst-loader-gold));
-  animation: rst-fill 4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  animation: rst-fill 4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
   border-radius: 9999px;
 }
 
@@ -284,13 +272,9 @@ export default function ScreenLoader() {
     transform: scaleX(0);
     opacity: 1;
   }
-  60%, 86% {
+  60%, 100% {
     transform: scaleX(1);
     opacity: 1;
-  }
-  100% {
-    transform: scaleX(1);
-    opacity: 0;
   }
 }
 
