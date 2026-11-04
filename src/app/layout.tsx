@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import MetaPixel from "@/components/MetaPixel";
+import ScreenLoader from "@/components/ScreenLoader";
 import "./globals.css";
 
 const inter = Inter({
@@ -97,6 +99,7 @@ export default function RootLayout({
         <meta name="ICBM" content="13.0848037, 80.1983057" />
       </head>
       <body className="min-h-screen bg-[#FFF3E6] font-sans text-[#381932] overflow-x-hidden">
+        <ScreenLoader />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2CNVR5X55Y"
           strategy="afterInteractive"
@@ -110,6 +113,32 @@ export default function RootLayout({
             gtag('config', 'G-2CNVR5X55Y');
           `}
         </Script>
+        {/* Meta Pixel Code */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2246501702572609');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=2246501702572609&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+        <MetaPixel />
         <SchemaMarkup />
         {children}
       </body>
