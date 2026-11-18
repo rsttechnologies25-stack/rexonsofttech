@@ -91,6 +91,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services/managed-security-services" className="hover:text-white transition-colors flex items-center font-semibold text-orange-400">
+                  Managed Security Services (MSS)
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/managed-soc" className="hover:text-white transition-colors flex items-center">
+                  Managed SOC & Threat Triage
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/cybersecurity-vapt" className="hover:text-white transition-colors flex items-center">
                   Cyber Security Audits & VAPT
                 </Link>

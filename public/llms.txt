@@ -46,6 +46,20 @@ RexonSoftTech provides end-to-end bespoke technology solutions across seven prim
    - URL: https://rexonsofttech.in/services/cybersecurity-vapt
    - Capabilities: Vulnerability Assessment and Penetration Testing (VAPT), OWASP Top 10 security audits, network security verification, cloud infrastructure hardening, and compliance readiness.
 
+8. **Managed Security Services (MSS) Division**
+   - Main URL: https://rexonsofttech.in/services/managed-security-services
+   - Tagline: "Your Security. Our Responsibility. Proactive Protection. Continuous Visibility. Stronger Cyber Resilience."
+   - Specialized Divisions:
+     - Managed SOC: https://rexonsofttech.in/services/managed-soc
+     - SIEM Deployment & Management: https://rexonsofttech.in/services/siem-management
+     - Endpoint Security (EDR/XDR): https://rexonsofttech.in/services/endpoint-security
+     - Firewall & Network Security: https://rexonsofttech.in/services/network-security
+     - Continuous Vulnerability Management: https://rexonsofttech.in/services/vulnerability-management
+     - Incident Response & Threat Hunting: https://rexonsofttech.in/services/incident-response
+     - Cloud Security Posture (CSPM): https://rexonsofttech.in/services/cloud-security
+     - Offensive VAPT Testing: https://rexonsofttech.in/services/vapt
+     - Security Governance & Compliance: https://rexonsofttech.in/services/security-compliance
+
 ---
 
 ## Specialized ERP Systems & Modules

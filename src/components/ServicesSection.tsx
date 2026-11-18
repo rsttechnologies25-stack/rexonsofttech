@@ -83,13 +83,16 @@ export default function ServicesSection() {
     },
     {
       icon: ShieldAlert,
-      title: "Cyber Security Services",
-      href: "/services/cybersecurity-vapt",
-      description: "Deep vulnerability assessments ensuring your intellectual property and data remain secured.",
+      title: "Managed Security Services (MSS)",
+      href: "/services/managed-security-services",
+      description: "Continuous enterprise cybersecurity, Managed SOC, SIEM engineering, EDR/XDR defense, and VAPT security audits.",
       items: [
-        "Penetration & Security Audits",
-        "Vulnerability Scanning",
-        "OWASP Web Security Testing"
+        "Managed SOC & Threat Triage",
+        "SIEM Engineering (Sentinel, Splunk, Wazuh)",
+        "Endpoint Security & EDR Ransomware Defense",
+        "Firewall & Network Zero-Trust Rules",
+        "Continuous Vulnerability Management",
+        "Penetration Testing (VAPT) & Audits"
       ]
     }
   ];

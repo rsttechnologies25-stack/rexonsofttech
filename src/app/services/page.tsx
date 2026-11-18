@@ -112,6 +112,16 @@ export default function ServicesPage() {
         "position": 7,
         "item": {
           "@type": "Service",
+          "name": "Managed Security Services (MSS)",
+          "url": "https://rexonsofttech.in/services/managed-security-services",
+          "provider": { "@id": "https://rexonsofttech.in/#organization" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Service",
           "name": "Cybersecurity & VAPT Audits",
           "url": "https://rexonsofttech.in/services/cybersecurity-vapt",
           "provider": { "@id": "https://rexonsofttech.in/#organization" }

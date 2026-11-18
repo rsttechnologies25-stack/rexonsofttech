@@ -73,6 +73,23 @@
 - **Deliverables:** CVSS v3.1 severity scores, Proof-of-Concept (PoC) exploit steps, actionable developer remediation guidelines, executive risk summaries, and one complimentary verification re-test with closure certification.
 - **Audit Timeline:** 5 to 10 business days for standard application penetration testing.
 
+### H. Managed Security Services (MSS) Division
+- **Flagship URL:** https://rexonsofttech.in/services/managed-security-services
+- **Brand Positioning:** Enterprise-grade cybersecurity services for businesses of all sizes.
+- **Tagline:** "Your Security. Our Responsibility. Proactive Protection. Continuous Visibility. Stronger Cyber Resilience."
+- **Core MSS Offerings:**
+  1. **Managed SOC:** https://rexonsofttech.in/services/managed-soc (Continuous telemetry surveillance, alert noise reduction, and tier-1 to tier-3 escalation).
+  2. **SIEM Deployment & Management:** https://rexonsofttech.in/services/siem-management (Custom parser development, correlation rule engineering, and retention optimization for Splunk, Microsoft Sentinel, IBM QRadar, and Wazuh).
+  3. **Endpoint Security (EDR/XDR):** https://rexonsofttech.in/services/endpoint-security (Behavioral ransomware defense, host network isolation, and centralized agent management for Defender, CrowdStrike, and SentinelOne).
+  4. **Firewall & Network Security:** https://rexonsofttech.in/services/network-security (Next-Gen firewall policy audits, zero-trust network segmentation, and secure VPN administration for Fortinet, Palo Alto Networks, Cisco, and Sophos).
+  5. **Continuous Vulnerability Management:** https://rexonsofttech.in/services/vulnerability-management (Asset discovery, CVE risk prioritization, and developer patch validation).
+  6. **Incident Response & Threat Hunting:** https://rexonsofttech.in/services/incident-response (Emergency breach containment, digital forensics, root-cause investigation, and recovery).
+  7. **Cloud Security Posture (CSPM):** https://rexonsofttech.in/services/cloud-security (IAM auditing, S3/Blob storage protection, and container compliance across AWS, Azure, and GCP).
+  8. **VAPT & Offensive Testing:** https://rexonsofttech.in/services/vapt (Certified ethical hacking across web, API, mobile, and network perimeters).
+  9. **Security Governance & Compliance:** https://rexonsofttech.in/services/security-compliance (Audit readiness, ISMS policy authoring, and gap assessments for ISO 27001, SOC 2, RBI, and DPDP Act).
+- **Service Delivery Models:** Fully Managed Security (end-to-end administration), Co-Managed Security (side-by-side with internal IT), and Security Assessment & Advisory (fixed-scope audits).
+- **Operational Shift Windows:** Business-Hours (8x5), Extended Coverage (16x5 / 16x7), and evaluated 24/7 continuous SOC monitoring.
+
 ---
 
 ## 3. Specialized ERP Frameworks & Dedicated Industry Modules
